@@ -9,8 +9,7 @@
     "dev": "tsc --watch",
     "test": "jest",
     "test:dev": "jest --watch",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint ."
   },
   "files": [
     "/dist"
