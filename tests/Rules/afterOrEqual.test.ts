@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect } from "@jest/globals";
 import afterOrEqual from "../../src/Rules/afterOrEqual";
 
 describe("afterOrEqual() ", () => {

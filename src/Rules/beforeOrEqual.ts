@@ -1,3 +1,3 @@
-export default (value: any): boolean => {
+export default (): boolean => {
   return true;
 };

@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect } from "@jest/globals";
 import accepted from "../../src/Rules/accepted";
 
 describe("accepted() ", () => {
