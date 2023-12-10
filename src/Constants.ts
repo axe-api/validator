@@ -4,7 +4,7 @@ import rules from "./Rules";
 export const RULE_FUNCTION_MAPS: Record<RuleType, ValidationFunction> = {
   string: rules.required,
   boolean: rules.required,
-  accepted: rules.required,
+  accepted: rules.accepted,
   after: rules.required,
   after_or_equal: rules.required,
   alpha: rules.required,
