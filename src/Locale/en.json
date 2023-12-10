@@ -1,0 +1,5 @@
+{
+  "required": "The field is required.",
+  "email": "The field should be an email.",
+  "min": "The field must be at least {0} characters"
+}
