@@ -17,9 +17,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "tsc": "^2.0.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-typescript": "^7.23.3",
