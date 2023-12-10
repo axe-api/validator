@@ -19,4 +19,18 @@ describe("validate() function ", () => {
       "The field must be at least 20 characters"
     );
   });
+
+  test("should be able to validate the nested values", () => {
+    const data = {
+      user: {
+        email: "foo@bar.com",
+      },
+    };
+    const rules = {
+      "user.email": "required",
+    };
+
+    const result = validate(data, rules);
+    expect(result.isValid).toBe(true);
+  });
 });
