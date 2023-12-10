@@ -2,7 +2,7 @@ export const toRuleNameArray = (rules: string): string[] => {
   return rules.split("|");
 };
 
-export const getValueViaPath = (data: any, path: string): any | undefined => {
+export const getValueViaPath = (data: any, path: string): any => {
   const keys = path.split(".");
 
   return keys.reduce((acc, key) => {
