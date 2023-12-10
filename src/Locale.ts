@@ -1,5 +1,5 @@
 import { RuleType } from "./Types";
-import * as en from "./locales/en.json";
+import * as en from "./Locale/en.json";
 
 export const getMessage = (rule: RuleType, params: any[]) => {
   let message = en[rule];

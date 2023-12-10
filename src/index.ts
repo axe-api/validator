@@ -1,8 +1,8 @@
 import { IValidationResult } from "./Interface";
 import { getMessage } from "./Locale";
 import { ValidationResult } from "./Types";
-import { toRuleDefinition } from "./factory";
-import { toRuleNameArray } from "./helpers";
+import { toRuleDefinition } from "./Factory";
+import { toRuleNameArray } from "./Helpers";
 
 const validate = (
   data: any,
