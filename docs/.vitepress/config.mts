@@ -17,10 +17,10 @@ export default defineConfig({
         ],
       },
       {
-        text: "Rules",
+        text: "Reference",
         items: [
-          { text: "Why?", link: "/xx" },
-          { text: "Getting started", link: "/rr" },
+          { text: "Rules", link: "/rules" },
+          { text: "i18n", link: "/rr" },
         ],
       },
     ],
