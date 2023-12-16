@@ -1,9 +1,26 @@
-export default (value: any, min: any): boolean => {
-  min = parseInt(min);
-
-  if (!value) {
+export default (value: any, size: any): boolean => {
+  if (
+    value === null ||
+    value === undefined ||
+    String(value).trim().length === 0
+  ) {
     return true;
   }
 
-  return value.toString().trim().length >= min;
+  const check = Number(size);
+
+  if (size === null || size === undefined || isNaN(check)) {
+    throw new Error(`Incorrect validation rule: max:number`);
+  }
+
+  if (typeof value === "string") {
+    return value.trim().length >= check;
+  }
+
+  const input = Number(value);
+  if (isNaN(input)) {
+    return false;
+  }
+
+  return input >= size;
 };

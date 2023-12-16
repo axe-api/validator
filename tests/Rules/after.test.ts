@@ -36,9 +36,9 @@ describe("after() ", () => {
     expect(after("2023-01-01", "invalid-date")).toBe(false);
   });
 
-  it("should return false for null and undefined values", () => {
-    expect(after(null, "2022-01-01")).toBe(false);
-    expect(after(undefined, "2022-01-01")).toBe(false);
+  it("should return true for null and undefined values", () => {
+    expect(after(null, "2022-01-01")).toBe(true);
+    expect(after(undefined, "2022-01-01")).toBe(true);
   });
 
   it("should handle weird values gracefully", () => {

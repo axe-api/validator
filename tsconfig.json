@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es2020",
     "target": "es5",
     "declaration": true,
     "outDir": "./dist",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "lib": ["es2016", "dom", "es5"],
+    "esModuleInterop": true
   },
   "include": ["src/**/*"],
   "watchOptions": {

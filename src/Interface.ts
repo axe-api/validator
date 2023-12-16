@@ -1,4 +1,9 @@
-import { RuleType, ValidationFunction, ValidationResult } from "./Types";
+import {
+  RuleType,
+  SupportedLanguages,
+  ValidationFunction,
+  ValidationResult,
+} from "./Types";
 
 export interface IRuleDefinition {
   name: RuleType;
@@ -14,5 +19,17 @@ export interface IRuleResult {
 export interface IValidationResult {
   isValid: boolean;
   isInvalid: boolean;
-  data: ValidationResult;
+  fields: Record<string, boolean>;
+  errors: ValidationResult;
+}
+
+export interface IContext {
+  data: any;
+  key: string;
+}
+
+export interface IOptions {
+  stopOnFail: boolean;
+  language: SupportedLanguages;
+  translations?: Record<string, string>;
 }

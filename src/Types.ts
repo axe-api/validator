@@ -32,3 +32,5 @@ export type RuleType =
 export type ValidationFunction = (...args: any[]) => boolean;
 
 export type ValidationResult = Record<string, IRuleResult[]>;
+
+export type SupportedLanguages = "en";

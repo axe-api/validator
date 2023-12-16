@@ -3,8 +3,10 @@ import { IRuleDefinition } from "./Interface";
 import { RuleType } from "./Types";
 
 export const toRuleDefinition = (rule: string): IRuleDefinition => {
-  const [name, ...params] = rule.split(":");
+  const [name, paramsAsString] = rule.split(":");
   const ruleType = toRuleType(name);
+
+  const params = paramsAsString ? paramsAsString.split(",") : [];
 
   return {
     name: ruleType,
