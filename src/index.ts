@@ -7,7 +7,7 @@ import { getOptions, setOptions } from "./Options";
 
 const validate = (
   data: any,
-  validation: Record<string, string>,
+  definition: Record<string, string>,
   options?: Partial<IOptions>
 ): IValidationResult => {
   const currentOptions: IOptions = {
@@ -17,7 +17,7 @@ const validate = (
 
   const { isValid, fields, results } = getResults(
     data,
-    validation,
+    definition,
     currentOptions
   );
 
@@ -31,7 +31,7 @@ const validate = (
 
 const getResults = (
   data: any,
-  validation: Record<string, string>,
+  definition: Record<string, string>,
   options: IOptions
 ) => {
   let isValid = true;
@@ -39,10 +39,10 @@ const getResults = (
   const results: ValidationResult = {};
 
   // Checking all validations
-  for (const key in validation) {
+  for (const key in definition) {
     fields[key] = true;
     // Parsing the rules
-    const rules = toRuleNameArray(validation[key]).map(toRuleDefinition);
+    const rules = toRuleNameArray(definition[key]).map(toRuleDefinition);
 
     // Getting the value by the path
     const value = getValueViaPath(data, key);

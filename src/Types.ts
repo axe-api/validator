@@ -29,7 +29,7 @@ export type RuleType =
   | "string"
   | "url";
 
-export type ValidationFunction = (...args: any[]) => boolean;
+export type RuleFunction = (...args: any[]) => boolean;
 
 export type ValidationResult = Record<string, IRuleResult[]>;
 

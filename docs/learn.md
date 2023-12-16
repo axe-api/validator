@@ -14,45 +14,45 @@ $ npm install --save axe-api-validator
 
 Using `axe-api-validator` is very simple.
 
-You should just call the `validate()` function with data and rules.
+You should just call the `validate()` function with data and the definition.
 
 ```js
-import validate from "axe-api-validator";
+import { validate } from "axe-api-validator";
 
 const data = {
-  email: "foo@bar.com",
+  email: "not-a-valid-email",
   name: "John",
   surname: "Doe",
 };
 
-const rules = {
+const definition = {
   email: "required|email",
   name: "required|min:1|max:50",
   surname: "required|min:1|max:50",
 };
 
-const result = await validate(data, rules);
+const result = await validate(data, definition);
+console.log(result);
 ```
 
-## Vue Demo
+By the example, you would get the following response:
 
-```js
-import { ref, computed } from "vue";
-import validate from "axe-api-validator";
-
-const data = ref({
-  email: "",
-  name: "",
-  surname: "",
-});
-
-const rules = {
-  email: "required|email",
-  name: "required|min:1|max:10",
-  surname: "required|min:1|max:10",
-};
-
-const validation = computed(() => validate(data.value, rules));
+```json
+{
+  "isValid": false,
+  "isInvalid": true,
+  "fields": {
+    "email": false,
+    "name": true,
+    "surname": true
+  },
+  "errors": {
+    "email": [
+      {
+        "rule": "required",
+        "message": "The field field is required."
+      }
+    ]
+  }
+}
 ```
-
-<Demo />

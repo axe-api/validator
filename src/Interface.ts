@@ -1,13 +1,13 @@
 import {
   RuleType,
   SupportedLanguages,
-  ValidationFunction,
+  RuleFunction,
   ValidationResult,
 } from "./Types";
 
 export interface IRuleDefinition {
   name: RuleType;
-  callback: ValidationFunction;
+  callback: RuleFunction;
   params: any[];
 }
 

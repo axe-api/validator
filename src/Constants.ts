@@ -1,8 +1,8 @@
-import { RuleType, ValidationFunction } from "./Types";
+import { RuleType, RuleFunction } from "./Types";
 import rules from "./Rules";
 import { IOptions } from "./Interface";
 
-export const RULE_FUNCTION_MAPS: Record<RuleType, ValidationFunction> = {
+export const RULE_FUNCTION_MAPS: Record<RuleType, RuleFunction> = {
   string: rules.string,
   boolean: rules.boolean,
   accepted: rules.accepted,
