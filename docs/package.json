@@ -8,10 +8,13 @@
   "dependencies": {
     "axe-api-validator": "file:../",
     "pretty-print-json": "^2.1.0",
-    "vue-code-highlight": "^0.7.8"
+    "vue-code-highlight": "^0.7.8",
+    "sitemap-ts": "^1.6.1"
   },
   "devDependencies": {
     "sass": "^1.69.5",
-    "vitepress": "^1.0.0-rc.31"
+    "vitepress": "^1.0.0-rc.31",
+    "vite-ssg": "^0.23.5",
+    "vite-ssg-sitemap": "^0.6.1"
   }
 }

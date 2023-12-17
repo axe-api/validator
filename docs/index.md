@@ -9,10 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Getting started
-      link: /learn
-    - theme: alt
-      text: API
-      link: /api
+      link: /getting-started
 
 features:
   - title: Declarative ✍🏽

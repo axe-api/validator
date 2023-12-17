@@ -2,7 +2,9 @@
 import Demo from "./Demo.vue"
 </script>
 
-# Installation
+# Getting started
+
+## Installation
 
 The library can be installed into an existing project:
 
