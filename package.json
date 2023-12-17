@@ -9,7 +9,6 @@
     "dev": "ts-node-dev --respawn --clear ./tests/dev.ts",
     "test": "jest",
     "test:dev": "jest --watch",
-    "test:coverage": "jest --coverage",
     "lint": "eslint .",
     "prepare": "husky install"
   },
