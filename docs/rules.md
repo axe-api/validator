@@ -231,14 +231,165 @@ The field under validation must be numeric and must have length between given mi
 | `digits_between:4,6` | `true`      | 🔴        |
 | `digits_between:4,6` | `'1234'`    | 🔴        |
 
-## `required`
+## `email`
+
+The field under validation must be formatted as an e-mail address.
+
+| Definition | Value         | Is valid? |
+| ---------- | ------------- | --------- |
+| `email`    | `null`        | 🟢        |
+| `email`    | `undefined`   | 🟢        |
+| `email`    | `foo@bar.com` | 🟢        |
+| `email`    | `just a text` | 🔴        |
+| `email`    | `true`        | 🔴        |
+| `email`    | `'1234'`      | 🔴        |
+
+## `hex`
+
+The field under validation should be a hexadecimal format.
+
+| Definition | Value              | Is valid? |
+| ---------- | ------------------ | --------- |
+| `hex`      | `null`             | 🟢        |
+| `hex`      | `undefined`        | 🟢        |
+| `hex`      | `1aF`              | 🟢        |
+| `hex`      | `1234567890ABCDEF` | 🟢        |
+| `hex`      | `123xyz`           | 🔴        |
+| `hex`      | `0xg`              | 🔴        |
+| `hex`      | `invalid string`   | 🔴        |
+
+## `in:foo,bar,...`
+
+The field under validation must be included in the given list of values.
 
 | Definition | Value       | Is valid? |
 | ---------- | ----------- | --------- |
-| `required` | `null`      | 🔴        |
-| `required` | `undefined` | 🔴        |
-| `required` | `''`        | 🔴        |
+| `in:A,B`   | `null`      | 🟢        |
+| `in:A,B`   | `undefined` | 🟢        |
+| `in:A,B`   | `A`         | 🟢        |
+| `in:A,B`   | `B`         | 🟢        |
+| `in:A,B`   | `C`         | 🔴        |
+| `in:A,B`   | `true`      | 🔴        |
+| `in:A,B`   | `{}`        | 🔴        |
+
+## `integer`
+
+The field under validation must have an integer value.
+
+| Definition | Value       | Is valid? |
+| ---------- | ----------- | --------- |
+| `integer`  | `null`      | 🟢        |
+| `integer`  | `undefined` | 🟢        |
+| `integer`  | `123`       | 🟢        |
+| `integer`  | `3.14`      | 🔴        |
+| `integer`  | `abc`       | 🔴        |
+
+## `max:value`
+
+Validate that an attribute is no greater than a given size
+
+| Definition | Value       | Is valid? |
+| ---------- | ----------- | --------- |
+| `max:5`    | `null`      | 🟢        |
+| `max:5`    | `undefined` | 🟢        |
+| `max:5`    | `'123'`     | 🟢        |
+| `max:5`    | `3`         | 🟢        |
+| `max:5`    | `'abcdef'`  | 🔴        |
+| `max:5`    | `10`        | 🔴        |
+
+## `min:value`
+
+Validate that an attribute is at least a given size.
+
+| Definition | Value       | Is valid? |
+| ---------- | ----------- | --------- |
+| `min:5`    | `null`      | 🟢        |
+| `min:5`    | `undefined` | 🟢        |
+| `min:5`    | `'abcdef'`  | 🟢        |
+| `min:5`    | `'123456'`  | 🟢        |
+| `min:5`    | `10`        | 🟢        |
+| `min:5`    | `'abcdef'`  | 🔴        |
+| `min:5`    | `2`         | 🔴        |
+
+## `not_in:foo,bar,...`
+
+The field under validation must not be included in the given list of values.
+
+| Definition   | Value       | Is valid? |
+| ------------ | ----------- | --------- |
+| `not_in:A,B` | `null`      | 🟢        |
+| `not_in:A,B` | `undefined` | 🟢        |
+| `not_in:A,B` | `C`         | 🟢        |
+| `not_in:A,B` | `A`         | 🔴        |
+| `not_in:A,B` | `B`         | 🔴        |
+| `not_in:A,B` | `true`      | 🔴        |
+
+## `numeric`
+
+Validate that an attribute is numeric.
+
+| Definition | Value       | Is valid? |
+| ---------- | ----------- | --------- |
+| `integer`  | `null`      | 🟢        |
+| `integer`  | `undefined` | 🟢        |
+| `integer`  | `123`       | 🟢        |
+| `integer`  | `3.14`      | 🟢        |
+| `integer`  | `abc`       | 🔴        |
+
+## `required`
+
+Checks if the value is provided.
+
+| Definition | Value       | Is valid? |
+| ---------- | ----------- | --------- |
 | `required` | `john`      | 🟢        |
 | `required` | `123`       | 🟢        |
 | `required` | `1.23`      | 🟢        |
 | `required` | `{}`        | 🟢        |
+| `required` | `null`      | 🔴        |
+| `required` | `undefined` | 🔴        |
+| `required` | `''`        | 🔴        |
+| `required` | `' '`       | 🔴        |
+
+## `size:value`
+
+The field under validation must have a size matching the given value. For string data, value corresponds to the number of characters. For numeric data, value corresponds to a given integer value.
+
+| Definition | Value       | Is valid? |
+| ---------- | ----------- | --------- |
+| `size:3`   | `null`      | 🟢        |
+| `size:3`   | `undefined` | 🟢        |
+| `size:3`   | `abc`       | 🟢        |
+| `size:3`   | `1`         | 🟢        |
+| `size:3`   | `1.23`      | 🟢        |
+| `size:3`   | `abcde`     | 🔴        |
+| `size:3`   | `10`        | 🔴        |
+
+## `string`
+
+The field under validation must be a string.
+
+| Definition | Value       | Is valid? |
+| ---------- | ----------- | --------- |
+| `string`   | `abc`       | 🟢        |
+| `string`   | `''`        | 🟢        |
+| `string`   | `' '`       | 🟢        |
+| `string`   | `1`         | 🔴        |
+| `string`   | `1.23`      | 🔴        |
+| `string`   | `abcde`     | 🔴        |
+| `string`   | `10`        | 🔴        |
+| `string`   | `null`      | 🔴        |
+| `string`   | `undefined` | 🔴        |
+
+## `url`
+
+Validate that an attribute has a valid URL format
+
+| Definition | Value                 | Is valid? |
+| ---------- | --------------------- | --------- |
+| `url`      | `null`                | 🟢        |
+| `url`      | `undefined`           | 🟢        |
+| `url`      | `https://example.com` | 🟢        |
+| `url`      | `http://example.com`  | 🟢        |
+| `url`      | `ftp://example.com`   | 🟢        |
+| `url`      | `invalid-url`         | 🔴        |
