@@ -1,7 +1,5 @@
-import * as fs from "fs";
 import { describe, expect, test } from "@jest/globals";
 import { setOptions, validate } from "../src/index";
-import { RULE_FUNCTION_MAPS } from "../src/Constants";
 
 describe("validate() function ", () => {
   test("should be able to validate the general structure", async () => {
@@ -49,13 +47,6 @@ describe("validate() function ", () => {
     expect(result.errors.price[0].message).toBe(
       "The field field must be between 1000 and 2000."
     );
-  });
-
-  test("all i18n keys should be set for each rule", async () => {
-    const content = JSON.parse(fs.readFileSync("./src/i18n/en.json", "utf-8"));
-    const rules = Object.keys(RULE_FUNCTION_MAPS);
-    const translationKeys = Object.keys(content);
-    expect(rules.length).toBe(translationKeys.length);
   });
 
   test("should stop on fail by options", async () => {

@@ -1,6 +1,6 @@
 import {
   RuleType,
-  SupportedLanguages,
+  LanguageType,
   RuleFunction,
   ValidationResult,
 } from "./Types";
@@ -30,6 +30,7 @@ export interface IContext {
 
 export interface IOptions {
   stopOnFail: boolean;
-  language: SupportedLanguages;
+  supportedLanguages: LanguageType[];
+  language: LanguageType;
   translations?: Record<string, string>;
 }

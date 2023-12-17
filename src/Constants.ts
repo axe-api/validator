@@ -34,6 +34,7 @@ export const RULE_FUNCTION_MAPS: Record<RuleType, RuleFunction> = {
 
 export const DEFAULT_OPTIONS: IOptions = {
   stopOnFail: false,
+  supportedLanguages: ["en"],
   language: "en",
   translations: {},
 };

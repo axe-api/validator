@@ -33,4 +33,6 @@ export type RuleFunction = (...args: any[]) => boolean;
 
 export type ValidationResult = Record<string, IRuleResult[]>;
 
-export type SupportedLanguages = "en";
+export type LanguageType = "en" | "tr";
+
+export type Translation = Record<RuleType, string>;
