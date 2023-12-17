@@ -38,6 +38,15 @@ import { isRequired } from "axe-validator";
 const result = isRequired("data");
 ```
 
+:::warning
+Each rule function should validate only one thing. For example, the `email` validation **should NOT** check if the data is provided. Otherwise, a rule function can not check the optional data.
+
+That's why `null` and `undefined` values are acceptable for all rules except the `required`.
+
+If you want to check if the data is provided and is a valid email, you should use two rules (`required`, `email`) at the same time.
+
+:::
+
 ## Definition
 
 The definition means which rule sets will be executed for data.
@@ -58,6 +67,6 @@ The `|` should be used to be able to use multiple rule names at the same time:
 
 `required|email|alpha`
 
-All possible rule parameters should be defined between the `:` operator.
+All possible rule parameters should be defined after the `:` operator. If there is more than one parameter, they must be separated using commas.
 
-`required|min:1|max:50|between:1:50`
+`required|min:1|max:50|between:1,50`
