@@ -5,17 +5,17 @@ import { toRuleDefinition } from "../Factory";
 import { getValueViaPath, toRuleNameArray } from "../Helpers";
 import { getOptions } from "../Options";
 
-export const validate = (
+export const validate = async (
   data: any,
   definition: Record<string, string>,
   options?: Partial<IOptions>
-): IValidationResult => {
+): Promise<IValidationResult> => {
   const currentOptions: IOptions = {
     ...getOptions(),
     ...options,
   };
 
-  const { isValid, fields, results } = getResults(
+  const { isValid, fields, results } = await getResults(
     data,
     definition,
     currentOptions
@@ -29,7 +29,7 @@ export const validate = (
   };
 };
 
-const getResults = (
+const getResults = async (
   data: any,
   definition: Record<string, string>,
   options: IOptions
@@ -69,7 +69,7 @@ const getResults = (
         // Setting the rule and the error message
         results[key].push({
           rule: rule.name,
-          message: getMessage(
+          message: await getMessage(
             rule.name,
             rule.params,
             options.language,

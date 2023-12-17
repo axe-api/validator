@@ -1,22 +1,31 @@
-import { RuleType, LanguageType } from "./Types";
-import en from "./i18n/en";
+import { RuleType, LanguageType, Translation } from "./Types";
 
-const TRANSLATIONS = {
-  en,
+const TRANSLATIONS: Partial<Record<LanguageType, Translation>> = {};
+
+export const setLocales = async (languages: LanguageType[]) => {
+  for (const language of languages) {
+    const { default: values } = await import(`./i18n/${language}`);
+    TRANSLATIONS[language] = values;
+  }
 };
 
-export const loadTranslation = async (language: LanguageType) => {
-  const result = await import(`./i18n/${language}`);
-  console.log(result);
-};
-
-export const getMessage = (
+export const getMessage = async (
   rule: RuleType,
   params: any[],
   language: LanguageType,
   customTranslations: Record<string, string>
 ) => {
+  if (Object.keys(TRANSLATIONS).length === 0) {
+    await setLocales(["en"]);
+  }
+
   const defaultTranslations = TRANSLATIONS[language];
+  if (defaultTranslations === undefined) {
+    throw new Error(
+      `You should load the translations first: await loadTranslation(["${language}"])`
+    );
+  }
+
   const translations = { ...defaultTranslations, ...customTranslations };
   let message = translations[rule];
 

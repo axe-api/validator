@@ -1,5 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
 import { setOptions, validate } from "../src/index";
+import { setLocales } from "../src/Locale";
 
 describe("validate() function ", () => {
   test("should be able to validate the general structure", async () => {
@@ -86,7 +87,7 @@ describe("validate() function ", () => {
 
   test("should be able set the default options", async () => {
     // Setting the general default options
-    setOptions({
+    await setOptions({
       stopOnFail: true,
     });
     const rules = {
@@ -97,14 +98,14 @@ describe("validate() function ", () => {
     expect(result1.errors.email.length).toBe(1);
 
     // Reverting the changes
-    setOptions({
+    await setOptions({
       stopOnFail: false,
     });
     const result2 = await validate({ email: "xxx" }, rules);
     expect(result2.errors.email.length).toBe(2);
 
     // Overriding my general options for a specific validate call
-    setOptions({
+    await setOptions({
       stopOnFail: true,
     });
     const result3 = await validate({ email: "xxx" }, rules, {
@@ -131,5 +132,19 @@ describe("validate() function ", () => {
     const result = await validate({ email: "foo@bar.com" }, rules);
     expect(result.fields.email).toBe(true);
     expect(result.fields.name).toBe(false);
+  });
+
+  test("should be able to load languages dynamically", async () => {
+    await setLocales(["en", "tr"]);
+
+    const rules = {
+      email: "required|email",
+    };
+
+    const result = await validate({ email: "invalid-email" }, rules, {
+      language: "tr",
+    });
+    expect(result.isValid).toBe(false);
+    expect(result.errors.email[0].message).toBe("Alan bir e-posta olmalıdır.");
   });
 });

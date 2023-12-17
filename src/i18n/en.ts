@@ -14,7 +14,7 @@ const translations: Translation = {
   between: "The field field must be between {0} and {1}.",
   boolean: "The field field must be a boolean value.",
   confirmed: "The field confirmation does not match.",
-  email: "The field format is invalid.",
+  email: "The field must be an email.",
   date: "The field is not a valid date format.",
   digits: "The field must be {0} digits.",
   digits_between: "The field field must be between {0} and {1} digits.",
@@ -26,9 +26,9 @@ const translations: Translation = {
   not_in: "The selected field is invalid.",
   numeric: "The field must be a number.",
   required: "The field field is required.",
-  size: "The field must be {0}.",
+  size: "The field's size must be {0}.",
   string: "The field must be a string.",
-  url: "The field format is invalid.",
+  url: "The field must be an URL.",
 };
 
 export default translations;

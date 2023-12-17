@@ -9,7 +9,7 @@ export const getOptions = () => {
   return OPTIONS;
 };
 
-export const setOptions = (value: Partial<IOptions>) => {
+export const setOptions = async (value: Partial<IOptions>) => {
   OPTIONS = {
     ...OPTIONS,
     ...value,

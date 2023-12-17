@@ -30,7 +30,6 @@ export interface IContext {
 
 export interface IOptions {
   stopOnFail: boolean;
-  supportedLanguages: LanguageType[];
   language: LanguageType;
   translations?: Record<string, string>;
 }
