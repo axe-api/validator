@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { describe, expect, test } from "@jest/globals";
-import validate, { setOptions } from "../src/index";
+import { setOptions, validate } from "../src/index";
 import { RULE_FUNCTION_MAPS } from "../src/Constants";
 
 describe("validate() function ", () => {
