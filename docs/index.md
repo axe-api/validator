@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Robust Validator"
-  text: "Rule-oriented data validation"
-  tagline: Extendable, rule-based, i18n-supported
+  text: "Rule-based data validation in JS"
+  tagline: Extendable, function-oriented, i18n-supported
   actions:
     - theme: brand
       text: Getting started
@@ -19,5 +19,5 @@ features:
   - title: Proof of work 💪
     details: Laravel-ish data validation rules are well-tested as a concept. This library is just another implementation for JavaScript.
   - title: i18n 🇺🇳
-    details: Multi-language error messages are supported internally, unlike other libraries.
+    details: Multi-language error messages are supported internally, unlike other libraries. It provides consistency.
 ---
