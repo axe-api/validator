@@ -1,7 +1,3 @@
-<script setup>
-import Demo from "./Demo.vue"
-</script>
-
 # Getting started
 
 ## Installation
@@ -9,17 +5,17 @@ import Demo from "./Demo.vue"
 The library can be installed into an existing project:
 
 ```bash
-$ npm install --save axe-api-validator
+$ npm install --save robust-validator
 ```
 
 ## Usage
 
-Using `axe-api-validator` is very simple.
+Using `robust-validator` is very simple.
 
 You should just call the `validate()` function with data and the definition.
 
 ```js
-import { validate } from "axe-api-validator";
+import { validate } from "robust-validator";
 
 const data = {
   email: "not-a-valid-email",

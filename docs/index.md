@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "Axe Validator"
-  text: "Solution-oriented data validation"
-  tagline: Extendable, function-based, i18n-supported
+  name: "Robust Validator"
+  text: "Rule-oriented data validation"
+  tagline: Extendable, rule-based, i18n-supported
   actions:
     - theme: brand
       text: Getting started

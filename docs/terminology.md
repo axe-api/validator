@@ -33,7 +33,7 @@ export default (value: any, size: any): boolean => {
 A rule should be able to execute directly.
 
 ```ts
-import { isRequired } from "axe-validator";
+import { isRequired } from "robust-validator";
 
 const result = isRequired("data");
 ```

@@ -9,7 +9,7 @@ const links: any = [];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Axe API Validator",
+  title: "Robust Validator",
   description: "Another data validation library",
   lang: "en-US",
   lastUpdated: false,
