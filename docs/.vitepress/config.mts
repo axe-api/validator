@@ -28,6 +28,7 @@ export default defineConfig({
         items: [
           { text: "Why?", link: "/why" },
           { text: "Getting started", link: "/getting-started" },
+          { text: "Demo", link: "/demo" },
           { text: "Terminology", link: "/terminology" },
         ],
       },

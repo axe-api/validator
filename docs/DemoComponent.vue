@@ -1,26 +1,24 @@
 <script setup>
 import { ref, computed } from "vue";
-import validate from "axe-api-validator";
+import { validate } from "axe-api-validator";
 
 const data = ref({
   email: "",
-  name: "",
-  surname: "",
 });
+const result = ref(null);
 
 const rules = {
-  email: "required|email",
-  name: "required|min:1|max:10",
-  surname: "required|min:1|max:10",
+  email: "required|email|min:1|max:50",
 };
 
-const onInput = (key, value) => {
+const check = async () => {
+  result.value = await validate(data.value, rules);
+};
+
+const onInput = async (key, value) => {
   data.value[key] = value;
+  check();
 };
-
-const result = computed(() => {
-  return validate(data.value, rules);
-});
 </script>
 
 <template>
@@ -32,24 +30,6 @@ const result = computed(() => {
         type="text"
         placeholder="type email here"
         @input="(event) => onInput('email', event.target.value)"
-      />
-    </div>
-    <div class="form-group">
-      <label for="input-name">Name</label>
-      <input
-        id="input-name"
-        type="text"
-        placeholder="John"
-        @input="(event) => onInput('name', event.target.value)"
-      />
-    </div>
-    <div class="form-group">
-      <label for="input-surname">Surname</label>
-      <input
-        id="input-surname"
-        type="text"
-        placeholder="John"
-        @input="(event) => onInput('surname', event.target.value)"
       />
     </div>
     <pre>{{ rules }}</pre>
