@@ -1,4 +1,4 @@
-import { describe, expect } from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 import notIn from "../../src/Rules/notIn";
 
 describe("notIn() ", () => {

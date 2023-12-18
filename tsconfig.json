@@ -1,15 +1,20 @@
 {
   "compilerOptions": {
-    "module": "es2020",
     "target": "es5",
+    "module": "commonjs",
+    "lib": ["es6", "dom"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
     "declaration": true,
     "outDir": "./dist",
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "lib": ["es2016", "dom", "es5"],
-    "esModuleInterop": true
+    "rootDir": "./src",
+    "types": ["node"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "docs"],
   "watchOptions": {
     "watchFile": "useFsEvents",
     "watchDirectory": "useFsEvents",

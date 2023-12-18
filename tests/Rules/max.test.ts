@@ -1,4 +1,4 @@
-import { describe, expect } from "@jest/globals";
+import { describe, expect, test } from "@jest/globals";
 import max from "../../src/Rules/max";
 
 describe("max() ", () => {

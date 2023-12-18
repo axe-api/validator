@@ -1,4 +1,4 @@
-import { describe, expect } from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 import confirmed from "../../src/Rules/confirmed";
 
 const toContext = (value: any) => {

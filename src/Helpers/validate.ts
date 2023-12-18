@@ -73,7 +73,7 @@ const getResults = async (
             rule.name,
             rule.params,
             options.language,
-            options.translations
+            options.translations || {}
           ),
         });
 

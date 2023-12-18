@@ -1,4 +1,4 @@
-import { describe, expect } from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 import boolean from "../../src/Rules/boolean";
 
 describe("boolean() ", () => {

@@ -1,4 +1,4 @@
-import { describe, expect } from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 import hex from "../../src/Rules/hex";
 
 describe("hex() ", () => {

@@ -1,4 +1,4 @@
-import { describe, expect } from "@jest/globals";
+import { describe, expect, test } from "@jest/globals";
 import min from "../../src/Rules/min";
 
 describe("min() ", () => {
