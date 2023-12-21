@@ -1,6 +1,8 @@
 .github
-node_modules
 .husky
+coverage
+docs
+node_modules
+node-tester
 src
 tests
-docs

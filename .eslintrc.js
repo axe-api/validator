@@ -24,5 +24,5 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
   },
-  ignorePatterns: ["dist", "node_modules"],
+  ignorePatterns: ["dist", "node_modules", "node-tester"],
 };

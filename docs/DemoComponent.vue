@@ -1,6 +1,10 @@
 <script setup>
 import { ref, computed } from "vue";
-import { validate } from "axe-api-validator";
+import { validate, setLocales } from "axe-api-validator";
+import en from "axe-api-validator/dist/i18n/en.json";
+import tr from "axe-api-validator/dist/i18n/tr.json";
+
+setLocales(tr);
 
 const data = ref({
   email: "",
@@ -12,7 +16,7 @@ const rules = {
 };
 
 const check = async () => {
-  result.value = await validate(data.value, rules);
+  result.value = await validate(data.value, rules, { language: "tr" });
 };
 
 const onInput = async (key, value) => {

@@ -3,6 +3,7 @@ import {
   LanguageType,
   RuleFunction,
   ValidationResult,
+  Translation,
 } from "./Types";
 
 export interface IRuleDefinition {
@@ -32,4 +33,9 @@ export interface IOptions {
   stopOnFail: boolean;
   language: LanguageType;
   translations?: Record<string, string>;
+}
+
+export interface ILocale {
+  key: LanguageType;
+  values: Translation;
 }

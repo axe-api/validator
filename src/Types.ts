@@ -59,6 +59,7 @@ export type LanguageType =
   | "ja"
   | "ka"
   | "ko"
+  | "li"
   | "lt"
   | "lv"
   | "mk"

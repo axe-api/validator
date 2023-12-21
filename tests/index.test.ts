@@ -1,8 +1,15 @@
-import { describe, expect, test } from "vitest";
+import { beforeAll, describe, expect, test } from "vitest";
 import { setOptions, validate } from "../src/index";
 import { setLocales } from "../src/Locale";
+import en from "../src/i18n/en.json";
+import tr from "../src/i18n/tr.json";
+import { ILocale } from "../src/Interface";
 
 describe("validate() function ", () => {
+  beforeAll(async () => {
+    await setLocales(en as ILocale);
+  });
+
   test("should be able to validate the general structure", async () => {
     const data = {
       email: "foo@bar.com",
@@ -135,7 +142,7 @@ describe("validate() function ", () => {
   });
 
   test("should be able to load languages dynamically", async () => {
-    await setLocales(["en", "tr"]);
+    await setLocales([en, tr]);
 
     const rules = {
       email: "required|email",
