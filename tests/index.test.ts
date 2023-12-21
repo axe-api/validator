@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "vitest";
 import { setOptions, validate } from "../src/index";
 import { setLocales } from "../src/Locale";
 

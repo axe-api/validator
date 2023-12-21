@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "module": "ESNext",
-    "lib": ["es6", "dom"],
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "declaration": true,
     "outDir": "./dist",
+    "lib": ["es6", "dom"],
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],

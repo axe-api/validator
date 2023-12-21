@@ -1,4 +1,4 @@
-import { describe, expect, it } from "@jest/globals";
+import { describe, expect, it } from "vitest";
 import date from "../../src/Rules/date";
 
 describe("date() ", () => {

@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "vitest";
 import between from "../../src/Rules/between";
 
 describe("between() ", () => {
