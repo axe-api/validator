@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, test } from "vitest";
-import { setOptions, validate } from "../src/index";
+import { setOptions, validate } from "../index";
 import { setLocales } from "../src/Locale";
 import en from "../src/i18n/en.json";
 import tr from "../src/i18n/tr.json";

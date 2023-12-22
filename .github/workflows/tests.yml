@@ -34,12 +34,9 @@ jobs:
       - run: | 
           npm ci
           npm run build
-          cd node-tester/cjs
-          npm install
-          node index.js
-          cd ../esm
-          npm install
-          node index.js
+          cd tests/consumers/cjs && npm install && node index.js
+          cd ../esm && npm install && node index.js
+          cd ../ts && npm install && npm run start
 
   linting:
     runs-on: ubuntu-latest
