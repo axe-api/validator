@@ -5,7 +5,7 @@ import terser from "@rollup/plugin-terser";
 import json from "@rollup/plugin-json";
 import { babel } from "@rollup/plugin-babel";
 import autoExternal from "rollup-plugin-auto-external";
-import bundleSize from "rollup-plugin-bundle-size";
+import filesize from "rollup-plugin-filesize";
 import copy from "rollup-plugin-copy";
 import path from "path";
 
@@ -45,7 +45,7 @@ const buildConfig = ({
       resolve({ browser }),
       commonjs(),
       terser(),
-      bundleSize(),
+      filesize(),
       ...(es5
         ? [
             babel({

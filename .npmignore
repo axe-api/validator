@@ -3,6 +3,5 @@
 coverage
 docs
 node_modules
-node-tester
 src
 tests
