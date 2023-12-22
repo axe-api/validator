@@ -8,10 +8,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "lib": ["es6", "dom"],
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "types": ["node"]
+    "declaration": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist", "docs"],

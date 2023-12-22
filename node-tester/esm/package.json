@@ -1,0 +1,9 @@
+{
+  "name": "tester",
+  "version": "1.0.0",
+  "main": "common.js",
+  "type": "module",
+  "dependencies": {
+    "axe-api-validator": "file:../../"
+  }
+}

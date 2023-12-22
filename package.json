@@ -2,13 +2,21 @@
   "name": "robust-validator",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/bundle.cjs.js",
-  "module": "dist/bundle.esm.js",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/bundle.cjs.js",
-      "import": "./dist/bundle.esm.js"
+      "types": {
+        "default": "./dist/esm/index.d.ts"
+      },
+      "browser": {
+        "require": "./dist/cjs/bundle.cjs.js",
+        "import": "./dist/esm/bundle.esm.js"
+      },
+      "require": {
+        "default": "./dist/cjs/bundle.cjs.js"
+      },
+      "default": {
+        "require": "./dist/esm/bundle.esm.js"
+      }
     },
     "./dist/i18n/*": "./dist/i18n/*"
   },
