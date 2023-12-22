@@ -37,6 +37,9 @@ jobs:
           cd node-tester/cjs
           npm install
           node index.js
+          cd ../esm
+          npm install
+          node index.js
 
   linting:
     runs-on: ubuntu-latest
