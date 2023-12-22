@@ -21,7 +21,7 @@ const main = async () => {
     throw new Error(`Unaccepted message: ${message}`);
   }
 
-  console.log("Success!");
+  console.log("CJS module tests are succeed!");
 };
 
 main();

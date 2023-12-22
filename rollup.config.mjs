@@ -125,7 +125,5 @@ export default async () => {
     },
   ];
 
-  console.log(result);
-
   return result;
 };
