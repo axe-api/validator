@@ -4,6 +4,6 @@
   "main": "common.js",
   "type": "commonjs",
   "dependencies": {
-    "axe-api-validator": "file:../../"
+    "axe-api-validator": "file:../../../"
   }
 }

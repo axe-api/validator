@@ -4,7 +4,6 @@
   "main": "common.js",
   "type": "module",
   "dependencies": {
-    "axe-api-validator": "file:../../",
-    "axios": "^1.6.2"
+    "axe-api-validator": "file:../../../"
   }
 }
