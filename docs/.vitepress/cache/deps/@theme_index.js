@@ -6,6 +6,7 @@ import {
   ref,
   watch
 } from "./chunk-DTWPM7ZD.js";
+import "./chunk-CSAU5B4Q.js";
 
 // node_modules/vitepress/dist/client/theme-default/index.js
 import "/Users/personal/Desktop/github/axe/validator/docs/node_modules/vitepress/dist/client/theme-default/styles/fonts.css";

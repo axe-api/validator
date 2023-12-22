@@ -1,4 +1,5 @@
 <script setup>
+import axios from "axios";
 import { ref, computed } from "vue";
 import { validate, setLocales } from "axe-api-validator";
 import en from "axe-api-validator/dist/i18n/en.json";

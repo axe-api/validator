@@ -3,21 +3,21 @@
   "version": "0.1.0",
   "description": "",
   "exports": {
-    ".": {
+   ".": {
       "types": {
-        "default": "./dist/esm/index.d.ts"
+        "require": "./index.d.cts",
+        "default": "./index.d.ts"
       },
       "browser": {
-        "require": "./dist/cjs/bundle.cjs.js",
-        "import": "./dist/esm/bundle.esm.js"
-      },
-      "require": {
-        "default": "./dist/cjs/bundle.cjs.js"
+        "require": "./dist/browser/bundle.cjs",
+        "default": "./dist/index.js"
       },
       "default": {
-        "require": "./dist/esm/bundle.esm.js"
+        "require": "./dist/node/bundle.cjs",
+        "default": "./dist/bundle.js"
       }
     },
+    "./package.json": "./package.json",
     "./dist/i18n/*": "./dist/i18n/*"
   },
   "scripts": {
@@ -41,6 +41,9 @@
     "@babel/preset-env": "^7.23.6",
     "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@types/jest": "^29.5.11",
@@ -56,6 +59,8 @@
     "jest": "^29.7.0",
     "rollup": "^4.9.1",
     "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-filesize": "^10.0.0",
     "rollup-plugin-typescript2": "^0.36.0",

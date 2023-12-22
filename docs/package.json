@@ -7,14 +7,15 @@
   },
   "dependencies": {
     "axe-api-validator": "file:../",
+    "axios": "^1.6.2",
     "pretty-print-json": "^2.1.0",
-    "vue-code-highlight": "^0.7.8",
-    "sitemap-ts": "^1.6.1"
+    "sitemap-ts": "^1.6.1",
+    "vue-code-highlight": "^0.7.8"
   },
   "devDependencies": {
     "sass": "^1.69.5",
-    "vitepress": "^1.0.0-rc.31",
     "vite-ssg": "^0.23.5",
-    "vite-ssg-sitemap": "^0.6.1"
+    "vite-ssg-sitemap": "^0.6.1",
+    "vitepress": "^1.0.0-rc.31"
   }
 }
