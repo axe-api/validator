@@ -1,7 +1,7 @@
 {
   "name": "robust-validator",
   "version": "0.1.0",
-  "description": "",
+  "description": "Rule-based data validation library",
   "exports": {
    ".": {
       "types": {
@@ -34,9 +34,28 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [ 
+    "robust-validator",
+    "validatorjs",
+    "validator.js",
+    "data validation",
+    "validator",
+    "validate",
+    "validation",
+    "data",
+    "laravel",
+    "laravel-validator-for-js"
+  ],
+  "author": "Özgür Adem Işıklı <i.ozguradem@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axe-api/validator"
+  },
+  "bugs": {
+    "url": "https://github.com/axe-api/validator/issues"
+  },
+   "homepage": "https://github.com/axe-api/validator#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.23.6",
     "@babel/preset-typescript": "^7.23.3",
