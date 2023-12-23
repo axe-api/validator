@@ -72,6 +72,7 @@ function App() {
   const [code, setCode] = useState("");
   const [result, setResult] = useState<any>(null);
   const [selectedRules, setSelectedRule] = useState<Record<string, boolean>>({
+    required: true,
     email: true,
     min: true,
     max: true,
@@ -99,7 +100,13 @@ function App() {
       myInput: input,
     });
     const rulesAsString = JSON.stringify(definition);
-    const definitionCode = `const result = await validate(${dataAsString},${rulesAsString})`;
+    const definitionCode = `
+    import { validate } from "robust-validator";
+
+    const result = await validate(
+      ${dataAsString}, // data
+      ${rulesAsString} // validation rules
+    )`;
     setCode(
       await prettier.format(definitionCode, {
         parser: "babel",
@@ -163,7 +170,7 @@ function App() {
           </RuleList>
         </Options>
         <Playground>
-          <SubTitle>Rule Definition</SubTitle>
+          <SubTitle>Code</SubTitle>
           <Frame>
             <Highlight language="javascript" style={stackoverflowDark}>
               {code}
@@ -178,7 +185,7 @@ function App() {
             onChange={(event) => setInput(event.target.value)}
           />
 
-          <SubTitle>Result</SubTitle>
+          <SubTitle>result</SubTitle>
           <Frame>
             <Highlight language="json" style={stackoverflowDark}>
               {JSON.stringify(result, undefined, 2)}

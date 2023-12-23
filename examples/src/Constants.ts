@@ -22,7 +22,7 @@ export const RULE_PARAMETER_MAP: Record<string, any[]> = {
   in: ["apple", "orange"],
   integer: [],
   max: [15],
-  min: [5],
+  min: [8],
   not_in: ["apple", "orange"],
   numeric: [],
   required: [],
