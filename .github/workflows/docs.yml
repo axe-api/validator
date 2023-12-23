@@ -15,8 +15,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-
-      - name: Build and deploy
         working-directory: ./docs
       - run: |
           pwd
