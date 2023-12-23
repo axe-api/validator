@@ -37,6 +37,7 @@ export default defineConfig({
         items: [
           { text: "Rules", link: "/rules" },
           { text: "i18n", link: "/i18n" },
+          { text: "Options", link: "/options" },
         ],
       },
     ],
