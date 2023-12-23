@@ -5,8 +5,7 @@
   "exports": {
     ".": {
       "types": {
-        "require": "./index.d.cts",
-        "default": "./index.d.ts"
+        "default": "./dist/index.d.ts"
       },
       "browser": {
         "require": "./dist/browser/bundle.cjs",
