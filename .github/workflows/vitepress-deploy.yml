@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Docs
 on:
   push:
     branches:
@@ -14,11 +14,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: yarn
-      - run: cd docs && yarn install --frozen-lockfile
+          cache: npm
+      - run: cd docs && npm install --frozen-lockfile
 
       - name: Build
-        run: yarn docs:build
+        run: npm docs:build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
