@@ -7,10 +7,7 @@
   },
   "dependencies": {
     "robust-validator": "file:../",
-    "axios": "^1.6.2",
-    "pretty-print-json": "^2.1.0",
-    "sitemap-ts": "^1.6.1",
-    "vue-code-highlight": "^0.7.8"
+    "sitemap-ts": "^1.6.1"
   },
   "devDependencies": {
     "sass": "^1.69.5",
