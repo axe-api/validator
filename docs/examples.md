@@ -1,7 +1,3 @@
-<script setup>
-import DemoComponent from "./DemoComponent.vue"
-</script>
-
 # Demo
 
 In this page, you can find many example codes.
@@ -41,10 +37,6 @@ const validateData = async () => {
 ```
 
 :::
-
-## Example
-
-<DemoComponent />
 
 ## Node.js (CJS)
 

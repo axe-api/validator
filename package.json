@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Rule-based data validation library",
   "exports": {
-   ".": {
+    ".": {
       "types": {
         "require": "./index.d.cts",
         "default": "./index.d.ts"
@@ -34,7 +34,7 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "keywords": [ 
+  "keywords": [
     "robust-validator",
     "validatorjs",
     "validator.js",
@@ -55,7 +55,7 @@
   "bugs": {
     "url": "https://github.com/axe-api/validator/issues"
   },
-   "homepage": "https://github.com/axe-api/validator#readme",
+  "homepage": "https://github.com/axe-api/validator#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.23.6",
     "@babel/preset-typescript": "^7.23.3",
