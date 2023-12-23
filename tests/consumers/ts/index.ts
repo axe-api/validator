@@ -1,5 +1,5 @@
-import { validate, setLocales } from "axe-api-validator";
-import en from "axe-api-validator/dist/i18n/en.json";
+import { validate, setLocales, setOptions } from "robust-validator";
+import en from "robust-validator/dist/i18n/en.json";
 
 const data = {
   email: null,
@@ -11,6 +11,9 @@ const rules = {
 
 const main = async () => {
   setLocales(en);
+  setOptions({
+    language: "en",
+  });
   const result = await validate(data, rules);
   if (result.isValid) {
     throw new Error("The email should be invalid!");

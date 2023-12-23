@@ -23,7 +23,7 @@ export const getMessage = async (
 ) => {
   const defaultTranslations = TRANSLATIONS[language];
   if (defaultTranslations === undefined) {
-    throw new Error(`You should set locale first: setLocales(["${language}"])`);
+    throw new Error(`You should set locale: setLocales(["${language}"])`);
   }
 
   const translations = { ...defaultTranslations, ...customTranslations };

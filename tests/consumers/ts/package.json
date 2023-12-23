@@ -7,7 +7,7 @@
     "start": "tsc"
   },
   "dependencies": {
-    "axe-api-validator": "file:../../../"
+    "robust-validator": "file:../../../"
   },
   "devDependencies": {
     "typescript": "^5.3.3"

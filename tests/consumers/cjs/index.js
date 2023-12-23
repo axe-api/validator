@@ -1,5 +1,5 @@
-const { validate, setLocales } = require("axe-api-validator");
-const en = require("axe-api-validator/dist/i18n/en.json");
+const { validate, setLocales } = require("robust-validator");
+const en = require("robust-validator/dist/i18n/en.json");
 
 const data = {
   email: null,

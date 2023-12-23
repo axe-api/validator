@@ -1,5 +1,5 @@
-import pkg from "axe-api-validator";
-import en from "axe-api-validator/dist/i18n/en.json" assert { type: "json" };
+import pkg from "robust-validator";
+import en from "robust-validator/dist/i18n/en.json" assert { type: "json" };
 
 const { validate, setLocales } = pkg;
 

@@ -1,12 +1,12 @@
 {
-  "name": "axe-api-validator-docs",
+  "name": "robust-validator-docs",
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "axe-api-validator": "file:../",
+    "robust-validator": "file:../",
     "axios": "^1.6.2",
     "pretty-print-json": "^2.1.0",
     "sitemap-ts": "^1.6.1",
