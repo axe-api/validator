@@ -15,13 +15,13 @@ jobs:
         with:
           node-version: 20
           cache: npm
-        working-directory: ./docs
-      - run: pwd
-      - run: npm install --frozen-lockfile
 
       - name: Build and deploy
         working-directory: ./docs
-        run: npm docs:build
+      - run: |
+          pwd
+          npm install --frozen-lockfile
+          npm run docs:build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
