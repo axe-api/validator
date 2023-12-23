@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getValueViaPath } from "../../src/helpers";
+import { getValueViaPath } from "../../src/helpers/getValueViaPath";
 
 describe("getValueViaPath() function", () => {
   const data = {

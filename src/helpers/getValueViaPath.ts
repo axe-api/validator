@@ -1,7 +1,3 @@
-export const toRuleNameArray = (rules: string): string[] => {
-  return rules.split("|");
-};
-
 export const getValueViaPath = (data: any, path: string): any => {
   const keys = path.split(".");
 

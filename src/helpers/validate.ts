@@ -2,7 +2,7 @@ import { IContext, IOptions, IValidationResult } from "../Interface";
 import { getMessage } from "../Locale";
 import { ValidationResult } from "../Types";
 import { toRuleDefinition } from "../Factory";
-import { getValueViaPath, toRuleNameArray } from "../Helpers";
+import { getValueViaPath } from "./getValueViaPath";
 import { getOptions } from "../Options";
 
 export const validate = async (
@@ -93,4 +93,8 @@ const getResults = async (
     fields,
     results,
   };
+};
+
+const toRuleNameArray = (rules: string): string[] => {
+  return rules.split("|");
 };
