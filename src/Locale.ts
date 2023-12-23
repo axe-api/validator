@@ -21,10 +21,6 @@ export const getMessage = async (
   language: LanguageType,
   customTranslations: Record<string, string>
 ) => {
-  // if (Object.keys(TRANSLATIONS).length === 0) {
-  //   throw new Error("You should define at least one locale file.");
-  // }
-
   const defaultTranslations = TRANSLATIONS[language];
   if (defaultTranslations === undefined) {
     throw new Error(`You should set locale first: setLocales(["${language}"])`);
@@ -32,6 +28,10 @@ export const getMessage = async (
 
   const translations = { ...defaultTranslations, ...customTranslations };
   let message = translations[rule];
+
+  if (message === undefined) {
+    throw new Error(`Undefined error message: ${rule} (${language})`);
+  }
 
   for (const index in params) {
     message = message.replace(`{${index}}`, params[index]);
