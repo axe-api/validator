@@ -1,12 +1,11 @@
 {
   "name": "robust-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rule-based data validation library",
   "exports": {
     ".": {
       "types": {
-        "require": "./index.d.cts",
-        "default": "./index.d.ts"
+        "default": "./dist/index.d.ts"
       },
       "browser": {
         "require": "./dist/browser/bundle.cjs",
