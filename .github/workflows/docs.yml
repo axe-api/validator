@@ -12,17 +12,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set working directory
-        run: cd docs && pwd
-
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: npm
-      - run: npm install --frozen-lockfile
+      - run: cd docs && pwd && npm install --frozen-lockfile
 
       - name: Build
-        run: pwd && npm run docs:build
+        run: cd docs && pwd && npm run docs:build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
