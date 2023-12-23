@@ -36,7 +36,7 @@ export default defineConfig({
         text: "Reference",
         items: [
           { text: "Rules", link: "/rules" },
-          { text: "i18n", link: "/rr" },
+          { text: "i18n", link: "/i18n" },
         ],
       },
     ],
