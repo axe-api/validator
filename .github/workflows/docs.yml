@@ -11,11 +11,11 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+        working-directory: ./app          
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: npm
-        working-directory: ./docs
       - run: |
           pwd
           npm install --frozen-lockfile
@@ -23,7 +23,6 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        working-directory: ./docs
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: docs/.vitepress/dist
