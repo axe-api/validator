@@ -89,7 +89,7 @@ function App() {
       };
     }),
   ];
-  rules.sort();
+  rules.sort((a, b) => a.title.localeCompare(b.title));
 
   const definition = {
     myInput: "",
