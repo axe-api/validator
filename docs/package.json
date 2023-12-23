@@ -6,7 +6,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "robust-validator": "robust-validator",
+    "robust-validator": "^0.1.0",
     "sitemap-ts": "^1.6.1"
   },
   "devDependencies": {
