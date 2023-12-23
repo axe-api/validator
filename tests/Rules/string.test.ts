@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import string from "../../src/Rules/string";
+import string from "../../src/rules/string";
 
 describe("string() ", () => {
   it("should return the correct value for the data type", () => {

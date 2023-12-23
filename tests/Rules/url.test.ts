@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import url from "../../src/Rules/url";
+import url from "../../src/rules/url";
 
 describe("url() ", () => {
   it("should return true for null and undefined", () => {

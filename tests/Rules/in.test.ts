@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import inFunction from "../../src/Rules/in";
+import inFunction from "../../src/rules/in";
 
 describe("in() ", () => {
   it("should return true for null or undefined values", () => {

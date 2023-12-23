@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import digits from "../../src/Rules/digits";
+import digits from "../../src/rules/digits";
 
 describe("digits() ", () => {
   it("returns true for null or undefined values", () => {

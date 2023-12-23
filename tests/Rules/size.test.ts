@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import size from "../../src/Rules/size";
+import size from "../../src/rules/size";
 
 describe("size() ", () => {
   it("should return true for null or undefined values", () => {

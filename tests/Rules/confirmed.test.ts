@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import confirmed from "../../src/Rules/confirmed";
+import confirmed from "../../src/rules/confirmed";
 
 const toContext = (value: any) => {
   return {

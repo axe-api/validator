@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import numeric from "../../src/Rules/numeric";
+import numeric from "../../src/rules/numeric";
 
 describe("numeric() ", () => {
   test("should return true for numeric values", () => {

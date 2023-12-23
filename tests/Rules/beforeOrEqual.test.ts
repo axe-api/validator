@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import beforeOrEqual from "../../src/Rules/beforeOrEqual";
+import beforeOrEqual from "../../src/rules/beforeOrEqual";
 
 describe("beforeOrEqual() ", () => {
   it("should return true for null or undefined values", () => {

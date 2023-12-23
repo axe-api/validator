@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import alphaDash from "../../src/Rules/alphaDash";
+import alphaDash from "../../src/rules/alphaDash";
 
 describe("alphaDash() ", () => {
   it("should return true for valid inputs", () => {

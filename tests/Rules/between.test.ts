@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import between from "../../src/Rules/between";
+import between from "../../src/rules/between";
 
 describe("between() ", () => {
   test("string with valid length", () => {

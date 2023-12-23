@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import notIn from "../../src/Rules/notIn";
+import notIn from "../../src/rules/notIn";
 
 describe("notIn() ", () => {
   it("should return true for null or undefined values", () => {

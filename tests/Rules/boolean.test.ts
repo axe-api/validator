@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import boolean from "../../src/Rules/boolean";
+import boolean from "../../src/rules/boolean";
 
 describe("boolean() ", () => {
   it("should return true for valid boolean values", () => {
