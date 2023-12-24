@@ -14,8 +14,7 @@ export default defineConfig({
   lang: "en-US",
   lastUpdated: false,
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    // nav: [{ text: "GitHub", link: "https://github.com/axe-api/validator" }],
+    nav: [{ text: "Demo", link: "https://validator.axe-api.com/demo" }],
 
     editLink: {
       pattern: "https://github.com/axe-api/validator/edit/main/docs/:path",
