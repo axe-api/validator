@@ -11,7 +11,7 @@ import path from "path";
 const outputFileName = "bundle";
 const name = "bundle";
 const namedInput = "./index.ts";
-const defaultInput = "./src/validator.ts";
+const defaultInput = "./default.ts";
 
 const buildConfig = ({
   es5,

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isAccepted from "../../src/rules/isAccepted";
+import { isAccepted } from "../../index";
 
 describe("isAccepted() ", () => {
   it("should return true for valid values", () => {

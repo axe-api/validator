@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isIn from "../../src/rules/isIn";
+import { isIn } from "../../index";
 
 describe("isIn() ", () => {
   it("should return true for null or undefined values", () => {

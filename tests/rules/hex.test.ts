@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isHex from "../../src/rules/isHex";
+import { isHex } from "../../index";
 
 describe("isHex() ", () => {
   it("should return true for valid hexadecimal strings", () => {

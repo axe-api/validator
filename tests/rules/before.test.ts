@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isBefore from "../../src/rules/isBefore";
+import { isBefore } from "../../index";
 
 describe("isBefore() ", () => {
   it("should return true for null or undefined values", () => {

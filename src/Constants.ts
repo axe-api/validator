@@ -1,5 +1,5 @@
 import { RuleType, RuleFunction } from "./Types";
-import rules from "./rules";
+import * as rules from "./rules";
 import { IOptions } from "./Interface";
 
 export const RULE_FUNCTION_MAPS: Record<RuleType, RuleFunction> = {

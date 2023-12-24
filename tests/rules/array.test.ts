@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isArray from "../../src/rules/isArray";
+import { isArray } from "../../index";
 
 describe("isArray() ", () => {
   it("should return true for an empty array", () => {

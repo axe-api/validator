@@ -82,3 +82,5 @@ export type LanguageType =
   | "zh";
 
 export type Translation = Record<RuleType, string>;
+
+export type Definition = Record<string, string | string[]>;

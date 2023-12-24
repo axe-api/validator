@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isAlphaNum from "../../src/rules/isAlphaNum";
+import { isAlphaNum } from "../../index";
 
 describe("isAlphaNum() ", () => {
   it("returns true for valid alpha-numeric strings", () => {

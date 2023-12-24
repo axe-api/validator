@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isDate from "../../src/rules/isDate";
+import { isDate } from "../../index";
 
 describe("isDate() ", () => {
   it("should return true for valid date strings", () => {

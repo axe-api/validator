@@ -1,4 +1,4 @@
-const { validate, setLocales } = require("robust-validator");
+const { validate, setLocales, isEmail } = require("robust-validator");
 const en = require("robust-validator/dist/i18n/en.json");
 
 const data = {
@@ -22,6 +22,7 @@ const main = async () => {
   }
 
   console.log("CJS module tests are succeed!");
+  console.log("isEmail", isEmail);
 };
 
 main();

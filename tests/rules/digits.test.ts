@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isDigits from "../../src/rules/isDigits";
+import { isDigits } from "../../index";
 
 describe("isDigits() ", () => {
   it("returns true for null or undefined values", () => {

@@ -1,7 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { LanguageType } from "../src/Types";
-import { setLocales } from "../src/Locale";
-import { ILocale } from "../src/Interface";
+import { LanguageType, setLocales, ILocale } from "../index";
 
 const LANGUAGES: Record<LanguageType, string> = {
   ar: "ar",

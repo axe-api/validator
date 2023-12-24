@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isInteger from "../../src/rules/isInteger";
+import { isInteger } from "../../index";
 
 describe("isInteger() ", () => {
   it("should return true for null", () => {

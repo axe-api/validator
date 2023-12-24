@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isEmail from "../../src/rules/isEmail";
+import { isEmail } from "../../index";
 
 describe("isEmail() ", () => {
   it("should return true for valid email addresses", () => {
