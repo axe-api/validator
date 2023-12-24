@@ -1,13 +1,13 @@
 import { IContext, IOptions, IValidationResult } from "../Interface";
 import { getMessage } from "../Locale";
-import { ValidationResult } from "../Types";
+import { Definition, ValidationResult } from "../Types";
 import { toRuleDefinition } from "../Factory";
 import { getValueViaPath } from "./getValueViaPath";
 import { getOptions } from "../Options";
 
 export const validate = async (
   data: any,
-  definition: Record<string, string>,
+  definition: Definition,
   options?: Partial<IOptions>
 ): Promise<IValidationResult> => {
   const currentOptions: IOptions = {
@@ -31,7 +31,7 @@ export const validate = async (
 
 const getResults = async (
   data: any,
-  definition: Record<string, string>,
+  definition: Definition,
   options: IOptions
 ) => {
   let isValid = true;
@@ -42,7 +42,15 @@ const getResults = async (
   for (const key in definition) {
     fields[key] = true;
     // Parsing the rules
-    const rules = toRuleNameArray(definition[key]).map(toRuleDefinition);
+    const params = definition[key];
+    let ruleGroup: string = "";
+    if (Array.isArray(params)) {
+      ruleGroup = params.join("|");
+    } else {
+      ruleGroup = params;
+    }
+
+    const rules = toRuleNameArray(ruleGroup).map(toRuleDefinition);
 
     // Getting the value by the path
     const value = getValueViaPath(data, key);

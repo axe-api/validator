@@ -1,5 +1,12 @@
 import { beforeAll, describe, expect, test } from "vitest";
-import { setOptions, validate, setLocales, ILocale } from "../index";
+import {
+  setOptions,
+  validate,
+  setLocales,
+  ILocale,
+  required,
+  email,
+} from "../index";
 import en from "../src/i18n/en.json";
 import tr from "../src/i18n/tr.json";
 
@@ -151,5 +158,17 @@ describe("validate() function ", () => {
     });
     expect(result.isValid).toBe(false);
     expect(result.errors.email[0].message).toBe("Alan bir e-posta olmalıdır.");
+  });
+
+  test("should be able to use the converters", async () => {
+    const data = {
+      email: "sample",
+    };
+    const rules = {
+      email: [required(), email()],
+    };
+
+    const result = await validate(data, rules);
+    expect(result.isValid).toBe(false);
   });
 });
