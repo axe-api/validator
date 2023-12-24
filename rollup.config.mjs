@@ -2,7 +2,6 @@ import typescript from "rollup-plugin-typescript2";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import terser from "@rollup/plugin-terser";
-import json from "@rollup/plugin-json";
 import { babel } from "@rollup/plugin-babel";
 import autoExternal from "rollup-plugin-auto-external";
 import filesize from "rollup-plugin-filesize";
@@ -38,7 +37,6 @@ const buildConfig = ({
     },
     plugins: [
       typescript(),
-      json(),
       copy({
         targets: [{ src: "src/i18n/*", dest: "dist/i18n" }],
       }),

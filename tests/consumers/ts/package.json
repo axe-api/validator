@@ -2,14 +2,14 @@
   "name": "tester",
   "version": "1.0.0",
   "main": "index.ts",
-  "type": "module",
   "scripts": {
-    "start": "tsc"
+    "start": "ts-node index.ts"
   },
   "dependencies": {
     "robust-validator": "file:../../../"
   },
   "devDependencies": {
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
 }
