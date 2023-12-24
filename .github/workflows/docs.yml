@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - docs
+      - examples
 
 jobs:
   deploy:
@@ -20,11 +21,12 @@ jobs:
 
       - name: Build
         run: cd docs && pwd && npm run docs:build
+        run: cd examples && pwd && npm install && npm run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: docs/.vitepress/dist
-          external_repository: axe-api/validator-docs
-          publish_branch: master
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     personal_token: ${{ secrets.ACCESS_TOKEN }}
+      #     publish_dir: docs/.vitepress/dist
+      #     external_repository: axe-api/validator-docs
+      #     publish_branch: master
