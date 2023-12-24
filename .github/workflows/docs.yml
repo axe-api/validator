@@ -20,8 +20,9 @@ jobs:
       - run: cd docs && pwd && npm install --frozen-lockfile
 
       - name: Build
-        run: cd docs && pwd && npm run docs:build
-        run: cd examples && pwd && npm install && npm run build
+        run: |
+          cd docs && pwd && npm run docs:build
+          cd examples && pwd && npm install && npm run build
 
       # - name: Deploy
       #   uses: peaceiris/actions-gh-pages@v3
