@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import isDigitsBetween from "../../src/rules/isDigitsBetween";
+import { isDigitsBetween } from "../../index";
 
 describe("digitsBetween() ", () => {
   test("Valid numeric value within range", () => {

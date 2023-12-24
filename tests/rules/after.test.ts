@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isAfter from "../../src/rules/isAfter";
+import { isAfter } from "../../index";
 
 describe("isAfter() ", () => {
   it("should return true if value is after the date", () => {

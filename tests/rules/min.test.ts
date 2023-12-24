@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import isMin from "../../src/rules/isMin";
+import { isMin } from "../../index";
 
 describe("isMin() ", () => {
   test("returns false when value is less than or equal to size", () => {

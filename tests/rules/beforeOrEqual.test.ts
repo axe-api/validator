@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isBeforeOrEqual from "../../src/rules/isBeforeOrEqual";
+import { isBeforeOrEqual } from "../../index";
 
 describe("isBeforeOrEqual() ", () => {
   it("should return true for null or undefined values", () => {

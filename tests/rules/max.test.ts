@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import isMax from "../../src/rules/isMax";
+import { isMax } from "../../index";
 
 describe("isMax() ", () => {
   test("returns true when value is less than or equal to size", () => {

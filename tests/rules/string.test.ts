@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isString from "../../src/rules/isString";
+import { isString } from "../../index";
 
 describe("isString() ", () => {
   it("should return the correct value for the data type", () => {

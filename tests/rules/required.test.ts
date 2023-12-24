@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isRequired from "../../src/rules/isRequired";
+import { isRequired } from "../../index";
 
 describe("isRequired() ", () => {
   it("should return true for non-null, non-undefined, and non-empty string values", () => {

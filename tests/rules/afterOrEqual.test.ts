@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import isAfterOrEqual from "../../src/rules/isAfterOrEqual";
+import { isAfterOrEqual } from "../../index";
 
 describe("isAfterOrEqual() ", () => {
   it("returns true if the value is after or equal to the date (string input)", () => {

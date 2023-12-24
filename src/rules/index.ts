@@ -26,7 +26,7 @@ import isSize from "./isSize";
 import isString from "./isString";
 import isUrl from "./isUrl";
 
-export default {
+export {
   isAccepted,
   isAfter,
   isAfterOrEqual,

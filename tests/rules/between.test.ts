@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import isBetween from "../../src/rules/isBetween";
+import { isBetween } from "../../index";
 
 describe("isBetween() ", () => {
   test("string with valid length", () => {
