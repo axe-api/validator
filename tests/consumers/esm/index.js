@@ -1,7 +1,7 @@
 import pkg from "robust-validator";
 import en from "robust-validator/dist/i18n/en.json" assert { type: "json" };
 
-const { validate, setLocales } = pkg;
+const { validate, setLocales, isEmail } = pkg;
 
 const data = {
   email: null,
@@ -24,6 +24,7 @@ const main = async () => {
   }
 
   console.log("ESM module tests are succeed!");
+  console.log("isEmail", isEmail);
 };
 
 main();

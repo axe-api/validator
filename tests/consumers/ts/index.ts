@@ -1,4 +1,4 @@
-import { validate, setLocales, setOptions } from "robust-validator";
+import { validate, setLocales, setOptions, isEmail } from "robust-validator";
 import en from "robust-validator/dist/i18n/en.json";
 
 const data = {
@@ -25,6 +25,7 @@ const main = async () => {
   }
 
   console.log("ESM module tests are succeed!");
+  console.log("isEmail", isEmail);
 };
 
 main();
