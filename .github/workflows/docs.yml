@@ -23,6 +23,7 @@ jobs:
         run: |
           cd docs && pwd && npm run docs:build
           cd ../examples && pwd && npm install && npm run build
+          mv dist ../docs/.vitepress/dist/examples
 
       # - name: Deploy
       #   uses: peaceiris/actions-gh-pages@v3
