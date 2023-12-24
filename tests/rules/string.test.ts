@@ -1,16 +1,16 @@
 import { describe, expect, it } from "vitest";
-import string from "../../src/rules/string";
+import isString from "../../src/rules/isString";
 
-describe("string() ", () => {
+describe("isString() ", () => {
   it("should return the correct value for the data type", () => {
-    expect(string("Hello")).toBe(true);
-    expect(string(null)).toBe(true);
-    expect(string(undefined)).toBe(true);
-    expect(string(123)).toBe(false);
-    expect(string(123.12)).toBe(false);
-    expect(string(true)).toBe(false);
-    expect(string({ key: "value" })).toBe(false);
-    expect(string("")).toBe(true);
-    expect(string(new Error())).toBe(false);
+    expect(isString("Hello")).toBe(true);
+    expect(isString(null)).toBe(true);
+    expect(isString(undefined)).toBe(true);
+    expect(isString(123)).toBe(false);
+    expect(isString(123.12)).toBe(false);
+    expect(isString(true)).toBe(false);
+    expect(isString({ key: "value" })).toBe(false);
+    expect(isString("")).toBe(true);
+    expect(isString(new Error())).toBe(false);
   });
 });

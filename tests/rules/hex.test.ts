@@ -1,22 +1,22 @@
 import { describe, expect, it } from "vitest";
-import hex from "../../src/rules/hex";
+import isHex from "../../src/rules/isHex";
 
-describe("hex() ", () => {
+describe("isHex() ", () => {
   it("should return true for valid hexadecimal strings", () => {
-    expect(hex("1aF")).toBe(true);
-    expect(hex("1234567890ABCDEF")).toBe(true);
-    expect(hex(123)).toBe(true);
+    expect(isHex("1aF")).toBe(true);
+    expect(isHex("1234567890ABCDEF")).toBe(true);
+    expect(isHex(123)).toBe(true);
   });
 
   it("should return false for invalid hexadecimal strings", () => {
-    expect(hex("123xyz")).toBe(false);
-    expect(hex("0xg")).toBe(false);
-    expect(hex("invalid string")).toBe(false);
-    expect(hex(true)).toBe(false);
+    expect(isHex("123xyz")).toBe(false);
+    expect(isHex("0xg")).toBe(false);
+    expect(isHex("invalid string")).toBe(false);
+    expect(isHex(true)).toBe(false);
   });
 
   it("should return true for null or undefined values", () => {
-    expect(hex(null)).toBe(true);
-    expect(hex(undefined)).toBe(true);
+    expect(isHex(null)).toBe(true);
+    expect(isHex(undefined)).toBe(true);
   });
 });

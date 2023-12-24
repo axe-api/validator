@@ -1,21 +1,21 @@
 import { describe, expect, it } from "vitest";
-import alphaDash from "../../src/rules/alphaDash";
+import isAlphaDash from "../../src/rules/isAlphaDash";
 
-describe("alphaDash() ", () => {
+describe("isAlphaDash() ", () => {
   it("should return true for valid inputs", () => {
     // Valid inputs
-    expect(alphaDash("abc123")).toBe(true);
-    expect(alphaDash("alpha-numeric_123")).toBe(true);
-    expect(alphaDash(null)).toBe(true); // null is considered valid
-    expect(alphaDash(undefined)).toBe(true); // undefined is considered valid
-    expect(alphaDash("")).toBe(true); // undefined is considered valid
-    expect(alphaDash(" ")).toBe(true); // undefined is considered valid
-    expect(alphaDash(123)).toBe(true); // Numbers are not allowed
+    expect(isAlphaDash("abc123")).toBe(true);
+    expect(isAlphaDash("alpha-numeric_123")).toBe(true);
+    expect(isAlphaDash(null)).toBe(true); // null is considered valid
+    expect(isAlphaDash(undefined)).toBe(true); // undefined is considered valid
+    expect(isAlphaDash("")).toBe(true); // undefined is considered valid
+    expect(isAlphaDash(" ")).toBe(true); // undefined is considered valid
+    expect(isAlphaDash(123)).toBe(true); // Numbers are not allowed
   });
 
   it("should return false for invalid inputs", () => {
     // Invalid inputs
-    expect(alphaDash("special$char")).toBe(false);
-    expect(alphaDash({ key: "value" })).toBe(false); // Objects are not allowed
+    expect(isAlphaDash("special$char")).toBe(false);
+    expect(isAlphaDash({ key: "value" })).toBe(false); // Objects are not allowed
   });
 });

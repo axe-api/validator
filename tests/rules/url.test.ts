@@ -1,33 +1,33 @@
 import { describe, expect, it } from "vitest";
-import url from "../../src/rules/url";
+import isUrl from "../../src/rules/isUrl";
 
-describe("url() ", () => {
+describe("isUrl() ", () => {
   it("should return true for null and undefined", () => {
-    expect(url(null)).toBe(true);
-    expect(url(undefined)).toBe(true);
+    expect(isUrl(null)).toBe(true);
+    expect(isUrl(undefined)).toBe(true);
   });
 
   it("should return true for valid URLs", () => {
-    expect(url("https://example.com")).toBe(true);
-    expect(url("http://example.com/path")).toBe(true);
-    expect(url("ftp://example.com")).toBe(true);
+    expect(isUrl("https://example.com")).toBe(true);
+    expect(isUrl("http://example.com/path")).toBe(true);
+    expect(isUrl("ftp://example.com")).toBe(true);
   });
 
   it("should return false for invalid URLs", () => {
-    expect(url("invalid-url")).toBe(false);
+    expect(isUrl("invalid-url")).toBe(false);
   });
 
   it("should handle various data types", () => {
-    expect(url(123)).toBe(false);
-    expect(url({ key: "value" })).toBe(false);
+    expect(isUrl(123)).toBe(false);
+    expect(isUrl({ key: "value" })).toBe(false);
   });
 
   it("should return false for empty strings", () => {
-    expect(url("")).toBe(false);
+    expect(isUrl("")).toBe(false);
   });
 
   it("should handle special characters in URLs", () => {
-    expect(url("https://example.com/#section")).toBe(true);
-    expect(url("https://example.com/?param=value")).toBe(true);
+    expect(isUrl("https://example.com/#section")).toBe(true);
+    expect(isUrl("https://example.com/?param=value")).toBe(true);
   });
 });

@@ -1,24 +1,24 @@
 import { describe, expect, it } from "vitest";
-import date from "../../src/rules/date";
+import isDate from "../../src/rules/isDate";
 
-describe("date() ", () => {
+describe("isDate() ", () => {
   it("should return true for valid date strings", () => {
-    expect(date("2023-12-10")).toBe(true);
-    expect(date("December 10, 2023")).toBe(true);
+    expect(isDate("2023-12-10")).toBe(true);
+    expect(isDate("December 10, 2023")).toBe(true);
   });
 
   it("should return false for invalid date strings", () => {
-    expect(date("invalid date")).toBe(false);
-    expect(date("2023-13-10")).toBe(false);
+    expect(isDate("invalid date")).toBe(false);
+    expect(isDate("2023-13-10")).toBe(false);
   });
 
   it("should return true for null or undefined", () => {
-    expect(date(null)).toBe(true);
-    expect(date(undefined)).toBe(true);
+    expect(isDate(null)).toBe(true);
+    expect(isDate(undefined)).toBe(true);
   });
 
   it("should return false for non-date objects", () => {
-    expect(date({})).toBe(false);
-    expect(date([])).toBe(false);
+    expect(isDate({})).toBe(false);
+    expect(isDate([])).toBe(false);
   });
 });

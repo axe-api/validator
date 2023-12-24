@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import confirmed from "../../src/rules/confirmed";
+import isConfirmed from "../../src/rules/isConfirmed";
 
 const toContext = (value: any) => {
   return {
@@ -13,15 +13,15 @@ const toContext = (value: any) => {
 
 describe("confirmed() ", () => {
   it("should return true for valid confirmed values", () => {
-    expect(confirmed("123456", toContext("123456"))).toBe(true);
+    expect(isConfirmed("123456", toContext("123456"))).toBe(true);
   });
 
   it("should return false for invalid confirmed values", () => {
-    expect(confirmed("123456", toContext("12345678"))).toBe(false);
-    expect(confirmed("123456", toContext(null))).toBe(false);
-    expect(confirmed("123456", toContext(false))).toBe(false);
-    expect(confirmed("123456", toContext({}))).toBe(false);
-    expect(confirmed("123456", toContext(""))).toBe(false);
-    expect(confirmed("123456", toContext(123456))).toBe(false);
+    expect(isConfirmed("123456", toContext("12345678"))).toBe(false);
+    expect(isConfirmed("123456", toContext(null))).toBe(false);
+    expect(isConfirmed("123456", toContext(false))).toBe(false);
+    expect(isConfirmed("123456", toContext({}))).toBe(false);
+    expect(isConfirmed("123456", toContext(""))).toBe(false);
+    expect(isConfirmed("123456", toContext(123456))).toBe(false);
   });
 });

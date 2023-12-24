@@ -1,27 +1,27 @@
 import { describe, expect, it } from "vitest";
-import alpha from "../../src/rules/alpha";
+import isAlpha from "../../src/rules/isAlpha";
 
-describe("alpha() ", () => {
+describe("isAlpha() ", () => {
   it("returns true for valid alphabetic strings", () => {
-    expect(alpha("abc")).toBe(true);
-    expect(alpha("XYZ")).toBe(true);
-    expect(alpha("AbCdEf")).toBe(true);
+    expect(isAlpha("abc")).toBe(true);
+    expect(isAlpha("XYZ")).toBe(true);
+    expect(isAlpha("AbCdEf")).toBe(true);
   });
 
   it("returns false for non-alphabetic strings", () => {
-    expect(alpha("123")).toBe(false);
-    expect(alpha("abc123")).toBe(false);
-    expect(alpha("Special!")).toBe(false);
-    expect(alpha(123)).toBe(false); // Non-string input
+    expect(isAlpha("123")).toBe(false);
+    expect(isAlpha("abc123")).toBe(false);
+    expect(isAlpha("Special!")).toBe(false);
+    expect(isAlpha(123)).toBe(false); // Non-string input
   });
 
   it("returns true for null or undefined values", () => {
-    expect(alpha(null)).toBe(true);
-    expect(alpha(undefined)).toBe(true);
+    expect(isAlpha(null)).toBe(true);
+    expect(isAlpha(undefined)).toBe(true);
   });
 
   it("returns true for empty strings", () => {
-    expect(alpha("")).toBe(true);
-    expect(alpha(" ")).toBe(true);
+    expect(isAlpha("")).toBe(true);
+    expect(isAlpha(" ")).toBe(true);
   });
 });

@@ -1,26 +1,26 @@
 import { describe, expect, it } from "vitest";
-import required from "../../src/rules/required";
+import isRequired from "../../src/rules/isRequired";
 
-describe("required() ", () => {
+describe("isRequired() ", () => {
   it("should return true for non-null, non-undefined, and non-empty string values", () => {
-    expect(required(42)).toBe(true);
-    expect(required("hello")).toBe(true);
-    expect(required(true)).toBe(true);
-    expect(required(false)).toBe(true);
-    expect(required([])).toBe(true);
-    expect(required({ key: "value" })).toBe(true);
-    expect(required(0)).toBe(true);
+    expect(isRequired(42)).toBe(true);
+    expect(isRequired("hello")).toBe(true);
+    expect(isRequired(true)).toBe(true);
+    expect(isRequired(false)).toBe(true);
+    expect(isRequired([])).toBe(true);
+    expect(isRequired({ key: "value" })).toBe(true);
+    expect(isRequired(0)).toBe(true);
   });
 
   it("should return false for null, undefined, and empty string values", () => {
-    expect(required(null)).toBe(false);
-    expect(required(undefined)).toBe(false);
-    expect(required("")).toBe(false);
+    expect(isRequired(null)).toBe(false);
+    expect(isRequired(undefined)).toBe(false);
+    expect(isRequired("")).toBe(false);
   });
 
   it("should return true for zero and other truthy values", () => {
-    expect(required(0)).toBe(true);
-    expect(required("0")).toBe(true);
-    expect(required(true)).toBe(true);
+    expect(isRequired(0)).toBe(true);
+    expect(isRequired("0")).toBe(true);
+    expect(isRequired(true)).toBe(true);
   });
 });

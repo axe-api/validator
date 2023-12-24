@@ -1,57 +1,57 @@
-import accepted from "./accepted";
-import after from "./after";
-import afterOrEqual from "./afterOrEqual";
-import alpha from "./alpha";
-import alphaDash from "./alphaDash";
-import alphaNum from "./alphaNum";
-import array from "./array";
-import before from "./before";
-import beforeOrEqual from "./beforeOrEqual";
-import between from "./between";
-import boolean from "./boolean";
-import confirmed from "./confirmed";
-import date from "./date";
-import digits from "./digits";
-import digitsBetween from "./digitsBetween";
-import email from "./email";
-import hex from "./hex";
-import inFunction from "./in";
-import integer from "./integer";
-import max from "./max";
-import min from "./min";
-import notIn from "./notIn";
-import numeric from "./numeric";
-import required from "./required";
-import size from "./size";
-import string from "./string";
-import url from "./url";
+import isAccepted from "./isAccepted";
+import isAfter from "./isAfter";
+import isAfterOrEqual from "./isAfterOrEqual";
+import isAlpha from "./isAlpha";
+import isAlphaDash from "./isAlphaDash";
+import isAlphaNum from "./isAlphaNum";
+import isArray from "./isArray";
+import isBefore from "./isBefore";
+import isBeforeOrEqual from "./isBeforeOrEqual";
+import isBetween from "./isBetween";
+import isBoolean from "./isBoolean";
+import isConfirmed from "./isConfirmed";
+import isDate from "./isDate";
+import isDigits from "./isDigits";
+import isDigitsBetween from "./isDigitsBetween";
+import isEmail from "./isEmail";
+import isHex from "./isHex";
+import isIn from "./isIn";
+import isInteger from "./isInteger";
+import isMax from "./isMax";
+import isMin from "./isMin";
+import isNotIn from "./isNotIn";
+import isNumeric from "./isNumeric";
+import isRequired from "./isRequired";
+import isSize from "./isSize";
+import isString from "./isString";
+import isUrl from "./isUrl";
 
 export default {
-  accepted,
-  after,
-  afterOrEqual,
-  alpha,
-  alphaDash,
-  alphaNum,
-  array,
-  before,
-  beforeOrEqual,
-  between,
-  boolean,
-  confirmed,
-  date,
-  digits,
-  digitsBetween,
-  email,
-  hex,
-  in: inFunction,
-  integer,
-  max,
-  min,
-  notIn,
-  numeric,
-  required,
-  size,
-  string,
-  url,
+  isAccepted,
+  isAfter,
+  isAfterOrEqual,
+  isAlpha,
+  isAlphaDash,
+  isAlphaNum,
+  isArray,
+  isBefore,
+  isBeforeOrEqual,
+  isBetween,
+  isBoolean,
+  isConfirmed,
+  isDate,
+  isDigits,
+  isDigitsBetween,
+  isEmail,
+  isHex,
+  isIn,
+  isInteger,
+  isMax,
+  isMin,
+  isNotIn,
+  isNumeric,
+  isRequired,
+  isSize,
+  isString,
+  isUrl,
 };
