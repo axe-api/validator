@@ -3,7 +3,7 @@ import { RuleType, LanguageType, Translation } from "./Types";
 
 const TRANSLATIONS: Partial<Record<LanguageType, Translation>> = {};
 
-export const setLocales = async (json: any) => {
+export const setLocales = (json: any) => {
   if (Array.isArray(json)) {
     const locales = json as ILocale[];
     for (const item of locales) {
@@ -15,7 +15,7 @@ export const setLocales = async (json: any) => {
   }
 };
 
-export const getMessage = async (
+export const getMessage = (
   rule: RuleType,
   params: any[],
   language: LanguageType,

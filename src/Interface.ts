@@ -26,7 +26,7 @@ export interface IValidationResult {
 
 export interface IContext {
   data: any;
-  key: string;
+  field: string;
   definition: string;
 }
 

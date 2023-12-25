@@ -39,10 +39,10 @@ const getResults = async (
   const results: ValidationResult = {};
 
   // Checking all validations
-  for (const key in definition) {
-    fields[key] = true;
+  for (const field in definition) {
+    fields[field] = true;
     // Parsing the rules
-    const params = definition[key];
+    const params = definition[field];
     let ruleGroup: string = "";
     if (Array.isArray(params)) {
       ruleGroup = params.join("|");
@@ -53,33 +53,35 @@ const getResults = async (
     const rules = toRuleNameArray(ruleGroup).map(toRuleDefinition);
 
     // Getting the value by the path
-    const value = getValueViaPath(data, key);
+    const value = getValueViaPath(data, field);
 
     const context: IContext = {
       data,
-      key,
+      field,
       definition: ruleGroup,
     };
 
     // Checking all rules one by one
     for (const rule of rules) {
       // Calling the rule function with the validation parameters
-      // console.log([...rule.params, context]);
-      const isRuleValid = rule.callback(value, ...[...rule.params, context]);
+      const isRuleValid = await rule.callback(
+        value,
+        ...[...rule.params, context]
+      );
 
       // Is the value valid?
       if (isRuleValid === false) {
-        if (!results[key]) {
-          results[key] = [];
+        if (!results[field]) {
+          results[field] = [];
         }
 
         isValid = false;
-        fields[key] = false;
+        fields[field] = false;
 
         // Setting the rule and the error message
-        results[key].push({
+        results[field].push({
           rule: rule.name,
-          message: await getMessage(
+          message: getMessage(
             rule.name,
             rule.params,
             options.language,

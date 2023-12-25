@@ -1,4 +1,4 @@
-export default (value: any): boolean => {
+export default async (value: any): Promise<boolean> => {
   if (value === null || value === undefined) {
     return false;
   }
