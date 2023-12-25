@@ -58,6 +58,7 @@ const getResults = async (
     const context: IContext = {
       data,
       key,
+      definition: ruleGroup,
     };
 
     // Checking all rules one by one
