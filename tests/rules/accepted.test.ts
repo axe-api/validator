@@ -6,11 +6,11 @@ const positiveList = ["yes", "on", 1, "1", true];
 const negativeList = ["10", "", "no", 0, false, {}, [], null, undefined];
 
 describe("isAccepted() ", () => {
-  test.each(positiveList)("should return TRUE for the %i value", (value) => {
+  test.each(positiveList)("should return TRUE for the %s value", (value) => {
     expect(isAccepted(value)).toBe(true);
   });
 
-  test.each(negativeList)("should return FALSE for the %i value", (value) => {
+  test.each(negativeList)("should return FALSE for the %s value", (value) => {
     expect(isAccepted(value)).toBe(false);
   });
 });

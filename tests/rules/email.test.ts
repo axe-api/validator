@@ -1,27 +1,34 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, test } from "vitest";
 import { isEmail } from "../../index";
 
+const positiveList = [
+  "test@example.com",
+  "user@mail.co",
+  "johndoe@gmail.com.uk",
+  "johndoe@gmail.com.au",
+  "mike.erickson@ru.codedungeon.ru",
+];
+
+const negativeList = [
+  null,
+  undefined,
+  "",
+  " ",
+  "invalid-email",
+  "user@",
+  ".wooly@example.com",
+  "özgür@ışıklı.com",
+  123,
+  { key: "value" },
+  "johndoe.gmail.com",
+];
+
 describe("isEmail() ", () => {
-  it("should return true for valid email addresses", () => {
-    expect(isEmail("test@example.com")).toBe(true);
-    expect(isEmail("user@mail.co")).toBe(true);
+  test.each(positiveList)("should return TRUE for the %s value", (value) => {
+    expect(isEmail(value)).toBe(true);
   });
 
-  it("should return true for null or undefined values", () => {
-    expect(isEmail(null)).toBe(false);
-    expect(isEmail(undefined)).toBe(false);
-    expect(isEmail("")).toBe(false);
-  });
-
-  it("should return false for invalid email addresses", () => {
-    expect(isEmail("invalid-email")).toBe(false);
-    expect(isEmail("user@")).toBe(false);
-    expect(isEmail(".wooly@example.com")).toBe(false);
-    expect(isEmail("özgür@ışıklı.com")).toBe(false);
-  });
-
-  it("should return false for non-string values", () => {
-    expect(isEmail(123)).toBe(false);
-    expect(isEmail({ key: "value" })).toBe(false);
+  test.each(negativeList)("should return FALSE for the %s value", (value) => {
+    expect(isEmail(value)).toBe(false);
   });
 });
