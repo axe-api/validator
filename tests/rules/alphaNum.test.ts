@@ -1,27 +1,33 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, test } from "vitest";
 import { isAlphaNum } from "../../index";
 
+const positiveList = [
+  "abc123",
+  "AbC456",
+  "123XYZ",
+  123,
+  "",
+  " ",
+  null,
+  undefined,
+];
+
+const negativeList = [
+  "abc!123",
+  "123@xyz",
+  "abc_123",
+  true,
+  false,
+  { key: "value" },
+  "word word",
+];
+
 describe("isAlphaNum() ", () => {
-  it("returns true for valid alpha-numeric strings", () => {
-    expect(isAlphaNum("abc123")).toBe(true);
-    expect(isAlphaNum("AbC456")).toBe(true);
-    expect(isAlphaNum("123XYZ")).toBe(true);
-    expect(isAlphaNum(123)).toBe(true);
+  test.each(positiveList)("should return TRUE for the `%s` value", (value) => {
+    expect(isAlphaNum(value)).toBe(true);
   });
 
-  it("returns false for strings with non-alpha-numeric characters", () => {
-    expect(isAlphaNum("abc!123")).toBe(false);
-    expect(isAlphaNum("123@xyz")).toBe(false);
-    expect(isAlphaNum("abc_123")).toBe(false);
-  });
-
-  it("returns false for non-string values", () => {
-    expect(isAlphaNum(true)).toBe(false);
-    expect(isAlphaNum({ key: "value" })).toBe(false);
-  });
-
-  it("returns true for null or undefined values", () => {
-    expect(isAlphaNum(null)).toBe(true);
-    expect(isAlphaNum(undefined)).toBe(true);
+  test.each(negativeList)("should return FALSE for the `%s` value", (value) => {
+    expect(isAlphaNum(value)).toBe(false);
   });
 });
