@@ -1,4 +1,4 @@
-import { IContext, IOptions, IValidationResult } from "../Interface";
+import { IContext, IValidationOptions, IValidationResult } from "../Interface";
 import { getMessage } from "../Locale";
 import { Definition, ValidationResult } from "../Types";
 import { toRuleDefinition } from "../Factory";
@@ -8,9 +8,9 @@ import { getOptions } from "../Options";
 export const validate = async (
   data: any,
   definition: Definition,
-  options?: Partial<IOptions>
+  options?: Partial<IValidationOptions>
 ): Promise<IValidationResult> => {
-  const currentOptions: IOptions = {
+  const currentOptions: IValidationOptions = {
     ...getOptions(),
     ...options,
   };
@@ -32,7 +32,7 @@ export const validate = async (
 const getResults = async (
   data: any,
   definition: Definition,
-  options: IOptions
+  options: IValidationOptions
 ) => {
   let isValid = true;
   const fields: Record<string, boolean> = {};

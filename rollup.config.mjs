@@ -5,6 +5,7 @@ import terser from "@rollup/plugin-terser";
 import { babel } from "@rollup/plugin-babel";
 import autoExternal from "rollup-plugin-auto-external";
 import filesize from "rollup-plugin-filesize";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import copy from "rollup-plugin-copy";
 import path from "path";
 
@@ -28,6 +29,7 @@ const buildConfig = ({ es5, browser = true, ...config }) => {
       file: `${path.dirname(file)}/${basename}.${extArr}`,
     },
     plugins: [
+      peerDepsExternal(),
       typescript(),
       copy({
         targets: [{ src: "src/i18n/*", dest: "dist/i18n" }],

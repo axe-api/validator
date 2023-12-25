@@ -1,13 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { isConfirmed } from "../../index";
+import { IContext, isConfirmed } from "../../index";
 
-const toContext = (value: any) => {
+const toContext = (value: any): IContext => {
   return {
     data: {
       password: "123456",
       password_confirmed: value,
     },
     key: "password",
+    definition: "confirmed",
   };
 };
 

@@ -33,6 +33,10 @@ export interface IContext {
 export interface IOptions {
   stopOnFail: boolean;
   language: LanguageType;
+  dateFormat: string;
+}
+
+export interface IValidationOptions extends IOptions {
   translations?: Record<string, string>;
 }
 
