@@ -25,6 +25,9 @@ describe("isDigits() ", () => {
     expect(isDigits(123, 5)).toBe(false);
     expect(isDigits(123456, 3)).toBe(false);
     expect(isDigits(1.6, 3)).toBe(false);
+    expect(isDigits("1234 ", 5)).toBe(false);
+    expect(isDigits(" 1234", 5)).toBe(false);
+    expect(isDigits(" ", 1)).toBe(false);
   });
 
   it("throwns error for invalid length value", () => {
