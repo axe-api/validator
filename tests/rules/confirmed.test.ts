@@ -7,7 +7,7 @@ const toContext = (value: any): IContext => {
       password: "123456",
       password_confirmed: value,
     },
-    key: "password",
+    field: "password",
     definition: "confirmed",
   };
 };
