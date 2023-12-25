@@ -34,25 +34,31 @@ The field under validation must be `yes`, `on`, `1` or `true`. This is useful fo
 
 The field under validation must be after the given date.
 
-| Definition         | Value        | Is valid? |
-| ------------------ | ------------ | --------- |
-| `after:2024-01-01` | `null`       | 🟢        |
-| `after:2024-01-01` | `undefined`  | 🟢        |
-| `after:2024-01-01` | `2025-01-01` | 🟢        |
-| `after:2024-01-01` | `2024-01-01` | 🔴        |
-| `after:2024-01-01` | `2020-01-01` | 🔴        |
+| Definition         | Value        | `startAt`    | Is valid? |
+| ------------------ | ------------ | ------------ | --------- |
+| `after:2024-01-01` | `null`       |              | 🟢        |
+| `after:2024-01-01` | `undefined`  |              | 🟢        |
+| `after:2024-01-01` | `2025-01-01` |              | 🟢        |
+| `after:startAt`    | `2025-01-01` | `2024-01-01` | 🟢        |
+| `after:startAt`    | `2024-01-01` | `2024-01-01` | 🔴        |
+| `after:startAt`    | `2024-01-01` | `2025-01-01` | 🔴        |
+| `after:2024-01-01` | `2024-01-01` |              | 🔴        |
+| `after:2024-01-01` | `2020-01-01` |              | 🔴        |
 
 ## `after_or_equal:date`
 
 The field unter validation must be after or equal to the given field
 
-| Definition                  | Value        | Is valid? |
-| --------------------------- | ------------ | --------- |
-| `after_or_equal:2024-01-01` | `null`       | 🟢        |
-| `after_or_equal:2024-01-01` | `undefined`  | 🟢        |
-| `after_or_equal:2024-01-01` | `2025-01-01` | 🟢        |
-| `after_or_equal:2024-01-01` | `2024-01-01` | 🟢        |
-| `after_or_equal:2024-01-01` | `2020-01-01` | 🔴        |
+| Definition                  | Value        | `startAt`    | Is valid? |
+| --------------------------- | ------------ | ------------ | --------- |
+| `after_or_equal:2024-01-01` | `null`       |              | 🟢        |
+| `after_or_equal:2024-01-01` | `undefined`  |              | 🟢        |
+| `after_or_equal:2024-01-01` | `2025-01-01` |              | 🟢        |
+| `after_or_equal:2024-01-01` | `2024-01-01` |              | 🟢        |
+| `after_or_equal:startAt`    | `2025-01-01` | `2024-01-01` | 🟢        |
+| `after_or_equal:startAt`    | `2024-01-01` | `2024-01-01` | 🟢        |
+| `after_or_equal:startAt`    | `2024-01-01` | `2025-01-01` | 🔴        |
+| `after_or_equal:2024-01-01` | `2020-01-01` |              | 🔴        |
 
 ## `alpha`
 
@@ -122,25 +128,31 @@ The field under validation must be an array.
 
 The field under validation must be before the given date.
 
-| Definition          | Value        | Is valid? |
-| ------------------- | ------------ | --------- |
-| `before:2024-01-01` | `null`       | 🟢        |
-| `before:2024-01-01` | `undefined`  | 🟢        |
-| `before:2024-01-01` | `2023-01-01` | 🟢        |
-| `before:2024-01-01` | `2024-01-01` | 🔴        |
-| `before:2024-01-01` | `2025-01-01` | 🔴        |
+| Definition          | Value        | `finishAt`   | Is valid? |
+| ------------------- | ------------ | ------------ | --------- |
+| `before:2024-01-01` | `null`       |              | 🟢        |
+| `before:2024-01-01` | `undefined`  |              | 🟢        |
+| `before:2024-01-01` | `2023-01-01` |              | 🟢        |
+| `before:finishAt`   | `2023-01-01` | `2024-01-01` | 🟢        |
+| `before:finishAt`   | `2023-01-01` | `2023-01-01` | 🔴        |
+| `before:finishAt`   | `2023-01-01` | `2022-01-01` | 🔴        |
+| `before:2024-01-01` | `2024-01-01` |              | 🔴        |
+| `before:2024-01-01` | `2025-01-01` |              | 🔴        |
 
 ## `before_or_equal:date`
 
 The field under validation must be before or equal to the given date.
 
-| Definition                   | Value        | Is valid? |
-| ---------------------------- | ------------ | --------- |
-| `before_or_equal:2024-01-01` | `null`       | 🟢        |
-| `before_or_equal:2024-01-01` | `undefined`  | 🟢        |
-| `before_or_equal:2024-01-01` | `2023-01-01` | 🟢        |
-| `before_or_equal:2024-01-01` | `2024-01-01` | 🟢        |
-| `before_or_equal:2024-01-01` | `2025-01-01` | 🔴        |
+| Definition                   | Value        | `finishAt`   | Is valid? |
+| ---------------------------- | ------------ | ------------ | --------- |
+| `before_or_equal:2024-01-01` | `null`       |              | 🟢        |
+| `before_or_equal:2024-01-01` | `undefined`  |              | 🟢        |
+| `before_or_equal:2024-01-01` | `2023-01-01` |              | 🟢        |
+| `before_or_equal:2024-01-01` | `2024-01-01` |              | 🟢        |
+| `before_or_equal:finishAt`   | `2023-01-01` | `2024-01-01` | 🟢        |
+| `before_or_equal:finishAt`   | `2023-01-01` | `2023-01-01` | 🟢        |
+| `before_or_equal:finishAt`   | `2023-01-01` | `2022-01-01` | 🔴        |
+| `before_or_equal:2024-01-01` | `2025-01-01` |              | 🔴        |
 
 ## `between:min,max`
 

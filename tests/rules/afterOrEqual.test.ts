@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { isAfterOrEqual } from "../../index";
+import { isAfterOrEqual, setLocales, validate } from "../../index";
+import en from "../../src/i18n/en.json";
 
 describe("isAfterOrEqual() ", () => {
   it("returns true if the value is after or equal to the date (string input)", () => {
@@ -70,5 +71,20 @@ describe("isAfterOrEqual() ", () => {
     expect(isAfterOrEqual("invalid-date", new Date("2022-01-01"))).toBe(false);
     expect(isAfterOrEqual(new Date("2022-01-01"), "invalid-date")).toBe(false);
     expect(isAfterOrEqual("invalid-date", "invalid-date")).toBe(false);
+  });
+
+  it("should be able to use another field as the comparison date", async () => {
+    await setLocales(en);
+
+    const data = {
+      startAt: "2023-10-21",
+      finishAt: "2023-10-21",
+    };
+    const rules = {
+      finishAt: "after_or_equal:startAt",
+    };
+
+    const result = await validate(data, rules);
+    expect(result.isValid).toBe(true);
   });
 });

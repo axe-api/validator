@@ -63,6 +63,7 @@ const getResults = async (
     // Checking all rules one by one
     for (const rule of rules) {
       // Calling the rule function with the validation parameters
+      // console.log([...rule.params, context]);
       const isRuleValid = rule.callback(value, ...[...rule.params, context]);
 
       // Is the value valid?

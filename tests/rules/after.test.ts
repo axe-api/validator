@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { isAfter } from "../../index";
+import { isAfter, setLocales, validate } from "../../index";
+import en from "../../src/i18n/en.json";
 
-describe("isAfter() ", () => {
+describe("isAfter()", () => {
   it("should return true if value is after the date", () => {
     expect(isAfter("2023-01-01", "2022-01-01")).toBe(true);
     expect(isAfter(new Date("2023-01-01"), "2022-01-01")).toBe(true);
@@ -49,5 +50,20 @@ describe("isAfter() ", () => {
     expect(isAfter("2022-01-01", "")).toBe(false);
     expect(isAfter("2022-01-01", [])).toBe(false);
     expect(isAfter("2022-01-01", {})).toBe(false);
+  });
+
+  it("should be able to use another field as the comparison date", async () => {
+    await setLocales(en);
+
+    const data = {
+      startAt: "2023-10-21",
+      finishAt: "2023-10-01",
+    };
+    const rules = {
+      finishAt: "after:startAt",
+    };
+
+    const result = await validate(data, rules);
+    expect(result.isValid).toBe(false);
   });
 });
