@@ -5,6 +5,6 @@ dayjs.extend(customParseFormat);
 
 export default (value: any, dateFormat?: string): boolean => {
   const options = getOptions();
-  const format = dateFormat || options.dateFormat;
+  const format = dateFormat ?? options.dateFormat;
   return dayjs(value, format, true).isValid();
 };
