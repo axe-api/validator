@@ -1,6 +1,6 @@
 export default (value: any, size: any): boolean => {
   if (value === null || value === undefined) {
-    return true;
+    return false;
   }
 
   if (isNaN(Number(size))) {

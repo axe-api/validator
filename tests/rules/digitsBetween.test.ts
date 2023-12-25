@@ -37,12 +37,12 @@ describe("digitsBetween() ", () => {
     expect(isDigitsBetween("12345", 1, 4)).toBe(false);
   });
 
-  test("Null value should return true", () => {
-    expect(isDigitsBetween(null, 2, 4)).toBe(true);
+  test("Null value should return false", () => {
+    expect(isDigitsBetween(null, 2, 4)).toBe(false);
   });
 
-  test("Undefined value should return true", () => {
-    expect(isDigitsBetween(undefined, 2, 4)).toBe(true);
+  test("Undefined value should return false", () => {
+    expect(isDigitsBetween(undefined, 2, 4)).toBe(false);
   });
 
   test("Incorrect min or max value should thrown error ", () => {

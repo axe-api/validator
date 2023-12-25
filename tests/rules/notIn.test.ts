@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { isNotIn } from "../../index";
 
 describe("isNotIn() ", () => {
-  it("should return true for null or undefined values", () => {
-    expect(isNotIn(null, ["a", "b", "c"])).toBe(true);
-    expect(isNotIn(undefined, ["a", "b", "c"])).toBe(true);
+  it("should return false for null or undefined values", () => {
+    expect(isNotIn(null, ["a", "b", "c"])).toBe(false);
+    expect(isNotIn(undefined, ["a", "b", "c"])).toBe(false);
   });
 
   it("should return false if value is in the list", () => {

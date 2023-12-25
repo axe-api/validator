@@ -15,8 +15,8 @@ describe("isHex() ", () => {
     expect(isHex(true)).toBe(false);
   });
 
-  it("should return true for null or undefined values", () => {
-    expect(isHex(null)).toBe(true);
-    expect(isHex(undefined)).toBe(true);
+  it("should return false for null or undefined values", () => {
+    expect(isHex(null)).toBe(false);
+    expect(isHex(undefined)).toBe(false);
   });
 });

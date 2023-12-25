@@ -14,9 +14,9 @@ describe("isMin() ", () => {
     expect(isMin(0, 0)).toBe(true);
   });
 
-  test("returns true when value is null or undefined", () => {
-    expect(isMin(null, 5)).toBe(true);
-    expect(isMin(undefined, 10)).toBe(true);
+  test("returns false when value is null or undefined", () => {
+    expect(isMin(null, 5)).toBe(false);
+    expect(isMin(undefined, 10)).toBe(false);
   });
 
   test("returns false for strings, arrays, and other types", () => {

@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { isSize } from "../../index";
 
 describe("isSize() ", () => {
-  it("should return true for null or undefined values", () => {
-    expect(isSize(null, 5)).toBe(true);
-    expect(isSize(undefined, 10)).toBe(true);
+  it("should return false for null or undefined values", () => {
+    expect(isSize(null, 5)).toBe(false);
+    expect(isSize(undefined, 10)).toBe(false);
   });
 
   it("should return true for strings with the correct length", () => {

@@ -63,6 +63,12 @@ const getResults = async (
 
     // Checking all rules one by one
     for (const rule of rules) {
+      // If the value is empty but the rule is not required, we don't execute
+      // the rules
+      if (rule.name !== "required" && (value === null || value === undefined)) {
+        continue;
+      }
+
       // Calling the rule function with the validation parameters
       const isRuleValid = await rule.callback(
         value,

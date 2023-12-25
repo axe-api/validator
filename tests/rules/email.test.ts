@@ -8,9 +8,9 @@ describe("isEmail() ", () => {
   });
 
   it("should return true for null or undefined values", () => {
-    expect(isEmail(null)).toBe(true);
-    expect(isEmail(undefined)).toBe(true);
-    expect(isEmail("")).toBe(true);
+    expect(isEmail(null)).toBe(false);
+    expect(isEmail(undefined)).toBe(false);
+    expect(isEmail("")).toBe(false);
   });
 
   it("should return false for invalid email addresses", () => {

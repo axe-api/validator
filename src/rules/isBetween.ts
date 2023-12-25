@@ -1,11 +1,6 @@
 import { IContext } from "../Interface";
 
 export default (value: any, min: any, max: any, extra?: IContext): boolean => {
-  // Check if the value is null or undefined
-  if (value === null || value === undefined) {
-    return true;
-  }
-
   // Convert min and max to numbers if they are not already
   const minValue = typeof min === "number" ? min : parseFloat(min);
   const maxValue = typeof max === "number" ? max : parseFloat(max);

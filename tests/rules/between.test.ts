@@ -26,11 +26,6 @@ describe("isBetween() ", () => {
     }
   );
 
-  test("should be able to return TRUE for null or undefined", () => {
-    expect(isBetween(null, 1, 10)).toBe(true);
-    expect(isBetween(undefined, 1, 10)).toBe(true);
-  });
-
   test("should threat as string if the definition has `numeric` rule", async () => {
     await setLocales(en);
 

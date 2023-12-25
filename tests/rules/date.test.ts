@@ -1,12 +1,7 @@
-import { describe, expect, it, test } from "vitest";
+import { describe, expect, test } from "vitest";
 import { isDate } from "../../index";
 
 describe("isDate() ", () => {
-  it("should return TRUE for null or undefined", () => {
-    expect(isDate(null)).toBe(true);
-    expect(isDate(undefined)).toBe(true);
-  });
-
   test("should return TRUE for valid dates", () => {
     expect(isDate("2023-01-01")).toBe(true);
     expect(isDate("2023-01-15")).toBe(true);

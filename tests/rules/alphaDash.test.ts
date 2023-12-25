@@ -1,16 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { isAlphaDash } from "../../index";
 
-const positiveList = [
-  "John_-",
-  "abc123",
-  "alpha-numeric_123",
-  null,
-  undefined,
-  "",
-  " ",
-  123,
-];
+const positiveList = ["John_-", "abc123", "alpha-numeric_123", 123];
 
 const negativeList = ["special$char", { key: "value" }, "'", "a b"];
 

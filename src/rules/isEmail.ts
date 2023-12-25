@@ -1,13 +1,4 @@
 export default (value: any): boolean => {
-  if (value === null || value === undefined) {
-    return true;
-  }
-
-  const content = String(value).trim();
-  if (content.length === 0) {
-    return true;
-  }
-
   return !!String(value)
     .toLowerCase()
     .match(

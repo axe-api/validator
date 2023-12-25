@@ -4,8 +4,8 @@ import { isString } from "../../index";
 describe("isString() ", () => {
   it("should return the correct value for the data type", () => {
     expect(isString("Hello")).toBe(true);
-    expect(isString(null)).toBe(true);
-    expect(isString(undefined)).toBe(true);
+    expect(isString(null)).toBe(false);
+    expect(isString(undefined)).toBe(false);
     expect(isString(123)).toBe(false);
     expect(isString(123.12)).toBe(false);
     expect(isString(true)).toBe(false);

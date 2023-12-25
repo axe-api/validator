@@ -37,11 +37,6 @@ describe("isAfter()", () => {
     expect(isAfter("2023-01-01", "invalid-date")).toBe(false);
   });
 
-  it("should return true for null and undefined values", () => {
-    expect(isAfter(null, "2022-01-01")).toBe(true);
-    expect(isAfter(undefined, "2022-01-01")).toBe(true);
-  });
-
   it("should handle weird values gracefully", () => {
     expect(isAfter("", "2022-01-01")).toBe(false);
     expect(isAfter(42, "2022-01-01")).toBe(false);

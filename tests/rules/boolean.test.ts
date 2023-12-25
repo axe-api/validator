@@ -11,8 +11,6 @@ describe("isBoolean() ", () => {
     expect(isBoolean("false")).toBe(true);
     expect(isBoolean("0")).toBe(true);
     expect(isBoolean("1")).toBe(true);
-    expect(isBoolean(null)).toBe(true); // Null is considered valid
-    expect(isBoolean(undefined)).toBe(true); // Undefined is considered valid
   });
 
   it("should return false for invalid boolean values", () => {
@@ -23,5 +21,7 @@ describe("isBoolean() ", () => {
     expect(isBoolean("")).toBe(false);
     expect(isBoolean(" ")).toBe(false);
     expect(isBoolean(new Error())).toBe(false);
+    expect(isBoolean(null)).toBe(false);
+    expect(isBoolean(undefined)).toBe(false);
   });
 });

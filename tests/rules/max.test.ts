@@ -15,9 +15,9 @@ describe("isMax() ", () => {
     expect(isMax(100, 50)).toBe(false);
   });
 
-  test("returns true when value is null or undefined", () => {
-    expect(isMax(null, 5)).toBe(true);
-    expect(isMax(undefined, 10)).toBe(true);
+  test("returns FALSE when value is null or undefined", () => {
+    expect(isMax(null, 5)).toBe(false);
+    expect(isMax(undefined, 10)).toBe(false);
   });
 
   test("returns false for strings, arrays, and other types", () => {

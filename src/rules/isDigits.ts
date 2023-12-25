@@ -1,9 +1,4 @@
 export default (value: any, length: any): boolean => {
-  // Check if value is NULL or undefined
-  if (value === null || value === undefined) {
-    return true;
-  }
-
   // Check if the value is numeric
   if (typeof value !== "number" && isNaN(Number(value))) {
     return false;

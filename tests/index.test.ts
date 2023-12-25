@@ -171,4 +171,18 @@ describe("validate() function ", () => {
     const result = await validate(data, rules);
     expect(result.isValid).toBe(false);
   });
+
+  test("should not try to validate for empty records", async () => {
+    const data = {
+      email: null,
+      phone: undefined,
+    };
+    const rules = {
+      email: "email",
+      phone: "min:10",
+    };
+
+    const result = await validate(data, rules);
+    expect(result.isValid).toBe(true);
+  });
 });

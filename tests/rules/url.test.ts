@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { isUrl } from "../../index";
 
 describe("isUrl() ", () => {
-  it("should return true for null and undefined", () => {
-    expect(isUrl(null)).toBe(true);
-    expect(isUrl(undefined)).toBe(true);
+  it("should return false for null and undefined", () => {
+    expect(isUrl(null)).toBe(false);
+    expect(isUrl(undefined)).toBe(false);
   });
 
   it("should return true for valid URLs", () => {

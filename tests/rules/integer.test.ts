@@ -2,12 +2,9 @@ import { describe, expect, it } from "vitest";
 import { isInteger } from "../../index";
 
 describe("isInteger() ", () => {
-  it("should return true for null", () => {
-    expect(isInteger(null)).toBe(true);
-  });
-
-  it("should return true for undefined", () => {
-    expect(isInteger(undefined)).toBe(true);
+  it("should return FALSE for null or undefined", () => {
+    expect(isInteger(null)).toBe(false);
+    expect(isInteger(undefined)).toBe(false);
   });
 
   it("should return true for integer values", () => {

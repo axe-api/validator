@@ -3,11 +3,6 @@ import { isBeforeOrEqual, setLocales, validate } from "../../index";
 import en from "../../src/i18n/en.json";
 
 describe("isBeforeOrEqual() ", () => {
-  it("should return true for null or undefined values", () => {
-    expect(isBeforeOrEqual(null, new Date())).toBe(true);
-    expect(isBeforeOrEqual(undefined, new Date())).toBe(true);
-  });
-
   it("should return true if the value is before or equal to the date", () => {
     const date = new Date("2023-01-01");
 

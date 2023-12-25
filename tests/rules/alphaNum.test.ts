@@ -1,16 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { isAlphaNum } from "../../index";
 
-const positiveList = [
-  "abc123",
-  "AbC456",
-  "123XYZ",
-  123,
-  "",
-  " ",
-  null,
-  undefined,
-];
+const positiveList = ["abc123", "AbC456", "123XYZ", 123];
 
 const negativeList = [
   "abc!123",

@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { isDigits } from "../../index";
 
 describe("isDigits() ", () => {
-  it("returns true for null or undefined values", () => {
-    expect(isDigits(null, 5)).toBe(true);
-    expect(isDigits(undefined, 5)).toBe(true);
+  it("returns false for null or undefined values", () => {
+    expect(isDigits(null, 5)).toBe(false);
+    expect(isDigits(undefined, 5)).toBe(false);
   });
 
   it("returns true for numeric values with exact length", () => {
