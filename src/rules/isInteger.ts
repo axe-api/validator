@@ -1,3 +1,6 @@
 export default (value: any): boolean => {
-  return Number.isInteger(value);
+  if (isNaN(value)) {
+    return false;
+  }
+  return String(parseInt(value, 10)) === String(value);
 };

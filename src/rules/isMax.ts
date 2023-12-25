@@ -1,5 +1,5 @@
 export default (value: any, size: any): boolean => {
-  if (value === null || value === undefined) {
+  if (value === null || value === undefined || typeof value === "boolean") {
     return false;
   }
 
