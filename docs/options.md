@@ -14,6 +14,7 @@ setLocales(en);
 setOptions({
   stopOnFail: true,
   language: "en",
+  dateFormat: "YYYY-MM-DD",
 });
 ```
 
@@ -31,11 +32,17 @@ setLocales(en);
 setOptions({
   stopOnFail: true,
   language: "en",
+  dateFormat: "YYYY-MM-DD",
 });
 
 await validate(
   data,
   { email: "required" },
-  { stopOnFail: false, language: "de" }, // Override
+  // You can override any of the following property
+  {
+    stopOnFail: false,
+    language: "de",
+    dateFormat: "YYYY-MM-DD",
+  },
 );
 ```
