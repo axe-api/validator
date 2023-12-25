@@ -4,6 +4,7 @@ import { isNumeric } from "../../index";
 describe("isNumeric() ", () => {
   test("should return true for numeric values", () => {
     expect(isNumeric(42)).toBe(true);
+    expect(isNumeric(0.5432)).toBe(true);
     expect(isNumeric(-3.14)).toBe(true);
     expect(isNumeric("123")).toBe(true);
     expect(isNumeric("-456")).toBe(true);
