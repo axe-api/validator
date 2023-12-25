@@ -1,21 +1,25 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, test } from "vitest";
 import { isAlphaDash } from "../../index";
 
+const positiveList = [
+  "John_-",
+  "abc123",
+  "alpha-numeric_123",
+  null,
+  undefined,
+  "",
+  " ",
+  123,
+];
+
+const negativeList = ["special$char", { key: "value" }, "'", "a b"];
+
 describe("isAlphaDash() ", () => {
-  it("should return true for valid inputs", () => {
-    // Valid inputs
-    expect(isAlphaDash("abc123")).toBe(true);
-    expect(isAlphaDash("alpha-numeric_123")).toBe(true);
-    expect(isAlphaDash(null)).toBe(true); // null is considered valid
-    expect(isAlphaDash(undefined)).toBe(true); // undefined is considered valid
-    expect(isAlphaDash("")).toBe(true); // undefined is considered valid
-    expect(isAlphaDash(" ")).toBe(true); // undefined is considered valid
-    expect(isAlphaDash(123)).toBe(true); // Numbers are not allowed
+  test.each(positiveList)("should return TRUE for the `%s` value", (value) => {
+    expect(isAlphaDash(value)).toBe(true);
   });
 
-  it("should return false for invalid inputs", () => {
-    // Invalid inputs
-    expect(isAlphaDash("special$char")).toBe(false);
-    expect(isAlphaDash({ key: "value" })).toBe(false); // Objects are not allowed
+  test.each(negativeList)("should return FALSE for the `%s` value", (value) => {
+    expect(isAlphaDash(value)).toBe(false);
   });
 });
