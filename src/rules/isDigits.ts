@@ -1,4 +1,8 @@
 export default (value: any, length: any): boolean => {
+  if (typeof value === "boolean") {
+    return false;
+  }
+
   // Check if the value is numeric
   if (typeof value !== "number" && isNaN(Number(value))) {
     return false;

@@ -1,6 +1,19 @@
 import { describe, expect, test } from "vitest";
 import { isDigitsBetween } from "../../index";
 
+const negativeList = [
+  "9098a",
+  "abcde",
+  null,
+  undefined,
+  true,
+  false,
+  {},
+  NaN,
+  Infinity,
+  -Infinity,
+];
+
 describe("digitsBetween() ", () => {
   test("Valid numeric value within range", () => {
     expect(isDigitsBetween("123", 2, 4)).toBe(true);
@@ -37,18 +50,14 @@ describe("digitsBetween() ", () => {
     expect(isDigitsBetween("12345", 1, 4)).toBe(false);
   });
 
-  test("Null value should return false", () => {
-    expect(isDigitsBetween(null, 2, 4)).toBe(false);
-  });
-
-  test("Undefined value should return false", () => {
-    expect(isDigitsBetween(undefined, 2, 4)).toBe(false);
-  });
-
   test("Incorrect min or max value should thrown error ", () => {
     expect(() => isDigitsBetween(12, "a", 4)).toThrow();
     expect(() => isDigitsBetween(12, 1, "c")).toThrow();
     expect(() => isDigitsBetween(12, 1, undefined)).toThrow();
     expect(() => isDigitsBetween(12, null, 4)).toThrow();
+  });
+
+  test.each(negativeList)("should return FALSE for the %s value", (value) => {
+    expect(isDigitsBetween(value, 4, 6)).toBe(false);
   });
 });
