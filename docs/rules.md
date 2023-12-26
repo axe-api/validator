@@ -200,20 +200,21 @@ Let's assume that the value of the `password` field is `123456`. If you use the 
 | `password_confirmation` | `false`     | 🔴        |
 | `password_confirmation` | `{}`        | 🔴        |
 
-## `date`
+## `date:format`
 
 The field under validation must be a valid date format which is acceptable by Javascript's Date object.
 
-| Rule   | Value                        | Is valid? |
-| ------ | ---------------------------- | --------- |
-| `date` | `null`                       | 🔴        |
-| `date` | `undefined`                  | 🔴        |
-| `date` | `2023-12-16T00:00:00Z`       | 🟢        |
-| `date` | `December 16, 2023 12:00:00` | 🟢        |
-| `date` | `2023-01-01`                 | 🟢        |
-| `date` | `2022-13-01`                 | 🔴        |
-| `date` | `2022-12-32`                 | 🔴        |
-| `date` | `false`                      | 🔴        |
+| Rule              | Value                        | Is valid? |
+| ----------------- | ---------------------------- | --------- |
+| `date:YYYY-MM-DD` | `null`                       | 🔴        |
+| `date:YYYY-MM-DD` | `undefined`                  | 🔴        |
+| `date:YYYY-MM-DD` | `2023-12-16`                 | 🟢        |
+| `date:YYYY-MM-DD` | `2023-01-01`                 | 🟢        |
+| `date:YYYY-MM-DD` | `December 16, 2023 12:00:00` | 🔴        |
+| `date:YYYY-MM-DD` | `2022-13-01`                 | 🔴        |
+| `date:YYYY-MM-DD` | `2022-12-32`                 | 🔴        |
+| `date:YYYY-MM-DD` | `2022-02-29`                 | 🔴        |
+| `date:YYYY-MM-DD` | `false`                      | 🔴        |
 
 ## `digits:value`
 
