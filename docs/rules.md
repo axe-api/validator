@@ -19,6 +19,28 @@ If you want to check if the data is provided and is a valid email, you should us
 
 The field under validation must be `yes`, `on`, `1` or `true`. This is useful for validating "Terms of Service" acceptance.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { terms: "accepted" });
+```
+
+```ts [Function-based]
+import { validate, accepted } from "robust-validator";
+// ...
+await validate(data, { terms: [accepted()] });
+```
+
+```ts [Direct usage]
+import { isAccepted } from "robust-validator";
+// ...
+isAccepted("your-value");
+```
+
+:::
+
 | Rule       | Value       | Is valid? |
 | ---------- | ----------- | --------- |
 | `accepted` | `null`      | 🔴        |
@@ -33,6 +55,40 @@ The field under validation must be `yes`, `on`, `1` or `true`. This is useful fo
 ## `after:date`
 
 The field under validation must be after the given date.
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { startAt: "after:2023-01-01" });
+```
+
+```ts [Function-based]
+import { validate, after } from "robust-validator";
+// ...
+await validate(data, { startAt: [after("2023-01-01")] });
+```
+
+```ts [Direct usage]
+import { isAfter } from "robust-validator";
+// ...
+isAfter("your-value", "2023-01-01");
+```
+
+:::
+
+:::tip
+robust-validator library uses the [dayjs](https://day.js.org/) for the date validations.
+
+You can check the possible date formats [here](https://day.js.org/docs/en/parse/string-format).
+:::
+
+:::warning
+You MUST install the [dayjs](https://day.js.org/) is to your project.
+
+`npm install dayjs` or `yarn add dayjs`
+:::
 
 | Rule               | Value        | `startAt`    | Is valid? |
 | ------------------ | ------------ | ------------ | --------- |
@@ -49,6 +105,40 @@ The field under validation must be after the given date.
 
 The field unter validation must be after or equal to the given field
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { startAt: "after_or_equal:2023-01-01" });
+```
+
+```ts [Function-based]
+import { validate, afterOrEqual } from "robust-validator";
+// ...
+await validate(data, { startAt: [afterOrEqual("2023-01-01")] });
+```
+
+```ts [Direct usage]
+import { isAfterOrEqual } from "robust-validator";
+// ...
+isAfterOrEqual("your-value", "2023-01-01");
+```
+
+:::
+
+:::tip
+robust-validator library uses the [dayjs](https://day.js.org/) for the date validations.
+
+You can check the possible date formats [here](https://day.js.org/docs/en/parse/string-format).
+:::
+
+:::warning
+You MUST install the [dayjs](https://day.js.org/) is to your project.
+
+`npm install dayjs` or `yarn add dayjs`
+:::
+
 | Rule                        | Value        | `startAt`    | Is valid? |
 | --------------------------- | ------------ | ------------ | --------- |
 | `after_or_equal:2024-01-01` | `null`       |              | 🔴        |
@@ -64,6 +154,28 @@ The field unter validation must be after or equal to the given field
 
 The field under validation must be entirely alphabetic characters.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { username: "alpha" });
+```
+
+```ts [Function-based]
+import { validate, alpha } from "robust-validator";
+// ...
+await validate(data, { username: [alpha()] });
+```
+
+```ts [Direct usage]
+import { isAlpha } from "robust-validator";
+// ...
+isAlpha("your-value");
+```
+
+:::
+
 | Rule    | Value       | Is valid? |
 | ------- | ----------- | --------- |
 | `alpha` | `null`      | 🔴        |
@@ -78,6 +190,28 @@ The field under validation must be entirely alphabetic characters.
 ## `alpha_dash`
 
 The field under validation may have alpha-numeric characters, as well as dashes and underscores.
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { username: "alpha_dash" });
+```
+
+```ts [Function-based]
+import { validate, alphaDash } from "robust-validator";
+// ...
+await validate(data, { username: [alphaDash()] });
+```
+
+```ts [Direct usage]
+import { isAlphaDash } from "robust-validator";
+// ...
+isAlphaDash("your-value");
+```
+
+:::
 
 | Rule         | Value       | Is valid? |
 | ------------ | ----------- | --------- |
@@ -95,6 +229,28 @@ The field under validation may have alpha-numeric characters, as well as dashes 
 
 The field under validation must be entirely alpha-numeric characters.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { username: "alpha_num" });
+```
+
+```ts [Function-based]
+import { validate, alphaNum } from "robust-validator";
+// ...
+await validate(data, { username: [alphaNum()] });
+```
+
+```ts [Direct usage]
+import { isAlphaNum } from "robust-validator";
+// ...
+isAlphaNum("your-value");
+```
+
+:::
+
 | Rule        | Value       | Is valid? |
 | ----------- | ----------- | --------- |
 | `alpha_num` | `null`      | 🔴        |
@@ -110,6 +266,28 @@ The field under validation must be entirely alpha-numeric characters.
 ## `array`
 
 The field under validation must be an array.
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { selectedIds: "array" });
+```
+
+```ts [Function-based]
+import { validate, array } from "robust-validator";
+// ...
+await validate(data, { selectedIds: [array()] });
+```
+
+```ts [Direct usage]
+import { isArray } from "robust-validator";
+// ...
+isArray([1, 2, 3]);
+```
+
+:::
 
 | Rule    | Value         | Is valid? |
 | ------- | ------------- | --------- |
@@ -128,6 +306,40 @@ The field under validation must be an array.
 
 The field under validation must be before the given date.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { startAt: "before:2023-01-01" });
+```
+
+```ts [Function-based]
+import { validate, before } from "robust-validator";
+// ...
+await validate(data, { startAt: [before("2023-01-01")] });
+```
+
+```ts [Direct usage]
+import { isBefore } from "robust-validator";
+// ...
+isBefore("your-value", "2023-01-01");
+```
+
+:::
+
+:::tip
+robust-validator library uses the [dayjs](https://day.js.org/) for the date validations.
+
+You can check the possible date formats [here](https://day.js.org/docs/en/parse/string-format).
+:::
+
+:::warning
+You MUST install the [dayjs](https://day.js.org/) is to your project.
+
+`npm install dayjs` or `yarn add dayjs`
+:::
+
 | Rule                | Value        | `finishAt`   | Is valid? |
 | ------------------- | ------------ | ------------ | --------- |
 | `before:2024-01-01` | `null`       |              | 🔴        |
@@ -141,7 +353,41 @@ The field under validation must be before the given date.
 
 ## `before_or_equal:date`
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { startAt: "before_or_equal:2023-01-01" });
+```
+
+```ts [Function-based]
+import { validate, beforeOrEqual } from "robust-validator";
+// ...
+await validate(data, { startAt: [beforeOrEqual("2023-01-01")] });
+```
+
+```ts [Direct usage]
+import { isBeforeOrEqual } from "robust-validator";
+// ...
+isBeforeOrEqual("your-value", "2023-01-01");
+```
+
+:::
+
 The field under validation must be before or equal to the given date.
+
+:::tip
+robust-validator library uses the [dayjs](https://day.js.org/) for the date validations.
+
+You can check the possible date formats [here](https://day.js.org/docs/en/parse/string-format).
+:::
+
+:::warning
+You MUST install the [dayjs](https://day.js.org/) is to your project.
+
+`npm install dayjs` or `yarn add dayjs`
+:::
 
 | Rule                         | Value        | `finishAt`   | Is valid? |
 | ---------------------------- | ------------ | ------------ | --------- |
@@ -158,6 +404,28 @@ The field under validation must be before or equal to the given date.
 
 The field under validation must have a size between the given min and max. Strings, and numerics are evaluated in the same fashion as the size rule.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { score: "between:1,10" });
+```
+
+```ts [Function-based]
+import { validate, score } from "robust-validator";
+// ...
+await validate(data, { score: [score(1, 10)] });
+```
+
+```ts [Direct usage]
+import { isBetween } from "robust-validator";
+// ...
+isBetween(3, 1, 10);
+```
+
+:::
+
 | Rule          | Value       | Is valid? |
 | ------------- | ----------- | --------- |
 | `between:1,5` | `null`      | 🔴        |
@@ -170,6 +438,28 @@ The field under validation must have a size between the given min and max. Strin
 ## `boolean`
 
 The field under validation must be a boolean value of the form true, false, 0, 1, 'true', 'false', '0', '1',
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { isOpen: "boolean" });
+```
+
+```ts [Function-based]
+import { validate, boolean } from "robust-validator";
+// ...
+await validate(data, { isOpen: [boolean()] });
+```
+
+```ts [Direct usage]
+import { isBoolean } from "robust-validator";
+// ...
+isBoolean(true);
+```
+
+:::
 
 | Rule      | Value       | Is valid? |
 | --------- | ----------- | --------- |
@@ -190,6 +480,28 @@ The field under validation must have a matching field of `foo_confirmation`. For
 
 Let's assume that the value of the `password` field is `123456`. If you use the `confirmed` definition on the `password` field's rules, the truth table would look like the following example:
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { password: "confirmed" });
+```
+
+```ts [Function-based]
+import { validate, confirmed } from "robust-validator";
+// ...
+await validate(data, { password: [confirmed()] });
+```
+
+```ts [Direct usage]
+import { isConfirmed } from "robust-validator";
+// ...
+isConfirmed("your-data");
+```
+
+:::
+
 | Field                   | Value       | Is valid? |
 | ----------------------- | ----------- | --------- |
 | `password_confirmation` | `123456`    | 🟢        |
@@ -203,6 +515,28 @@ Let's assume that the value of the `password` field is `123456`. If you use the 
 ## `date:format`
 
 The field under validation must be a valid date format which is acceptable by Javascript's Date object.
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { startAt: "date:YYYY-MM-DD" });
+```
+
+```ts [Function-based]
+import { validate, date } from "robust-validator";
+// ...
+await validate(data, { startAt: [date("YYYY-MM-DD")] });
+```
+
+```ts [Direct usage]
+import { isDate } from "robust-validator";
+// ...
+isDate("your-data", "YYYY-MM-DD");
+```
+
+:::
 
 | Rule              | Value                        | Is valid? |
 | ----------------- | ---------------------------- | --------- |
@@ -220,6 +554,28 @@ The field under validation must be a valid date format which is acceptable by Ja
 
 The field under validation must be numeric and must have an exact length of value.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { pin: "digits:4" });
+```
+
+```ts [Function-based]
+import { validate, digits } from "robust-validator";
+// ...
+await validate(data, { pin: [digits(4)] });
+```
+
+```ts [Direct usage]
+import { isDigits } from "robust-validator";
+// ...
+isDigits("1234", 4);
+```
+
+:::
+
 | Rule       | Value       | Is valid? |
 | ---------- | ----------- | --------- |
 | `digits:4` | `null`      | 🔴        |
@@ -233,6 +589,28 @@ The field under validation must be numeric and must have an exact length of valu
 ## `digits_between:min,max`
 
 The field under validation must be numeric and must have length between given min and max.
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { pin: "digits_between:4,6" });
+```
+
+```ts [Function-based]
+import { validate, digitsBetween } from "robust-validator";
+// ...
+await validate(data, { pin: [digitsBetween(4, 6)] });
+```
+
+```ts [Direct usage]
+import { isdigitsBetween } from "robust-validator";
+// ...
+isdigitsBetween("1234", 4, 6);
+```
+
+:::
 
 | Rule                 | Value       | Is valid? |
 | -------------------- | ----------- | --------- |
@@ -248,6 +626,28 @@ The field under validation must be numeric and must have length between given mi
 
 The field under validation must be formatted as an e-mail address.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { contact_email: "email" });
+```
+
+```ts [Function-based]
+import { validate, email } from "robust-validator";
+// ...
+await validate(data, { contact_email: [email()] });
+```
+
+```ts [Direct usage]
+import { isEmail } from "robust-validator";
+// ...
+isEmail("your-date");
+```
+
+:::
+
 | Rule    | Value         | Is valid? |
 | ------- | ------------- | --------- |
 | `email` | `null`        | 🔴        |
@@ -260,6 +660,28 @@ The field under validation must be formatted as an e-mail address.
 ## `hex`
 
 The field under validation should be a hexadecimal format.
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { colorCode: "hex" });
+```
+
+```ts [Function-based]
+import { validate, hex } from "robust-validator";
+// ...
+await validate(data, { colorCode: [hex()] });
+```
+
+```ts [Direct usage]
+import { isHex } from "robust-validator";
+// ...
+isHex("f1f1f1");
+```
+
+:::
 
 | Rule  | Value              | Is valid? |
 | ----- | ------------------ | --------- |
@@ -275,6 +697,28 @@ The field under validation should be a hexadecimal format.
 
 The field under validation must be included in the given list of values.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { userChoice: "in:news,marketing" });
+```
+
+```ts [Function-based]
+import { validate, in } from "robust-validator";
+// ...
+await validate(data, { userChoice: [in(["news", "marketing"])] });
+```
+
+```ts [Direct usage]
+import { isIn } from "robust-validator";
+// ...
+isIn("your-data", ["news", "marketing"]);
+```
+
+:::
+
 | Rule     | Value       | Is valid? |
 | -------- | ----------- | --------- |
 | `in:A,B` | `null`      | 🔴        |
@@ -289,6 +733,28 @@ The field under validation must be included in the given list of values.
 
 The field under validation must have an integer value.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { age: "integer" });
+```
+
+```ts [Function-based]
+import { validate, integer } from "robust-validator";
+// ...
+await validate(data, { age: [integer()] });
+```
+
+```ts [Direct usage]
+import { isInteger } from "robust-validator";
+// ...
+isInteger(134);
+```
+
+:::
+
 | Rule      | Value       | Is valid? |
 | --------- | ----------- | --------- |
 | `integer` | `null`      | 🔴        |
@@ -300,6 +766,28 @@ The field under validation must have an integer value.
 ## `max:value`
 
 Validate that an attribute is no greater than a given size
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { age: "max:99" });
+```
+
+```ts [Function-based]
+import { validate, max } from "robust-validator";
+// ...
+await validate(data, { age: [max(99)] });
+```
+
+```ts [Direct usage]
+import { isMax } from "robust-validator";
+// ...
+isMax(10, 99);
+```
+
+:::
 
 | Rule    | Value       | Is valid? |
 | ------- | ----------- | --------- |
@@ -313,6 +801,28 @@ Validate that an attribute is no greater than a given size
 ## `min:value`
 
 Validate that an attribute is at least a given size.
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { age: "min:22" });
+```
+
+```ts [Function-based]
+import { validate, min } from "robust-validator";
+// ...
+await validate(data, { age: [min(22)] });
+```
+
+```ts [Direct usage]
+import { isMin } from "robust-validator";
+// ...
+isMin(10, 22);
+```
+
+:::
 
 | Rule    | Value       | Is valid? |
 | ------- | ----------- | --------- |
@@ -328,6 +838,28 @@ Validate that an attribute is at least a given size.
 
 The field under validation must not be included in the given list of values.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { userChoice: "not_in:news,marketing" });
+```
+
+```ts [Function-based]
+import { validate, notIn } from "robust-validator";
+// ...
+await validate(data, { userChoice: [notIn(["news", "marketing"])] });
+```
+
+```ts [Direct usage]
+import { isNotIn } from "robust-validator";
+// ...
+isNotIn("your-data", ["news", "marketing"]);
+```
+
+:::
+
 | Rule         | Value       | Is valid? |
 | ------------ | ----------- | --------- |
 | `not_in:A,B` | `null`      | 🔴        |
@@ -341,6 +873,28 @@ The field under validation must not be included in the given list of values.
 
 Validate that an attribute is numeric.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { salary: "numeric" });
+```
+
+```ts [Function-based]
+import { validate, numeric } from "robust-validator";
+// ...
+await validate(data, { salary: [numeric()] });
+```
+
+```ts [Direct usage]
+import { isNumeric } from "robust-validator";
+// ...
+isNumeric(3000);
+```
+
+:::
+
 | Rule      | Value       | Is valid? |
 | --------- | ----------- | --------- |
 | `integer` | `null`      | 🔴        |
@@ -352,6 +906,28 @@ Validate that an attribute is numeric.
 ## `required`
 
 Checks if the value is provided.
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { salary: "required" });
+```
+
+```ts [Function-based]
+import { validate, required } from "robust-validator";
+// ...
+await validate(data, { salary: [required()] });
+```
+
+```ts [Direct usage]
+import { isRequired } from "robust-validator";
+// ...
+isRequired("your-data");
+```
+
+:::
 
 | Rule       | Value       | Is valid? |
 | ---------- | ----------- | --------- |
@@ -368,6 +944,28 @@ Checks if the value is provided.
 
 The field under validation must have a size matching the given value. For string data, value corresponds to the number of characters. For numeric data, value corresponds to a given integer value.
 
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { password: "size:12" });
+```
+
+```ts [Function-based]
+import { validate, size } from "robust-validator";
+// ...
+await validate(data, { password: [size(12)] });
+```
+
+```ts [Direct usage]
+import { isSize } from "robust-validator";
+// ...
+isSize("your-data", 12);
+```
+
+:::
+
 | Rule     | Value       | Is valid? |
 | -------- | ----------- | --------- |
 | `size:3` | `null`      | 🔴        |
@@ -381,6 +979,28 @@ The field under validation must have a size matching the given value. For string
 ## `string`
 
 The field under validation must be a string.
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { content: "string" });
+```
+
+```ts [Function-based]
+import { validate, string } from "robust-validator";
+// ...
+await validate(data, { content: [string()] });
+```
+
+```ts [Direct usage]
+import { isString } from "robust-validator";
+// ...
+isString("your-data");
+```
+
+:::
 
 | Rule     | Value       | Is valid? |
 | -------- | ----------- | --------- |
@@ -397,6 +1017,28 @@ The field under validation must be a string.
 ## `url`
 
 Validate that an attribute has a valid URL format
+
+::: code-group
+
+```ts [Declarative]
+import { validate } from "robust-validator";
+// ...
+await validate(data, { profile: "url" });
+```
+
+```ts [Function-based]
+import { validate, url } from "robust-validator";
+// ...
+await validate(data, { profile: [url()] });
+```
+
+```ts [Direct usage]
+import { isUrl } from "robust-validator";
+// ...
+isUrl("https://axe-api-com");
+```
+
+:::
 
 | Rule  | Value                 | Is valid? |
 | ----- | --------------------- | --------- |
