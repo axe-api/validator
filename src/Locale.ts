@@ -1,7 +1,7 @@
 import { ILocale } from "./Interface";
-import { RuleType, LanguageType, Translation } from "./Types";
+import { RuleType, LanguageType } from "./Types";
 
-const TRANSLATIONS: Partial<Record<LanguageType, Translation>> = {};
+const TRANSLATIONS: Partial<Record<LanguageType, Record<string, string>>> = {};
 
 export const setLocales = (json: any) => {
   if (Array.isArray(json)) {
@@ -12,6 +12,24 @@ export const setLocales = (json: any) => {
   } else {
     const locale = json as ILocale;
     TRANSLATIONS[locale.key] = locale.values;
+  }
+};
+
+export const getLoadedLocales = () => {
+  return Object.keys(TRANSLATIONS);
+};
+
+export const addCustomLocale = (
+  locale: LanguageType,
+  ruleName: string,
+  translation: string
+) => {
+  const root = TRANSLATIONS[locale];
+
+  if (root) {
+    root[ruleName] = translation;
+  } else {
+    throw new Error(`The translation path couldn't find: ${locale}`);
   }
 };
 

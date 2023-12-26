@@ -1,4 +1,5 @@
 export * from "./src/Options";
+export * from "./src/ruleManager";
 export * from "./src/helpers/validate";
 export * from "./src/Locale";
 export * from "./src/rules";

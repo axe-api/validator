@@ -81,7 +81,7 @@ export type LanguageType =
   | "vi"
   | "zh";
 
-export type Translation = Record<RuleType, string>;
+export type Translation = Partial<Record<RuleType, string>>;
 
 export type Definition = Record<string, string | string[]>;
 
