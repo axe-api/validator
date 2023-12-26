@@ -1,4 +1,4 @@
-import { IContext, IOptions, IValidationResult } from "../Interface";
+import { IContext, IValidationOptions, IValidationResult } from "../Interface";
 import { getMessage } from "../Locale";
 import { Definition, ValidationResult } from "../Types";
 import { toRuleDefinition } from "../Factory";
@@ -8,9 +8,9 @@ import { getOptions } from "../Options";
 export const validate = async (
   data: any,
   definition: Definition,
-  options?: Partial<IOptions>
+  options?: Partial<IValidationOptions>
 ): Promise<IValidationResult> => {
-  const currentOptions: IOptions = {
+  const currentOptions: IValidationOptions = {
     ...getOptions(),
     ...options,
   };
@@ -32,17 +32,17 @@ export const validate = async (
 const getResults = async (
   data: any,
   definition: Definition,
-  options: IOptions
+  options: IValidationOptions
 ) => {
   let isValid = true;
   const fields: Record<string, boolean> = {};
   const results: ValidationResult = {};
 
   // Checking all validations
-  for (const key in definition) {
-    fields[key] = true;
+  for (const field in definition) {
+    fields[field] = true;
     // Parsing the rules
-    const params = definition[key];
+    const params = definition[field];
     let ruleGroup: string = "";
     if (Array.isArray(params)) {
       ruleGroup = params.join("|");
@@ -53,31 +53,41 @@ const getResults = async (
     const rules = toRuleNameArray(ruleGroup).map(toRuleDefinition);
 
     // Getting the value by the path
-    const value = getValueViaPath(data, key);
+    const value = getValueViaPath(data, field);
 
     const context: IContext = {
       data,
-      key,
+      field,
+      definition: ruleGroup,
     };
 
     // Checking all rules one by one
     for (const rule of rules) {
+      // If the value is empty but the rule is not required, we don't execute
+      // the rules
+      if (rule.name !== "required" && (value === null || value === undefined)) {
+        continue;
+      }
+
       // Calling the rule function with the validation parameters
-      const isRuleValid = rule.callback(value, ...[...rule.params, context]);
+      const isRuleValid = await rule.callback(
+        value,
+        ...[...rule.params, context]
+      );
 
       // Is the value valid?
       if (isRuleValid === false) {
-        if (!results[key]) {
-          results[key] = [];
+        if (!results[field]) {
+          results[field] = [];
         }
 
         isValid = false;
-        fields[key] = false;
+        fields[field] = false;
 
         // Setting the rule and the error message
-        results[key].push({
+        results[field].push({
           rule: rule.name,
-          message: await getMessage(
+          message: getMessage(
             rule.name,
             rule.params,
             options.language,

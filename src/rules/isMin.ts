@@ -1,10 +1,6 @@
 export default (value: any, size: any): boolean => {
-  if (
-    value === null ||
-    value === undefined ||
-    String(value).trim().length === 0
-  ) {
-    return true;
+  if (value === null || value === undefined || typeof value === "boolean") {
+    return false;
   }
 
   const check = Number(size);

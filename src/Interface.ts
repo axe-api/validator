@@ -26,12 +26,17 @@ export interface IValidationResult {
 
 export interface IContext {
   data: any;
-  key: string;
+  field: string;
+  definition: string;
 }
 
 export interface IOptions {
   stopOnFail: boolean;
   language: LanguageType;
+  dateFormat: string;
+}
+
+export interface IValidationOptions extends IOptions {
   translations?: Record<string, string>;
 }
 

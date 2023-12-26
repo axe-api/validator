@@ -1,7 +1,6 @@
 export default (value: any, min: any, max: any): boolean => {
-  // Check if value is NULL or undefined
-  if (value === null || value === undefined) {
-    return true;
+  if (value === null || value === undefined || typeof value === "boolean") {
+    return false;
   }
 
   // Check if the value is numeric

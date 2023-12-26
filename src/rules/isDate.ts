@@ -1,8 +1,10 @@
-export default (value: any): boolean => {
-  if (value === null || value === undefined) {
-    return true; // NULL or undefined is considered valid
-  }
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+import { getOptions } from "../Options";
+dayjs.extend(customParseFormat);
 
-  const date = new Date(value);
-  return !isNaN(date.getTime());
+export default (value: any, dateFormat?: string): boolean => {
+  const options = getOptions();
+  const format = dateFormat ?? options.dateFormat;
+  return dayjs(value, format, true).isValid();
 };

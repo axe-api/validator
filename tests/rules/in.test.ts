@@ -1,20 +1,22 @@
 import { describe, expect, it } from "vitest";
 import { isIn } from "../../index";
 
+const LIST = ["a", "b", "c"];
+
 describe("isIn() ", () => {
-  it("should return true for null or undefined values", () => {
-    expect(isIn(null, ["a", "b", "c"])).toBe(true);
-    expect(isIn(undefined, ["a", "b", "c"])).toBe(true);
+  it("should return FALSE for null or undefined values", () => {
+    expect(isIn(null, LIST)).toBe(false);
+    expect(isIn(undefined, LIST)).toBe(false);
   });
 
   it("should return true if value is in the list", () => {
-    expect(isIn("a", ["a", "b", "c"])).toBe(true);
-    expect(isIn(["a", "b"], ["a", "b", "c"])).toBe(true);
+    expect(isIn("a", LIST)).toBe(true);
+    expect(isIn(["a", "b"], LIST)).toBe(true);
   });
 
   it("should return false if value is not in the list", () => {
-    expect(isIn("d", ["a", "b", "c"])).toBe(false);
-    expect(isIn(["a", "d"], ["a", "b", "c"])).toBe(false);
+    expect(isIn("d", LIST)).toBe(false);
+    expect(isIn(["a", "d"], LIST)).toBe(false);
   });
 
   it("should handle numeric values correctly", () => {

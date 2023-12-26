@@ -1,14 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { isBefore } from "../../index";
+import { isBefore, setLocales, validate } from "../../index";
+import en from "../../src/i18n/en.json";
 
 describe("isBefore() ", () => {
-  it("should return true for null or undefined values", () => {
-    expect(isBefore(null, "2023-01-01")).toBe(true);
-    expect(isBefore(undefined, "2023-01-01")).toBe(true);
-  });
-
   it("should return true if the value is before the given date", () => {
-    expect(isBefore("2022-01-01", "2023-01-01")).toBe(true);
+    expect(isBefore("2023-01-01", "2023-01-02")).toBe(true);
     expect(isBefore(100, "2023-01-01")).toBe(true);
     expect(isBefore(100, "2022-01-01")).toBe(true);
   });
@@ -25,5 +21,20 @@ describe("isBefore() ", () => {
 
     expect(isBefore(currentDate, futureDate)).toBe(true);
     expect(isBefore(futureDate, currentDate)).toBe(false);
+  });
+
+  it("should be able to use another field as the comparison date", async () => {
+    await setLocales(en);
+
+    const data = {
+      startAt: "2023-01-01",
+      finishAt: "2023-01-31",
+    };
+    const rules = {
+      startAt: "before:finishAt",
+    };
+
+    const result = await validate(data, rules);
+    expect(result.isValid).toBe(true);
   });
 });

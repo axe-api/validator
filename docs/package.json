@@ -9,6 +9,7 @@
     "sitemap-ts": "^1.6.1"
   },
   "devDependencies": {
+    "sass": "^1.69.5",
     "vite-ssg": "^0.23.5",
     "vite-ssg-sitemap": "^0.6.1",
     "vitepress": "^1.0.0-rc.31"

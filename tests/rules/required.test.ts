@@ -10,17 +10,15 @@ describe("isRequired() ", () => {
     expect(isRequired([])).toBe(true);
     expect(isRequired({ key: "value" })).toBe(true);
     expect(isRequired(0)).toBe(true);
+    expect(isRequired(0)).toBe(true);
+    expect(isRequired("0")).toBe(true);
+    expect(isRequired(true)).toBe(true);
   });
 
   it("should return false for null, undefined, and empty string values", () => {
     expect(isRequired(null)).toBe(false);
     expect(isRequired(undefined)).toBe(false);
     expect(isRequired("")).toBe(false);
-  });
-
-  it("should return true for zero and other truthy values", () => {
-    expect(isRequired(0)).toBe(true);
-    expect(isRequired("0")).toBe(true);
-    expect(isRequired(true)).toBe(true);
+    expect(isRequired(" ")).toBe(false);
   });
 });

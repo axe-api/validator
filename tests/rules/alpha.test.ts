@@ -14,14 +14,4 @@ describe("isAlpha() ", () => {
     expect(isAlpha("Special!")).toBe(false);
     expect(isAlpha(123)).toBe(false); // Non-string input
   });
-
-  it("returns true for null or undefined values", () => {
-    expect(isAlpha(null)).toBe(true);
-    expect(isAlpha(undefined)).toBe(true);
-  });
-
-  it("returns true for empty strings", () => {
-    expect(isAlpha("")).toBe(true);
-    expect(isAlpha(" ")).toBe(true);
-  });
 });

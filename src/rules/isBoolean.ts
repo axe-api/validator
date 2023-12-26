@@ -1,9 +1,4 @@
 export default (value: any): boolean => {
-  // Check if the value is null or undefined
-  if (value === null || value === undefined) {
-    return true;
-  }
-
   // Check if the value is a boolean or a valid string representation of boolean
   if (typeof value === "boolean") {
     return true;

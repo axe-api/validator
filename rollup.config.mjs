@@ -5,6 +5,7 @@ import terser from "@rollup/plugin-terser";
 import { babel } from "@rollup/plugin-babel";
 import autoExternal from "rollup-plugin-auto-external";
 import filesize from "rollup-plugin-filesize";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import copy from "rollup-plugin-copy";
 import path from "path";
 
@@ -13,29 +14,22 @@ const name = "bundle";
 const namedInput = "./index.ts";
 const defaultInput = "./default.ts";
 
-const buildConfig = ({
-  es5,
-  browser = true,
-  minifiedVersion = true,
-  ...config
-}) => {
+const buildConfig = ({ es5, browser = true, ...config }) => {
   const { file } = config.output;
   const ext = path.extname(file);
   const basename = path.basename(file, ext);
   const extArr = ext.split(".");
   extArr.shift();
 
-  const build = ({ minified }) => ({
+  const build = () => ({
     input: namedInput,
     ...config,
     output: {
       ...config.output,
-      file: `${path.dirname(file)}/${basename}.${(minified
-        ? ["min", ...extArr]
-        : extArr
-      ).join(".")}`,
+      file: `${path.dirname(file)}/${basename}.${extArr}`,
     },
     plugins: [
+      peerDepsExternal(),
       typescript(),
       copy({
         targets: [{ src: "src/i18n/*", dest: "dist/i18n" }],
@@ -56,11 +50,7 @@ const buildConfig = ({
     ],
   });
 
-  const configs = [build({ minified: false })];
-
-  if (minifiedVersion) {
-    configs.push(build({ minified: true }));
-  }
+  const configs = [build()];
 
   return configs;
 };
@@ -102,7 +92,6 @@ export default async () => {
     ...buildConfig({
       input: defaultInput,
       es5: false,
-      minifiedVersion: false,
       output: {
         file: `dist/browser/${name}.cjs`,
         name,

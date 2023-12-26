@@ -1,8 +1,4 @@
 export default (value: any, list: any[]): boolean => {
-  if (value === null || value === undefined) {
-    return true;
-  }
-
   const listAsString = list.map((item) => String(item).trim());
 
   if (Array.isArray(value)) {

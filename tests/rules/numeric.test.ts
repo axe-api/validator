@@ -4,6 +4,7 @@ import { isNumeric } from "../../index";
 describe("isNumeric() ", () => {
   test("should return true for numeric values", () => {
     expect(isNumeric(42)).toBe(true);
+    expect(isNumeric(0.5432)).toBe(true);
     expect(isNumeric(-3.14)).toBe(true);
     expect(isNumeric("123")).toBe(true);
     expect(isNumeric("-456")).toBe(true);
@@ -16,8 +17,8 @@ describe("isNumeric() ", () => {
     expect(isNumeric("123abc")).toBe(false);
     expect(isNumeric(true)).toBe(false);
     expect(isNumeric(false)).toBe(false);
-    expect(isNumeric(null)).toBe(true); // Special case for null
-    expect(isNumeric(undefined)).toBe(true); // Special case for undefined
+    expect(isNumeric(null)).toBe(false);
+    expect(isNumeric(undefined)).toBe(false);
     expect(isNumeric({})).toBe(false);
     expect(isNumeric([])).toBe(false);
   });

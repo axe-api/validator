@@ -1,6 +1,6 @@
-import { RULE_FUNCTION_MAPS } from "./Constants";
 import { IRuleDefinition } from "./Interface";
 import { RuleType } from "./Types";
+import { DEFINED_RULES } from "./ruleManager";
 
 export const toRuleDefinition = (rule: string): IRuleDefinition => {
   const [name, paramsAsString] = rule.split(":");
@@ -8,9 +8,15 @@ export const toRuleDefinition = (rule: string): IRuleDefinition => {
 
   const params = paramsAsString ? paramsAsString.split(",") : [];
 
+  const callback = DEFINED_RULES[ruleType];
+
+  if (callback === undefined) {
+    throw new Error(`Undefined validation rule: ${ruleType}`);
+  }
+
   return {
     name: ruleType,
-    callback: RULE_FUNCTION_MAPS[ruleType],
+    callback,
     params,
   };
 };

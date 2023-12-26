@@ -1,6 +1,6 @@
 export default (value: any, list: any[]): boolean => {
   if (value === null || value === undefined) {
-    return true;
+    return false;
   }
 
   const listAsString = list.map((item) => String(item).trim());

@@ -1,59 +1,52 @@
 {
-  "hash": "f5bf572c",
-  "browserHash": "c135df37",
+  "hash": "0de1b832",
+  "configHash": "ff5347c3",
+  "lockfileHash": "54634a67",
+  "browserHash": "8bc42beb",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "ac86b552",
+      "fileHash": "b35a2191",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "26fe66bd",
+      "fileHash": "6a882c71",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "742cdaac",
+      "fileHash": "61b74767",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "9bcc0d55",
+      "fileHash": "52e24bd6",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "a5d5d0c3",
+      "fileHash": "fa0dfeb6",
       "needsInterop": false
     },
     "@theme/index": {
       "src": "../../../node_modules/vitepress/dist/client/theme-default/index.js",
       "file": "@theme_index.js",
-      "fileHash": "f6a98d1d",
-      "needsInterop": false
-    },
-    "axios": {
-      "src": "../../../node_modules/axios/index.js",
-      "file": "axios.js",
-      "fileHash": "7e5f9cd2",
+      "fileHash": "9a203ec8",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-XBYK2D3W": {
-      "file": "chunk-XBYK2D3W.js"
+    "chunk-WAIFCIP6": {
+      "file": "chunk-WAIFCIP6.js"
     },
-    "chunk-DTWPM7ZD": {
-      "file": "chunk-DTWPM7ZD.js"
-    },
-    "chunk-CSAU5B4Q": {
-      "file": "chunk-CSAU5B4Q.js"
+    "chunk-7DTDMSOX": {
+      "file": "chunk-7DTDMSOX.js"
     }
   }
 }

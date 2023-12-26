@@ -29,7 +29,7 @@ export type RuleType =
   | "string"
   | "url";
 
-export type RuleFunction = (...args: any[]) => boolean;
+export type RuleFunction = (...args: any[]) => Promise<boolean> | boolean;
 
 export type ValidationResult = Record<string, IRuleResult[]>;
 
@@ -81,6 +81,8 @@ export type LanguageType =
   | "vi"
   | "zh";
 
-export type Translation = Record<RuleType, string>;
+export type Translation = Partial<Record<RuleType, string>>;
 
 export type Definition = Record<string, string | string[]>;
+
+export type InputResultType = "valid" | "invalid" | "fail";

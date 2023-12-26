@@ -9,7 +9,7 @@ A rule is a function that takes at least one argument (value) and validates the 
 The following type definition is the definition of a rule function.
 
 ```ts
-type RuleFunction = (...args: any[]) => boolean;
+type RuleFunction = (...args: any[]) => Promise<boolean> | boolean;
 ```
 
 The first parameter of a rule function should be the value that will be validated always.

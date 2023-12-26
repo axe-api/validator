@@ -6,9 +6,15 @@ import {
   ILocale,
   required,
   email,
+  register,
 } from "../index";
 import en from "../src/i18n/en.json";
 import tr from "../src/i18n/tr.json";
+
+const EXISTS_RULE_TRANSLATIONS = {
+  en: "The record doesn't exists on database: {0}",
+  tr: "Kayıt veritabanında bulunamadı: {0}",
+};
 
 describe("validate() function ", () => {
   beforeAll(async () => {
@@ -170,5 +176,78 @@ describe("validate() function ", () => {
 
     const result = await validate(data, rules);
     expect(result.isValid).toBe(false);
+  });
+
+  test("should not try to validate for empty records", async () => {
+    const data = {
+      email: null,
+      phone: undefined,
+    };
+    const rules = {
+      email: "email",
+      phone: "min:10",
+    };
+
+    const result = await validate(data, rules);
+    expect(result.isValid).toBe(true);
+  });
+
+  test("should throw an error for undefined validation rules", async () => {
+    const data = {
+      email: "user@example.com",
+    };
+    const rules = {
+      email: "exists:users",
+    };
+
+    await expect(validate(data, rules)).rejects.toThrow(
+      "Undefined validation rule: exists"
+    );
+  });
+
+  test("should be able to register a custom rule", async () => {
+    // Register a custom rule
+    const testRule = () => {
+      return true;
+    };
+    register("test", testRule, EXISTS_RULE_TRANSLATIONS);
+
+    const data = {
+      email: "user@example.com",
+    };
+    const rules = {
+      email: "test:users",
+    };
+
+    const results = await validate(data, rules);
+    expect(results.isValid).toBe(true);
+  });
+
+  test("should be able to register a custom rule with translations", async () => {
+    // Register a custom rule
+    const existsRule = () => {
+      return false;
+    };
+    register("exists", existsRule, EXISTS_RULE_TRANSLATIONS);
+
+    const data = {
+      email: "user@example.com",
+    };
+    const rules = {
+      email: "exists:users",
+    };
+
+    const results = await validate(data, rules);
+    expect(results.isValid).toBe(false);
+    expect(results.errors.email[0].rule).toBe("exists");
+    expect(results.errors.email[0].message).toBe(
+      "The record doesn't exists on database: users"
+    );
+  });
+
+  test("should not be able to register the same rule twice", async () => {
+    expect(() =>
+      register("exists", () => false, EXISTS_RULE_TRANSLATIONS)
+    ).toThrow("The rule name is already defined: exists");
   });
 });
