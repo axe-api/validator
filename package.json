@@ -25,7 +25,7 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint .",
-    "prepare": "husky install",
+    "prepare": "husky",
     "build": "rm -rf ./dist && rollup -c"
   },
   "files": [
