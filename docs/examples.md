@@ -11,8 +11,7 @@ You can find a Vue.js example here.
 ```vue [App.vue]
 <script setup>
 import { ref, computed } from "vue";
-import { validate, setLocales } from "robust-validator";
-import en from "robust-validator/dist/i18n/en.json";
+import { validate, setLocales, en } from "robust-validator";
 
 setLocales(en);
 
@@ -45,8 +44,7 @@ You can find a Node.js example here.
 ::: code-group
 
 ```js [index.js]
-const { validate, setLocales } = require("robust-validator");
-const en = require("robust-validator/dist/i18n/en.json");
+const { validate, setLocales, en } = require("robust-validator");
 
 setLocales(en);
 
@@ -72,10 +70,7 @@ You can find a Node.js (ESM) example here.
 ::: code-group
 
 ```js [index.ts]
-import pkg from "robust-validator";
-import en from "robust-validator/dist/i18n/en.json" assert { type: "json" };
-
-const { validate, setLocales } = pkg;
+import { validate, setLocales, en } from "robust-validator";
 
 setLocales(en);
 
@@ -101,8 +96,7 @@ You can find a TypeScript example here.
 ::: code-group
 
 ```js [index.js]
-import { validate, setLocales, setOptions } from "robust-validator";
-import en from "robust-validator/dist/i18n/en.json";
+import { validate, setLocales, en } from "robust-validator";
 
 setLocales(en);
 

@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "allowSyntheticDefaultImports": true,
-    "declaration": true
+    "declaration": true,
+    "typeRoots": ["node_modules/@types", "src/json.d.ts"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist", "docs"],

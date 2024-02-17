@@ -17,8 +17,7 @@ You should just call the `validate()` function with data and the definition.
 ::: code-group
 
 ```js [Declarative]
-import { validate, setLocales } from "robust-validator";
-import en from "robust-validator/dist/i18n/en.json";
+import { validate, setLocales, en } from "robust-validator";
 
 setLocales(en);
 
@@ -46,8 +45,8 @@ import {
   email,
   min,
   max,
+  en,
 } from "robust-validator";
-import en from "robust-validator/dist/i18n/en.json";
 
 setLocales(en);
 

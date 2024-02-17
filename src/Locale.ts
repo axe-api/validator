@@ -3,14 +3,25 @@ import { RuleType, LanguageType } from "./Types";
 
 const TRANSLATIONS: Partial<Record<LanguageType, Record<string, string>>> = {};
 
-export const setLocales = (json: any) => {
-  if (Array.isArray(json)) {
-    const locales = json as ILocale[];
+export const setLocales = (values: ILocale[] | ILocale) => {
+  if (Array.isArray(values)) {
+    const locales = values as ILocale[];
     for (const item of locales) {
-      TRANSLATIONS[item.key] = item.values;
+      mergeTranslations(item);
     }
   } else {
-    const locale = json as ILocale;
+    const locale = values as ILocale;
+    mergeTranslations(locale);
+  }
+};
+
+const mergeTranslations = (locale: ILocale) => {
+  if (TRANSLATIONS[locale.key]) {
+    TRANSLATIONS[locale.key] = {
+      ...TRANSLATIONS[locale.key],
+      ...locale.values,
+    };
+  } else {
     TRANSLATIONS[locale.key] = locale.values;
   }
 };
@@ -24,6 +35,10 @@ export const addCustomLocale = (
   ruleName: string,
   translation: string
 ) => {
+  if (!TRANSLATIONS[locale]) {
+    TRANSLATIONS[locale] = {};
+  }
+
   const root = TRANSLATIONS[locale];
 
   if (root) {
@@ -37,7 +52,7 @@ export const getMessage = (
   rule: RuleType,
   params: any[],
   language: LanguageType,
-  customTranslations: Record<string, string>
+  customTranslations: Record<string, string> = {}
 ) => {
   const defaultTranslations = TRANSLATIONS[language];
   if (defaultTranslations === undefined) {

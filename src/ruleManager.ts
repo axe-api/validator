@@ -1,5 +1,5 @@
 import { RULE_FUNCTION_MAPS } from "./Constants";
-import { addCustomLocale, getLoadedLocales } from "./Locale";
+import { addCustomLocale } from "./Locale";
 import { LanguageType, RuleFunction } from "./Types";
 
 export const DEFINED_RULES: Record<string, RuleFunction> = {
@@ -15,8 +15,7 @@ export const register = (
     throw new Error(`The rule name is already defined: ${name}`);
   }
 
-  const activeLocales = getLoadedLocales();
-  for (const locale of activeLocales) {
+  for (const locale of Object.keys(translations)) {
     const message = translations[locale as LanguageType];
     if (message === undefined) {
       throw new Error(

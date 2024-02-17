@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "common.js",
   "type": "module",
+  "scripts": {
+    "test": "rm -rf node_modules && rm -rf package-lock.json && npm install && node index.js"
+  },
   "dependencies": {
+    "dayjs": "^1.11.10",
     "robust-validator": "file:../../../"
   }
 }

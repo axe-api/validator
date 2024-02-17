@@ -1,5 +1,10 @@
-import { validate, setLocales, setOptions, isEmail } from "robust-validator";
-import en from "robust-validator/dist/i18n/en.json";
+import {
+  validate,
+  setLocales,
+  setOptions,
+  isEmail,
+  az,
+} from "robust-validator";
 
 const data = {
   email: null,
@@ -10,9 +15,9 @@ const rules = {
 };
 
 const main = async () => {
-  setLocales(en);
+  setLocales(az);
   setOptions({
-    language: "en",
+    language: "az",
   });
   const result = await validate(data, rules);
   if (result.isValid) {
@@ -20,7 +25,7 @@ const main = async () => {
   }
 
   const { message } = result.errors.email[0];
-  if (message !== "The field field is required.") {
+  if (message !== "Sahə tələb olunur.") {
     throw new Error(`Unaccepted message: ${message}`);
   }
 
