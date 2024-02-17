@@ -5,8 +5,7 @@ You can register your custom rules easily.
 ## Register
 
 ```ts
-import { validate, setLocales, register } from "robust-validator";
-import en from "robust-validator/dist/i18n/en.json";
+import { validate, setLocales, register, en } from "robust-validator";
 
 // Setting the locales firsrts
 setLocales(en);

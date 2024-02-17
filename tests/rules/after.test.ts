@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isAfter, setLocales, validate } from "../../index";
-import en from "../../src/i18n/en.json";
+import { isAfter, setLocales, validate, en } from "../../index";
 
 describe("isAfter()", () => {
   it("should return true if value is after the date", () => {

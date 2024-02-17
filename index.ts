@@ -7,3 +7,4 @@ export * from "./src/converters";
 export * from "./src/Constants";
 export * from "./src/Interface";
 export * from "./src/Types";
+export * from "./src/i18n";

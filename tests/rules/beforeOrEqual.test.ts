@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isBeforeOrEqual, setLocales, validate } from "../../index";
-import en from "../../src/i18n/en.json";
+import { isBeforeOrEqual, setLocales, validate, en } from "../../index";
 
 describe("isBeforeOrEqual() ", () => {
   it("should return true if the value is before or equal to the date", () => {

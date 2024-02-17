@@ -54,8 +54,8 @@ describe("Locale helpers", () => {
   test("setLocales() should be able to load all supported languages", async () => {
     expect(true).toBe(true);
     for (const language of Object.keys(LANGUAGES)) {
-      const content = await import(`../src/i18n/${language}.json`);
-      const locale = content.default as ILocale;
+      const content = await import(`../src/i18n`);
+      const locale = content[language] as ILocale;
       expect(locale.key).toBe(language);
       await setLocales(locale);
     }

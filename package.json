@@ -1,32 +1,25 @@
 {
   "name": "robust-validator",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Rule-based data validation library",
+  "type": "module",
+  "source": "./index.ts",
   "exports": {
-    ".": {
-      "types": {
-        "default": "./dist/index.d.ts"
-      },
-      "browser": {
-        "require": "./dist/browser/bundle.cjs",
-        "default": "./dist/index.js"
-      },
-      "default": {
-        "require": "./dist/node/bundle.cjs",
-        "default": "./dist/bundle.js"
-      }
-    },
-    "./package.json": "./package.json",
-    "./i18n/*": "./dist/i18n/*",
-    "./dist/i18n/*": "./dist/i18n/*"
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "test:consumer": "sh scripts/consumer-test.sh",
     "lint": "eslint .",
     "prepare": "husky",
-    "build": "rm -rf ./dist && rollup -c"
+    "build": "rm -rf ./dist && microbundle"
   },
   "files": [
     "/dist"
@@ -60,11 +53,6 @@
     "@babel/preset-env": "^7.23.6",
     "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
     "@types/jest": "^29.5.11",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
@@ -77,6 +65,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^9.0.10",
     "jest": "^29.7.0",
+    "microbundle": "^0.15.1",
     "rollup": "^4.9.1",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-auto-external": "^2.0.0",
@@ -84,6 +73,7 @@
     "rollup-plugin-filesize": "^10.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.36.0",
+    "terser": "^5.27.1",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",

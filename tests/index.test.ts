@@ -7,9 +7,10 @@ import {
   required,
   email,
   register,
+  en,
+  tr,
+  az,
 } from "../index";
-import en from "../src/i18n/en.json";
-import tr from "../src/i18n/tr.json";
 
 const EXISTS_RULE_TRANSLATIONS = {
   en: "The record doesn't exists on database: {0}",
@@ -242,6 +243,36 @@ describe("validate() function ", () => {
     expect(results.errors.email[0].rule).toBe("exists");
     expect(results.errors.email[0].message).toBe(
       "The record doesn't exists on database: users"
+    );
+  });
+
+  test("should be able to register a rule before setLocales", async () => {
+    const isNullable = (value: any) => {
+      if (value === null || value === "null") {
+        return true;
+      }
+      return false;
+    };
+
+    register("nullable", isNullable, {
+      en: "The {0} field must be null or empty.",
+      tr: "The {0} field must be null or empty.",
+      az: "AZ: The {0} field must be null or empty!",
+    });
+
+    setLocales(az);
+
+    const data = {
+      email: "user@example.com",
+    };
+    const rules = {
+      email: "nullable",
+    };
+
+    const results = await validate(data, rules, { language: "az" });
+    expect(results.isValid).toBe(false);
+    expect(results.errors.email[0].message).toBe(
+      "AZ: The {0} field must be null or empty!"
     );
   });
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "ts-node index.ts"
+    "test": "rm -rf node_modules && rm -rf package-lock.json && npm install && ts-node index.ts"
   },
   "dependencies": {
     "robust-validator": "file:../../../"

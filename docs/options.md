@@ -5,8 +5,7 @@
 You can set options for the validator.
 
 ```ts
-import { validate, setLocales, setOptions } from "robust-validator";
-import en from "robust-validator/dist/i18n/en.json";
+import { validate, setLocales, setOptions, en } from "robust-validator";
 
 setLocales(en);
 
@@ -23,8 +22,7 @@ setOptions({
 You can override the default options for a validate action like the following example:
 
 ```ts
-import { validate, setLocales, setOptions } from "robust-validator";
-import en from "robust-validator/dist/i18n/en.json";
+import { validate, setLocales, setOptions, en } from "robust-validator";
 
 setLocales(en);
 

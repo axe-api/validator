@@ -1,5 +1,10 @@
-const { validate, setLocales, isEmail } = require("robust-validator");
-const en = require("robust-validator/dist/i18n/en.json");
+const {
+  validate,
+  setLocales,
+  isEmail,
+  setOptions,
+  az,
+} = require("robust-validator");
 
 const data = {
   email: null,
@@ -10,14 +15,15 @@ const rules = {
 };
 
 const main = async () => {
-  setLocales(en);
+  setLocales(az);
+  setOptions({ language: "az" });
   const result = await validate(data, rules);
   if (result.isValid) {
     throw new Error("The email should be invalid!");
   }
 
   const { message } = result.errors.email[0];
-  if (message !== "The field field is required.") {
+  if (message !== "Sahə tələb olunur.") {
     throw new Error(`Unaccepted message: ${message}`);
   }
 

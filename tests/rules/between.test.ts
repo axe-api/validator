@@ -1,6 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { isBetween, setLocales, validate } from "../../index";
-import en from "../../src/i18n/en.json";
+import { isBetween, setLocales, validate, en } from "../../index";
 
 const positiveList = [
   [5, 1, 10],
