@@ -1,7 +1,7 @@
 /**
- * The field under validation must have a matching field of foo_confirmation.
+ * The field under validation must have a matching field of foo_confirmed.
  * For example, if the field under validation is password, a matching
- * password_confirmation field must be present in the input.
+ * password_confirmed field must be present in the input.
  *
  * @example
  *  import { confirmed } from "robust-validator"

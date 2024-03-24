@@ -476,7 +476,7 @@ isBoolean(true);
 
 ## `confirmed`
 
-The field under validation must have a matching field of `foo_confirmation`. For example, if the field under validation is `password`, a matching `password_confirmation` field must be present in the input.
+The field under validation must have a matching field of `foo_confirmed`. For example, if the field under validation is `password`, a matching `password_confirmed` field must be present in the input.
 
 Let's assume that the value of the `password` field is `123456`. If you use the `confirmed` definition on the `password` field's rules, the truth table would look like the following example:
 
@@ -502,15 +502,15 @@ isConfirmed("your-data");
 
 :::
 
-| Field                   | Value       | Is valid? |
-| ----------------------- | ----------- | --------- |
-| `password_confirmation` | `123456`    | 🟢        |
-| `password_confirmation` | `654321`    | 🔴        |
-| `password_confirmation` | `null`      | 🔴        |
-| `password_confirmation` | `undefined` | 🔴        |
-| `password_confirmation` | `true`      | 🔴        |
-| `password_confirmation` | `false`     | 🔴        |
-| `password_confirmation` | `{}`        | 🔴        |
+| Field                | Value       | Is valid? |
+| -------------------- | ----------- | --------- |
+| `password_confirmed` | `123456`    | 🟢        |
+| `password_confirmed` | `654321`    | 🔴        |
+| `password_confirmed` | `null`      | 🔴        |
+| `password_confirmed` | `undefined` | 🔴        |
+| `password_confirmed` | `true`      | 🔴        |
+| `password_confirmed` | `false`     | 🔴        |
+| `password_confirmed` | `{}`        | 🔴        |
 
 ## `date:format`
 
