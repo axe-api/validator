@@ -1,5 +1,9 @@
 # Release Notes
 
+## [1.1.1 (2024-09-19)](https://github.com/axe-api/axe-api/compare/1.1.1...1.1.0)
+
+- Security fix
+
 ## [1.1.0 (2024-02-17)](https://github.com/axe-api/axe-api/compare/1.1.0...1.0.1)
 
 - Fixed bundling issues
