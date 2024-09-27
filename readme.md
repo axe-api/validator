@@ -58,6 +58,14 @@ const result = await validate(data, definition);
 console.log(result);
 ```
 
+## 🤝 Contributors
+
+<a href="https://github.com/axe-api/validator/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=axe-api/validator" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
 ## ⚖️ License
 
 [MIT License](LICENSE)
