@@ -7,7 +7,6 @@
     "test": "rm -rf node_modules && rm -rf package-lock.json && npm install && node index.js"
   },
   "dependencies": {
-    "dayjs": "^1.11.10",
     "robust-validator": "file:../../../"
   }
 }

@@ -5,7 +5,7 @@
  *  import { date } from "robust-validator"
  *
  *  const definition = {
- *    value: [date("YYYY-MM-DD")]
+ *    value: [date("yyyy-MM-dd")]
  *  };
  * @type {string}
  * @tutorial https://validator.axe-api.com/rules.html#date-format

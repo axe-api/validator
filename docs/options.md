@@ -13,7 +13,7 @@ setLocales(en);
 setOptions({
   stopOnFail: true,
   language: "en",
-  dateFormat: "YYYY-MM-DD",
+  dateFormat: "yyyy-MM-dd",
 });
 ```
 
@@ -30,7 +30,7 @@ setLocales(en);
 setOptions({
   stopOnFail: true,
   language: "en",
-  dateFormat: "YYYY-MM-DD",
+  dateFormat: "yyyy-MM-dd",
 });
 
 await validate(
@@ -40,7 +40,7 @@ await validate(
   {
     stopOnFail: false,
     language: "de",
-    dateFormat: "YYYY-MM-DD",
+    dateFormat: "yyyy-MM-dd",
   },
 );
 ```
