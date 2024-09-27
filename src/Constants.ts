@@ -1,6 +1,5 @@
 import { RuleType, RuleFunction } from "./Types";
 import * as rules from "./rules";
-import { IOptions } from "./Interface";
 
 export const RULE_FUNCTION_MAPS: Record<RuleType, RuleFunction> = {
   string: rules.isString,
@@ -30,10 +29,4 @@ export const RULE_FUNCTION_MAPS: Record<RuleType, RuleFunction> = {
   required: rules.isRequired,
   size: rules.isSize,
   url: rules.isUrl,
-};
-
-export const DEFAULT_OPTIONS: IOptions = {
-  stopOnFail: false,
-  language: "en",
-  dateFormat: "YYYY-MM-DD",
 };
