@@ -1,5 +1,11 @@
 # Release Notes
 
+## [2.0.0 (2024-09-27)](https://github.com/axe-api/axe-api/compare/2.0.0...1.1.1)
+
+- Fixed bundling issues
+- The [dayjs](https://day.js.org) library with [date-fns](https://date-fns.org). You _MUST_ replace the date formats:
+  - `YYYY-MM-DD` => `yyyy-MM-dd`
+
 ## [1.1.1 (2024-09-19)](https://github.com/axe-api/axe-api/compare/1.1.1...1.1.0)
 
 - Security fix

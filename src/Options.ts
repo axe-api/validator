@@ -3,7 +3,7 @@ import { IOptions } from "./Interface";
 const DEFAULT_OPTIONS: IOptions = {
   stopOnFail: false,
   language: "en",
-  dateFormat: "YYYY-MM-DD",
+  dateFormat: "yyyy-MM-dd",
 };
 
 let OPTIONS: IOptions = {

@@ -1,14 +1,14 @@
 {
   "name": "robust-validator",
-  "version": "2.0.0-rc-2",
+  "version": "2.0.0",
   "description": "Rule-based data validation library",
   "type": "module",
-   "main": "dist/index.cjs",   
-  "module": "dist/index.mjs", 
-  "types": "dist/index.d.ts",    
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",  
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     }
@@ -59,7 +59,6 @@
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
     "@vitest/coverage-v8": "^1.1.0",
-    "dayjs": "^1.11.10",
     "eslint": "^8.56.0",
     "eslint-config-standard-with-typescript": "^43.0.0",
     "eslint-plugin-import": "^2.29.1",
@@ -81,7 +80,7 @@
     "typescript": "^5.3.3",
     "vitest": "^1.1.0"
   },
-  "peerDependencies": {
-    "dayjs": "^1.11.10"
+  "dependencies": {
+    "date-fns": "^4.1.0"
   }
 }

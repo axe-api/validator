@@ -1,17 +1,17 @@
-import dayjs from "dayjs";
+import { format } from "date-fns";
 
 export const RULE_PARAMETER_MAP: Record<string, any[]> = {
   string: [],
   boolean: [],
   accepted: [],
-  after: [dayjs().format("YYYY-MM-DD")],
-  after_or_equal: [dayjs().format("YYYY-MM-DD")],
+  after: [format(new Date(), "yyyy-MM-dd")],
+  after_or_equal: [format(new Date(), "yyyy-MM-dd")],
   alpha: [],
   alpha_dash: [],
   alpha_num: [],
   array: [],
-  before: [dayjs().format("YYYY-MM-DD")],
-  before_or_equal: [dayjs().format("YYYY-MM-DD")],
+  before: [format(new Date(), "yyyy-MM-dd")],
+  before_or_equal: [format(new Date(), "yyyy-MM-dd")],
   between: [5, 10],
   confirmed: [],
   date: [],

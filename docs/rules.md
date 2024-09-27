@@ -79,15 +79,9 @@ isAfter("your-value", "2023-01-01");
 :::
 
 :::tip
-robust-validator library uses the [dayjs](https://day.js.org/) for the date validations.
+robust-validator library uses the [date-fns](https://date-fns.org) for the date validations.
 
-You can check the possible date formats [here](https://day.js.org/docs/en/parse/string-format).
-:::
-
-:::warning
-You MUST install the [dayjs](https://day.js.org/) is to your project.
-
-`npm install dayjs` or `yarn add dayjs`
+You can check the possible date formats [here](https://date-fns.org/v4.1.0/docs/format).
 :::
 
 | Rule               | Value        | `startAt`    | Is valid? |
@@ -128,15 +122,9 @@ isAfterOrEqual("your-value", "2023-01-01");
 :::
 
 :::tip
-robust-validator library uses the [dayjs](https://day.js.org/) for the date validations.
+robust-validator library uses the [date-fns](https://date-fns.org) for the date validations.
 
-You can check the possible date formats [here](https://day.js.org/docs/en/parse/string-format).
-:::
-
-:::warning
-You MUST install the [dayjs](https://day.js.org/) is to your project.
-
-`npm install dayjs` or `yarn add dayjs`
+You can check the possible date formats [here](https://date-fns.org/v4.1.0/docs/format).
 :::
 
 | Rule                        | Value        | `startAt`    | Is valid? |
@@ -329,15 +317,9 @@ isBefore("your-value", "2023-01-01");
 :::
 
 :::tip
-robust-validator library uses the [dayjs](https://day.js.org/) for the date validations.
+robust-validator library uses the [date-fns](https://date-fns.org) for the date validations.
 
-You can check the possible date formats [here](https://day.js.org/docs/en/parse/string-format).
-:::
-
-:::warning
-You MUST install the [dayjs](https://day.js.org/) is to your project.
-
-`npm install dayjs` or `yarn add dayjs`
+You can check the possible date formats [here](https://date-fns.org/v4.1.0/docs/format).
 :::
 
 | Rule                | Value        | `finishAt`   | Is valid? |
@@ -378,15 +360,9 @@ isBeforeOrEqual("your-value", "2023-01-01");
 The field under validation must be before or equal to the given date.
 
 :::tip
-robust-validator library uses the [dayjs](https://day.js.org/) for the date validations.
+robust-validator library uses the [date-fns](https://date-fns.org) for the date validations.
 
-You can check the possible date formats [here](https://day.js.org/docs/en/parse/string-format).
-:::
-
-:::warning
-You MUST install the [dayjs](https://day.js.org/) is to your project.
-
-`npm install dayjs` or `yarn add dayjs`
+You can check the possible date formats [here](https://date-fns.org/v4.1.0/docs/format).
 :::
 
 | Rule                         | Value        | `finishAt`   | Is valid? |
@@ -516,39 +492,45 @@ isConfirmed("your-data");
 
 The field under validation must be a valid date format which is acceptable by Javascript's Date object.
 
+:::tip
+robust-validator library uses the [date-fns](https://date-fns.org) for the date validations.
+
+You can check the possible date formats [here](https://date-fns.org/v4.1.0/docs/format).
+:::
+
 ::: code-group
 
 ```ts [Declarative]
 import { validate } from "robust-validator";
 // ...
-await validate(data, { startAt: "date:YYYY-MM-DD" });
+await validate(data, { startAt: "date:yyyy-MM-dd" });
 ```
 
 ```ts [Function-based]
 import { validate, date } from "robust-validator";
 // ...
-await validate(data, { startAt: [date("YYYY-MM-DD")] });
+await validate(data, { startAt: [date("yyyy-MM-dd")] });
 ```
 
 ```ts [Direct usage]
 import { isDate } from "robust-validator";
 // ...
-isDate("your-data", "YYYY-MM-DD");
+isDate("your-data", "yyyy-MM-dd");
 ```
 
 :::
 
 | Rule              | Value                        | Is valid? |
 | ----------------- | ---------------------------- | --------- |
-| `date:YYYY-MM-DD` | `null`                       | 🔴        |
-| `date:YYYY-MM-DD` | `undefined`                  | 🔴        |
-| `date:YYYY-MM-DD` | `2023-12-16`                 | 🟢        |
-| `date:YYYY-MM-DD` | `2023-01-01`                 | 🟢        |
-| `date:YYYY-MM-DD` | `December 16, 2023 12:00:00` | 🔴        |
-| `date:YYYY-MM-DD` | `2022-13-01`                 | 🔴        |
-| `date:YYYY-MM-DD` | `2022-12-32`                 | 🔴        |
-| `date:YYYY-MM-DD` | `2022-02-29`                 | 🔴        |
-| `date:YYYY-MM-DD` | `false`                      | 🔴        |
+| `date:yyyy-MM-dd` | `null`                       | 🔴        |
+| `date:yyyy-MM-dd` | `undefined`                  | 🔴        |
+| `date:yyyy-MM-dd` | `2023-12-16`                 | 🟢        |
+| `date:yyyy-MM-dd` | `2023-01-01`                 | 🟢        |
+| `date:yyyy-MM-dd` | `December 16, 2023 12:00:00` | 🔴        |
+| `date:yyyy-MM-dd` | `2022-13-01`                 | 🔴        |
+| `date:yyyy-MM-dd` | `2022-12-32`                 | 🔴        |
+| `date:yyyy-MM-dd` | `2022-02-29`                 | 🔴        |
+| `date:yyyy-MM-dd` | `false`                      | 🔴        |
 
 ## `digits:value`
 
