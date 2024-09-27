@@ -1,17 +1,18 @@
 {
   "name": "robust-validator",
-  "version": "1.1.1",
+  "version": "2.0.0-rc-2",
   "description": "Rule-based data validation library",
   "type": "module",
-  "source": "./index.ts",
+   "main": "dist/index.cjs",   
+  "module": "dist/index.mjs", 
+  "types": "dist/index.d.ts",    
   "exports": {
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.modern.js"
+    ".": {
+      "import": "./dist/index.mjs",  
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.module.js",
-  "unpkg": "./dist/index.umd.js",
-  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
@@ -19,7 +20,7 @@
     "test:consumer": "sh scripts/consumer-test.sh",
     "lint": "eslint .",
     "prepare": "husky",
-    "build": "rm -rf ./dist && microbundle"
+    "build": "rm -rf ./dist && rollup -c"
   },
   "files": [
     "/dist"
@@ -53,6 +54,7 @@
     "@babel/preset-env": "^7.23.6",
     "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",
+    "@rollup/plugin-typescript": "^12.1.0",
     "@types/jest": "^29.5.11",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
@@ -65,7 +67,6 @@
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^9.0.10",
     "jest": "^29.7.0",
-    "microbundle": "^0.15.1",
     "rollup": "^4.9.1",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-auto-external": "^2.0.0",

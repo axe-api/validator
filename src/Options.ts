@@ -1,5 +1,10 @@
 import { IOptions } from "./Interface";
-import { DEFAULT_OPTIONS } from "./Constants";
+
+const DEFAULT_OPTIONS: IOptions = {
+  stopOnFail: false,
+  language: "en",
+  dateFormat: "YYYY-MM-DD",
+};
 
 let OPTIONS: IOptions = {
   ...DEFAULT_OPTIONS,
