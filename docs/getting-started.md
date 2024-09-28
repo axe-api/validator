@@ -83,7 +83,7 @@ By the example, you would get the following response:
     "email": [
       {
         "rule": "required",
-        "message": "The field field is required."
+        "message": "The field is required."
       }
     ]
   }

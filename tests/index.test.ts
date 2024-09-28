@@ -65,7 +65,7 @@ describe("validate() function ", () => {
     const result = await validate(data, rules);
     expect(result.isValid).toBe(false);
     expect(result.errors.price[0].message).toBe(
-      "The field field must be between 1000 and 2000."
+      "The field must be between 1000 and 2000."
     );
   });
 
@@ -96,11 +96,11 @@ describe("validate() function ", () => {
 
     const result = await validate({ email: "" }, rules, {
       translations: {
-        required: "The field field is required. (custom translation message)",
+        required: "The field is required. (custom translation message)",
       },
     });
     expect(result.errors.email[0].message).toBe(
-      "The field field is required. (custom translation message)"
+      "The field is required. (custom translation message)"
     );
   });
 
