@@ -1,5 +1,9 @@
 # Release Notes
 
+## [2.0.1 (2024-09-28)](https://github.com/axe-api/axe-api/compare/2.0.1...2.0.0)
+
+- Fixed validation messages in English
+
 ## [2.0.0 (2024-09-27)](https://github.com/axe-api/axe-api/compare/2.0.0...1.1.1)
 
 - Fixed bundling issues
