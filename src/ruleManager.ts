@@ -6,6 +6,10 @@ export const DEFINED_RULES: Record<string, RuleFunction> = {
   ...RULE_FUNCTION_MAPS,
 };
 
+export const isRegistered = (name: string) => {
+  return DEFINED_RULES.includes(name);
+};
+
 export const register = (
   name: string,
   ruleFunction: RuleFunction,
