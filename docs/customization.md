@@ -2,7 +2,7 @@
 
 You can register your custom rules easily.
 
-## Register
+## `register()`
 
 ```ts
 import { validate, setLocales, register, en } from "robust-validator";
@@ -32,4 +32,16 @@ const validateData = async () => {
     },
   );
 };
+```
+
+## `isRegister()`
+
+You can check if the rule is already register.
+
+```ts
+import { isRegistered, register } from "robust-validator";
+
+if (!isRegistered("myCustomRule")) {
+  // register your rule
+}
 ```
