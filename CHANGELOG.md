@@ -1,5 +1,9 @@
 # Release Notes
 
+## [2.1.0 (2024-10-19)](https://github.com/axe-api/axe-api/compare/2.1.0...2.0.1)
+
+- Added `isRegistered()` function. [#60](https://github.com/axe-api/validator/issues/60)
+
 ## [2.0.1 (2024-09-28)](https://github.com/axe-api/axe-api/compare/2.0.1...2.0.0)
 
 - Fixed validation messages in English
