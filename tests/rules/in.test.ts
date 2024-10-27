@@ -40,4 +40,8 @@ describe("isIn() ", () => {
     expect(isIn("A", ["a", "b", "c"])).toBe(false);
     expect(isIn("A", ["A", "B", "C"])).toBe(true);
   });
+
+  it("should be able to parse string values", async () => {
+    expect(isIn("A", "A,B,B")).toBe(true);
+  });
 });
