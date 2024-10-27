@@ -38,4 +38,9 @@ describe("isNotIn() ", () => {
     expect(isNotIn("A", ["a", "b", "c"])).toBe(true);
     expect(isNotIn("A", ["A", "B", "C"])).toBe(false);
   });
+
+  it("should be able to parse string values", async () => {
+    expect(isNotIn("A", "a,b,c")).toBe(true);
+    expect(isNotIn("A", "A,B,C")).toBe(false);
+  });
 });

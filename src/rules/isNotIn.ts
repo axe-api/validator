@@ -1,8 +1,9 @@
-export default (value: any, list: any[]): boolean => {
+export default (value: any, options: any[] | string): boolean => {
   if (value === null || value === undefined) {
     return false;
   }
 
+  const list: any[] = Array.isArray(options) ? options : options.split(",");
   const listAsString = list.map((item) => String(item).trim());
 
   if (Array.isArray(value)) {
