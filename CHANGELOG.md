@@ -1,5 +1,9 @@
 # Release Notes
 
+## [2.1.1 (2024-10-27)](https://github.com/axe-api/axe-api/compare/2.1.1...2.1.0)
+
+- TypeError: list.map is not a function [#62](https://github.com/axe-api/validator/issues/62)
+
 ## [2.1.0 (2024-10-19)](https://github.com/axe-api/axe-api/compare/2.1.0...2.0.1)
 
 - Added `isRegistered()` function. [#60](https://github.com/axe-api/validator/issues/60)
