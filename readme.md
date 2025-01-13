@@ -1,8 +1,26 @@
-# Robust Validator
+#
 
-<div style="display: flex; justify-content: center">
-  <img src="docs/public/logo.png" />
-</div>
+<h1 align="center">
+  <br>
+  <a href="https://validator.axe-api.com/">
+    <img src="https://validator.axe-api.com/logo.png" width="200">
+  </a>
+  <br>
+  Robust Validator
+  <br>
+  <a href="https://badge.fury.io/js/robust-validator">
+    <img src="https://badge.fury.io/js/robust-validator.svg" alt="npm version" height="18">
+  </a>
+  <a href="https://github.com/axe-api/validator/actions/workflows/npm-release-publish.yml" target="_blank">
+    <img src="https://github.com/axe-api/validator/actions/workflows/npm-release-publish.yml/badge.svg?branch=master">
+  </a>
+  <a href="https://github.com/axe-api/validator/issues" target="_blank">
+    <img src="https://img.shields.io/github/issues/axe-api/validator.svg">
+  </a>
+  <a href="https://opensource.org/licenses/MIT" target="_blank">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg">
+  </a>
+</h1>
 
 Rule-based data validation in JS. Extendable, function-oriented, i18n-supported
 
