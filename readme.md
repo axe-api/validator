@@ -1,5 +1,9 @@
 # Robust Validator
 
+<div style="display: flex; justify-content: center">
+  <img src="docs/public/logo.png" />
+</div>
+
 Rule-based data validation in JS. Extendable, function-oriented, i18n-supported
 
 [Documentation](https://validator.axe-api.com/)

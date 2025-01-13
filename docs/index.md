@@ -6,6 +6,9 @@ hero:
   name: "Robust Validator"
   text: "Rule-based data validation in JS"
   tagline: Extendable, function-oriented, i18n-supported
+  image:
+    src: /logo.png
+    alt: Robust Validator
   actions:
     - theme: brand
       text: Getting started
