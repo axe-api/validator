@@ -1,5 +1,9 @@
 # Release Notes
 
+## [2.2.0 (2025-01-13)](https://github.com/axe-api/axe-api/compare/2.2.0...2.2.1)
+
+- Array and object validation [#54](https://github.com/axe-api/validator/issues/54)
+
 ## [2.1.1 (2024-10-27)](https://github.com/axe-api/axe-api/compare/2.1.1...2.1.0)
 
 - TypeError: list.map is not a function [#62](https://github.com/axe-api/validator/issues/62)

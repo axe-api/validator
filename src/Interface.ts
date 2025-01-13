@@ -44,3 +44,14 @@ export interface ILocale {
   key: LanguageType;
   values: Translation;
 }
+
+export interface ITraversePair {
+  path: string;
+  value: any;
+}
+
+export interface ITraverseItem {
+  path: string;
+  rules: string | string[];
+  resolved: Array<ITraversePair>;
+}
