@@ -11,8 +11,8 @@
   <a href="https://badge.fury.io/js/robust-validator">
     <img src="https://badge.fury.io/js/robust-validator.svg" alt="npm version" height="18">
   </a>
-  <a href="https://github.com/axe-api/validator/actions/workflows/npm-release-publish.yml" target="_blank">
-    <img src="https://github.com/axe-api/validator/actions/workflows/npm-release-publish.yml/badge.svg?branch=master">
+  <a href="https://github.com/axe-api/validator/actions/workflows/npm-publish.yml" target="_blank">
+    <img src="https://github.com/axe-api/validator/actions/workflows/npm-publish.yml/badge.svg?branch=main">
   </a>
   <a href="https://github.com/axe-api/validator/issues" target="_blank">
     <img src="https://img.shields.io/github/issues/axe-api/validator.svg">
