@@ -19,7 +19,7 @@ const EXISTS_RULE_TRANSLATIONS = {
 
 describe("validate() function ", () => {
   beforeAll(async () => {
-    await setLocales(en as ILocale);
+    setLocales(en as ILocale);
   });
 
   test("should be able to validate the general structure", async () => {
