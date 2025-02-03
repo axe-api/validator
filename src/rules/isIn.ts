@@ -1,4 +1,10 @@
-export default (value: any, options: any[] | string): boolean => {
+export default (value: any, ...options: any): boolean => {
+  // support calls by "validate()" which uses spreading to pass all options.
+  // This behavior is different compared to standalone usage of this function.
+  if (options.length === 1) {
+    options = options[0]
+  }
+
   const list: any[] = Array.isArray(options) ? options : options.split(",");
   const listAsString = list.map((item) => String(item).trim());
 

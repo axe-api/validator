@@ -36,6 +36,11 @@ describe("isIn() ", () => {
     expect(isIn(["a", "b"], [])).toBe(false);
   });
 
+  it("should return false for empty options", () => {
+    expect(isIn("a")).toBe(false);
+    expect(isIn(["a", "b"])).toBe(false);
+  });
+
   it("should handle case sensitivity correctly", () => {
     expect(isIn("A", ["a", "b", "c"])).toBe(false);
     expect(isIn("A", ["A", "B", "C"])).toBe(true);
@@ -43,5 +48,10 @@ describe("isIn() ", () => {
 
   it("should be able to parse string values", async () => {
     expect(isIn("A", "A,B,B")).toBe(true);
+  });
+
+  it("should be able to work with spread-string options", async () => {
+    expect(isIn("A", ...["A,B,B"])).toBe(true);
+    expect(isIn("A", ...["A","B","C"])).toBe(true);
   });
 });
