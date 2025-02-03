@@ -43,5 +43,18 @@ describe("isIn() ", () => {
 
   it("should be able to parse string values", async () => {
     expect(isIn("A", "A,B,B")).toBe(true);
+    expect(isIn("B", "A,B,C")).toBe(true);
+    expect(isIn("C", "A,B,C")).toBe(true);
+    expect(isIn("D", "A,B,C")).toBe(false);
+
+    expect(isIn("a", ["a", "b", "c"])).toBe(true);
+    expect(isIn("b", ["a", "b", "c"])).toBe(true);
+    expect(isIn("c", ["a", "b", "c"])).toBe(true);
+    expect(isIn("d", ["a", "b", "c"])).toBe(false);
+  });
+
+  it("should be able to work with spread-string options", async () => {
+    expect(isIn("A", ...["A,B,B"])).toBe(true);
+    expect(isIn("A", ...["A", "B", "C"])).toBe(true);
   });
 });
