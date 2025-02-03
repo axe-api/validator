@@ -1,6 +1,6 @@
 {
   "name": "robust-validator",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Rule-based data validation library",
   "type": "module",
   "main": "dist/index.cjs",
