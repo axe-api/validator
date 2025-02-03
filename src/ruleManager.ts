@@ -7,7 +7,7 @@ export const DEFINED_RULES: Record<string, RuleFunction> = {
 };
 
 export const isRegistered = (name: string) => {
-  return DEFINED_RULES.includes(name);
+  return Object.keys(DEFINED_RULES).includes(name);
 };
 
 export const register = (
