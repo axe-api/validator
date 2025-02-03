@@ -1,5 +1,15 @@
 # Release Notes
 
+## [2.2.1 (2025-02-03)](https://github.com/axe-api/axe-api/compare/2.2.1...2.2.0)
+
+🎉 Big thanks to our contributors for this release!
+Special shoutout to: @christoph-kluge 🚀👏
+
+Your help makes this project better—cheers! 🎩✨
+
+- Fixed: Argument parsing issue on different functions [#70](https://github.com/axe-api/validator/issues/70)
+- Fixed: Internal server error: DEFINED_RULES.includes is not a function [#68](https://github.com/axe-api/validator/issues/68)
+
 ## [2.2.0 (2025-01-13)](https://github.com/axe-api/axe-api/compare/2.2.0...2.2.1)
 
 - Array and object validation [#54](https://github.com/axe-api/validator/issues/54)
