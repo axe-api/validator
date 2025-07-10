@@ -1,16 +1,12 @@
 import { beforeAll, describe, test, expect } from "vitest";
-import {
-  setLocales,
-  en,
-  ILocale,
-  isRegistered,
-  register,
-  validate,
-} from "../index";
+import { setLocales } from "../src/Locale";
+import { en } from "../src/i18n";
+import { isRegistered, register } from "../src/ruleManager";
+import { validate } from "../src/helpers/validate";
 
 describe("isRegistered()", () => {
   beforeAll(async () => {
-    setLocales(en as ILocale);
+    setLocales(en);
   });
 
   test("should check the unregistered rules", async () => {

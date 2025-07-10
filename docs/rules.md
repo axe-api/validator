@@ -675,7 +675,7 @@ isHex("f1f1f1");
 | `hex` | `0xg`              | 🔴        |
 | `hex` | `invalid string`   | 🔴        |
 
-## `in:foo,bar,...`
+## `includes:foo,bar,...`
 
 The field under validation must be included in the given list of values.
 
@@ -684,32 +684,35 @@ The field under validation must be included in the given list of values.
 ```ts [Declarative]
 import { validate } from "robust-validator";
 // ...
-await validate(data, { userChoice: "in:news,marketing" });
+await validate(data, { userChoice: "includes:news,marketing" });
 ```
 
 ```ts [Function-based]
-import { validate, in } from "robust-validator";
+import { validate, includes } from "robust-validator";
 // ...
-await validate(data, { userChoice: [in(["news", "marketing"])] });
+await validate(data, { userChoice: [includes(["news", "marketing"])] });
 ```
 
 ```ts [Direct usage]
-import { isIn } from "robust-validator";
+import { isIncludes } from "robust-validator";
 // ...
-isIn("your-data", ["news", "marketing"]);
+isIncludes("your-data", "news,marketing");
+
+// or
+isIncludes("your-data", ["news", "marketing"]);
 ```
 
 :::
 
-| Rule     | Value       | Is valid? |
-| -------- | ----------- | --------- |
-| `in:A,B` | `null`      | 🔴        |
-| `in:A,B` | `undefined` | 🔴        |
-| `in:A,B` | `A`         | 🟢        |
-| `in:A,B` | `B`         | 🟢        |
-| `in:A,B` | `C`         | 🔴        |
-| `in:A,B` | `true`      | 🔴        |
-| `in:A,B` | `{}`        | 🔴        |
+| Rule           | Value       | Is valid? |
+| -------------- | ----------- | --------- |
+| `includes:A,B` | `null`      | 🔴        |
+| `includes:A,B` | `undefined` | 🔴        |
+| `includes:A,B` | `A`         | 🟢        |
+| `includes:A,B` | `B`         | 🟢        |
+| `includes:A,B` | `C`         | 🔴        |
+| `includes:A,B` | `true`      | 🔴        |
+| `includes:A,B` | `{}`        | 🔴        |
 
 ## `integer`
 
@@ -816,7 +819,7 @@ isMin(10, 22);
 | `min:5` | `'abcdef'`  | 🔴        |
 | `min:5` | `2`         | 🔴        |
 
-## `not_in:foo,bar,...`
+## `not_includes:foo,bar,...`
 
 The field under validation must not be included in the given list of values.
 
@@ -825,31 +828,34 @@ The field under validation must not be included in the given list of values.
 ```ts [Declarative]
 import { validate } from "robust-validator";
 // ...
-await validate(data, { userChoice: "not_in:news,marketing" });
+await validate(data, { userChoice: "not_includes:news,marketing" });
 ```
 
 ```ts [Function-based]
-import { validate, notIn } from "robust-validator";
+import { validate, notIncludes } from "robust-validator";
 // ...
-await validate(data, { userChoice: [notIn(["news", "marketing"])] });
+await validate(data, { userChoice: [notIncludes(["news", "marketing"])] });
 ```
 
 ```ts [Direct usage]
-import { isNotIn } from "robust-validator";
+import { isNotIncludes } from "robust-validator";
 // ...
-isNotIn("your-data", ["news", "marketing"]);
+isNotIncludes("your-data", "news,marketing");
+
+// or
+isNotIncludes("your-data", ["news", "marketing"]);
 ```
 
 :::
 
-| Rule         | Value       | Is valid? |
-| ------------ | ----------- | --------- |
-| `not_in:A,B` | `null`      | 🔴        |
-| `not_in:A,B` | `undefined` | 🔴        |
-| `not_in:A,B` | `C`         | 🟢        |
-| `not_in:A,B` | `A`         | 🔴        |
-| `not_in:A,B` | `B`         | 🔴        |
-| `not_in:A,B` | `true`      | 🔴        |
+| Rule               | Value       | Is valid? |
+| ------------------ | ----------- | --------- |
+| `not_includes:A,B` | `null`      | 🔴        |
+| `not_includes:A,B` | `undefined` | 🔴        |
+| `not_includes:A,B` | `C`         | 🟢        |
+| `not_includes:A,B` | `A`         | 🔴        |
+| `not_includes:A,B` | `B`         | 🔴        |
+| `not_includes:A,B` | `true`      | 🔴        |
 
 ## `numeric`
 

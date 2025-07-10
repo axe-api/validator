@@ -15,11 +15,11 @@ import isDigits from "./isDigits";
 import isDigitsBetween from "./isDigitsBetween";
 import isEmail from "./isEmail";
 import isHex from "./isHex";
-import isIn from "./isIn";
+import isIncludes from "./isIncludes";
 import isInteger from "./isInteger";
 import isMax from "./isMax";
 import isMin from "./isMin";
-import isNotIn from "./isNotIn";
+import iisNotIncludes from "./isNotIncludes";
 import isNumeric from "./isNumeric";
 import isRequired from "./isRequired";
 import isSize from "./isSize";
@@ -44,11 +44,11 @@ export {
   isDigitsBetween,
   isEmail,
   isHex,
-  isIn,
+  isIncludes,
   isInteger,
   isMax,
   isMin,
-  isNotIn,
+  iisNotIncludes,
   isNumeric,
   isRequired,
   isSize,

@@ -1,16 +1,10 @@
 import { beforeAll, describe, expect, test } from "vitest";
-import {
-  setOptions,
-  validate,
-  setLocales,
-  ILocale,
-  required,
-  email,
-  register,
-  en,
-  tr,
-  az,
-} from "../index";
+import { setLocales } from "../src/Locale";
+import { az, en, tr } from "../src/i18n";
+import { validate } from "../src/helpers/validate";
+import { setOptions } from "../src/Options";
+import { required, email } from "../src/converters";
+import { register } from "../src/ruleManager";
 
 const EXISTS_RULE_TRANSLATIONS = {
   en: "The record doesn't exists on database: {0}",
@@ -19,7 +13,7 @@ const EXISTS_RULE_TRANSLATIONS = {
 
 describe("validate() function ", () => {
   beforeAll(async () => {
-    setLocales(en as ILocale);
+    setLocales(en);
   });
 
   test("should be able to validate the general structure", async () => {
@@ -67,6 +61,18 @@ describe("validate() function ", () => {
     expect(result.errors.price[0].message).toBe(
       "The field must be between 1000 and 2000."
     );
+  });
+
+  test("should be able to validate options correctly", async () => {
+    const data = {
+      role: "admin",
+    };
+    const rules = {
+      role: "includes:moderator,admin",
+    };
+
+    const result = await validate(data, rules);
+    expect(result.isValid).toBe(true);
   });
 
   test("should stop on fail by options", async () => {

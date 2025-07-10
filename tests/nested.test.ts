@@ -1,9 +1,11 @@
 import { beforeAll, describe, test, expect } from "vitest";
-import { validate, setLocales, en, ILocale } from "../index";
+import { setLocales } from "../src/Locale";
+import { en } from "../src/i18n";
+import { validate } from "../src/helpers/validate";
 
 describe("validate()", () => {
   beforeAll(async () => {
-    setLocales(en as ILocale);
+    setLocales(en);
   });
 
   test("should validate nested objects", async () => {
