@@ -13,8 +13,10 @@ export default defineConfig({
   description: "Another data validation library",
   lang: "en-US",
   lastUpdated: false,
+  appearance: "force-dark",
+
   themeConfig: {
-    nav: [{ text: "Demo", link: "https://validator.axe-api.com/demo" }],
+    nav: [{ text: "Blog", link: "/blog" }],
 
     editLink: {
       pattern: "https://github.com/axe-api/validator/edit/main/docs/:path",
@@ -50,9 +52,7 @@ export default defineConfig({
       copyright: "Copyright © 2020-present",
     },
 
-    search: {
-      provider: "local",
-    },
+    search: { provider: "local" },
   },
 
   transformHtml: (_, id, { pageData }) => {

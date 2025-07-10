@@ -129,6 +129,7 @@ const getResults = async (
         ) {
           continue;
         }
+
         // Calling the rule function with the validation parameters
         const isRuleValid = await rule.callback(
           check.value,
