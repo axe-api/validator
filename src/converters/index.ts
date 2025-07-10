@@ -15,11 +15,11 @@ import digits from "./digits";
 import digitsBetween from "./digitsBetween";
 import email from "./email";
 import hex from "./hex";
-import inConverter from "./in";
+import includes from "./includes";
 import integer from "./integer";
 import max from "./max";
 import min from "./min";
-import notIn from "./notIn";
+import notIncludes from "./notIncludes";
 import numeric from "./numeric";
 import required from "./required";
 import size from "./size";
@@ -44,11 +44,11 @@ export {
   digitsBetween,
   email,
   hex,
-  inConverter,
+  includes,
   integer,
   max,
   min,
-  notIn,
+  notIncludes,
   numeric,
   required,
   size,
