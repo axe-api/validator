@@ -24,7 +24,7 @@ export const RULE_FUNCTION_MAPS: Record<RuleType, RuleFunction> = {
   integer: rules.isInteger,
   max: rules.isMax,
   min: rules.isMin,
-  not_includes: rules.iisNotIncludes,
+  not_includes: rules.isNotIncludes,
   numeric: rules.isNumeric,
   required: rules.isRequired,
   size: rules.isSize,

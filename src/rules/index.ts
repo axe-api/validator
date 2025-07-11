@@ -19,7 +19,7 @@ import isIncludes from "./isIncludes";
 import isInteger from "./isInteger";
 import isMax from "./isMax";
 import isMin from "./isMin";
-import iisNotIncludes from "./isNotIncludes";
+import isNotIncludes from "./isNotIncludes";
 import isNumeric from "./isNumeric";
 import isRequired from "./isRequired";
 import isSize from "./isSize";
@@ -48,7 +48,7 @@ export {
   isInteger,
   isMax,
   isMin,
-  iisNotIncludes,
+  isNotIncludes,
   isNumeric,
   isRequired,
   isSize,
