@@ -59,7 +59,7 @@ describe("Locale helpers", () => {
       const content = await import(`../src/i18n`);
       const locale = content[language] as ILocale;
       expect(locale.key).toBe(language);
-      await setLocales(locale);
+      setLocales(locale);
     }
   });
 });

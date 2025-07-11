@@ -160,7 +160,7 @@ describe("validate() function ", () => {
   });
 
   test("should be able to load languages dynamically", async () => {
-    await setLocales([en, tr]);
+    setLocales([en, tr]);
 
     const rules = {
       email: "required|email",

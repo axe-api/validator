@@ -29,7 +29,7 @@ describe("isBetween() ", () => {
   );
 
   test("should threat as string if the definition has `numeric` rule", async () => {
-    await setLocales(en);
+    setLocales(en);
 
     const data = { input: "8" };
     const rules = { input: "numeric|between:5,10" };

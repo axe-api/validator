@@ -76,7 +76,7 @@ describe("isAfterOrEqual() ", () => {
   });
 
   it("should be able to use another field as the comparison date", async () => {
-    await setLocales(en);
+    setLocales(en);
 
     const data = {
       startAt: "2023-10-21",
