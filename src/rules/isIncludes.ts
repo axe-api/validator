@@ -1,4 +1,4 @@
-export default (value: unknown, ...args: unknown[]): boolean => {
+export default (value: string | number, ...args: unknown[]): boolean => {
   let params: unknown[];
 
   // validate() function passes the IContext all the time. So we should be sure
