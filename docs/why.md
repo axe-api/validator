@@ -6,13 +6,14 @@ Robust Validator was born out of the need for a versatile data validation soluti
 
 Why choose Robust Validator? It's more than just a data validation tool; it's a commitment to providing a reliable, well-maintained, and feature-rich solution for developers who value simplicity and effectiveness in their projects.
 
-## Principles
-
-I decided on some fundamental rules while building this library:
-
-- Every validation rule should be an independent function.
-- Every validation rule should be able to be used separately
-- All validation definition should be able to be stored anywhere (database, memory, configuration files, 3rd party API, etc) to be used later.
-- All validation rules should be able to be used in different languages.
-- Contribution to the rule set should be easy.
-- Should be well-documented.
+<section class="principles">
+  <div class="principles-title">Design Principles</div>
+  <div class="principles-list">
+    <div class="principles-list-item">⚡ Each validation rule is a standalone function.</div>
+    <div class="principles-list-item">⚡ Rules can be used on their own.</div>
+    <div class="principles-list-item">⚡ Definitions can live anywhere such as database, config, memory, or API.</div>
+    <div class="principles-list-item">⚡ Every rule supports multiple languages out of the box.</div>
+    <div class="principles-list-item">⚡ Adding new rules is simple and straightforward.</div>
+    <div class="principles-list-item">⚡ Everything is clearly and practically documented.</div>
+  </div>
+</section>

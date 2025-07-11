@@ -215,3 +215,33 @@
   background-color: rgba(253, 244, 82, 0.08);
   color: var(--vp-c-brand-1);
 }
+
+.principles {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.principles-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--vp-c-text-1);
+}
+
+.principles-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.principles-list-item {
+  position: relative;
+  padding-left: 0.5em;
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  color: var(--vp-c-text-2);
+}
