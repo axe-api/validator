@@ -5,10 +5,10 @@ import { IContext } from "../Interface";
 const toContext = (value: any): IContext => {
   return {
     data: {
-      password: "123456",
-      password_confirmed: value,
+      my_field: "123456",
+      my_field_confirmed: value,
     },
-    field: "password",
+    field: "my_field",
     definition: "confirmed",
   };
 };
