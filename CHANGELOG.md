@@ -1,5 +1,26 @@
 # Release Notes
 
+## [3.0.0 (2025-07-13)](https://github.com/axe-api/axe-api/compare/2.2.1...3.0.0)
+
+### Breaking changes
+
+Rename rule names:
+
+`in` → `includes`
+
+`isIn` → `isIncludes`
+
+String rules:
+`in:admin,moderator` → `includes:admin,moderator`
+
+### Fixes
+
+- Fixed: Declarative usage ofin:A,B does not validate B ([#73](https://github.com/axe-api/validator/issues/73))
+
+### Improvements
+
+- Documentation
+
 ## [2.2.1 (2025-02-03)](https://github.com/axe-api/axe-api/compare/2.2.1...2.2.0)
 
 🎉 Big thanks to our contributors for this release!
