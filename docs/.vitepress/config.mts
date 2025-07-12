@@ -55,6 +55,26 @@ export default defineConfig({
     search: { provider: "local" },
   },
 
+  head: [
+    [
+      "script",
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-67G9G0VBCC",
+        async: "",
+      },
+    ],
+    [
+      "script",
+      {},
+      `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-67G9G0VBCC');
+      `,
+    ],
+  ],
+
   transformHtml: (_, id, { pageData }) => {
     const file = fs.statSync(path.join(__dirname, "..", pageData.relativePath));
     if (!/[\\/]404\.html$/.test(id)) {
