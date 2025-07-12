@@ -145,7 +145,5 @@ Give it a try and make your validation cleaner and more reliable.
 ## Related Links
 
 - [Getting Started](https://validator.axe-api.com/getting-started)
-
 - [All Validation Rules](https://validator.axe-api.com/rules)
-
 - [Customization](https://validator.axe-api.com/customization)

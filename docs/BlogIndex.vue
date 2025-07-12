@@ -2,11 +2,17 @@
 const posts = [
   {
     time: "13 July, 2025",
-    title: "How to Validate Nested Objects in JavaScript with Robust Validator",
-    url: "/blog/2025-07-12-nested-object-validation",
+    title:
+      "How to Build a Custom Validation Rule in JavaScript with Robust Validator",
+    url: "/blog/2025-07-13-how-to-build-a-custom-validation-rule-in-javascript-with-robust-validator",
   },
   {
-    time: "13 July, 2025",
+    time: "12 July, 2025",
+    title: "How to Validate Nested Objects in JavaScript with Robust Validator",
+    url: "/blog/2025-07-12-how-to-validate-nested-objects-in-javascript-with-robust-validator",
+  },
+  {
+    time: "12 July, 2025",
     title: "What’s New in Robust Validator v3",
     url: "/blog/2025-07-13-whats-new-in-robust-validator-v3",
   },
