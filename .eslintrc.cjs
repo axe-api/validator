@@ -24,5 +24,11 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
   },
-  ignorePatterns: ["dist", "node_modules", "tests/consumers", "demo"],
+  ignorePatterns: [
+    "dist",
+    "node_modules",
+    "tests/consumers",
+    "demo",
+    "docs/public/cookieconsent.umd.js",
+  ],
 };
