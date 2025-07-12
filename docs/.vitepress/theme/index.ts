@@ -5,6 +5,7 @@ import { observeCodeBlocks } from "./observe-code-blocks";
 
 export default {
   ...DefaultTheme,
+
   enhanceApp({ router }) {
     if (typeof window !== "undefined") {
       onMounted(() => {

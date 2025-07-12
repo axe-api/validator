@@ -48,7 +48,8 @@ export default defineConfig({
     ],
 
     footer: {
-      message: "Released under the MIT License.",
+      message:
+        'Released under the MIT License. | <a href="/privacy-policy">Privacy Policy</a> | <a href="/cookie-policy">Cookie Policy</a> | <a style="cursor: pointer" data-cc="show-preferencesModal">Cookie preferences</a>',
       copyright: "Copyright © 2020-present",
     },
 
@@ -56,21 +57,25 @@ export default defineConfig({
   },
 
   head: [
+    ["link", { rel: "stylesheet", href: "/cookieconsent.css" }],
+    ["script", { defer: "", src: "/init.js" }],
     [
       "script",
       {
-        src: "https://www.googletagmanager.com/gtag/js?id=G-67G9G0VBCC",
+        type: "text/plain",
+        "data-category": "analytics",
         async: "",
+        "data-src": "https://www.googletagmanager.com/gtag/js?id=G-67G9G0VBCC",
       },
     ],
     [
       "script",
-      {},
+      { type: "text/plain", "data-category": "analytics" },
       `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-67G9G0VBCC');
+        gtag('config', 'G-67G9G0VBCC', { anonymize_ip: true });
       `,
     ],
   ],
