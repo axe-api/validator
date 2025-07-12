@@ -41,6 +41,22 @@ loadScript("/cookieconsent.umd.js").then(() => {
                 description:
                   "These cookies are essential for the proper functioning of this website. Without them, the website would not work properly.",
                 linkedCategory: "necessary",
+                cookieTable: {
+                  headers: {
+                    name: "Name",
+                    domain: "Domain",
+                    expiration: "Expiration",
+                    description: "Description",
+                  },
+                  body: [
+                    {
+                      name: "cc_cookie",
+                      domain: "validator.axe-api.com",
+                      expiration: "6 months",
+                      description: "Remembers your cookie preferences.",
+                    },
+                  ],
+                },
               },
               {
                 title: "Performance and analytics",
