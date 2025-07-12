@@ -2,6 +2,11 @@
 const posts = [
   {
     time: "13 July, 2025",
+    title: "How to Validate Nested Objects in JavaScript with Robust Validator",
+    url: "/blog/2025-07-12-nested-object-validation",
+  },
+  {
+    time: "13 July, 2025",
     title: "What’s New in Robust Validator v3",
     url: "/blog/2025-07-13-whats-new-in-robust-validator-v3",
   },
