@@ -3,8 +3,8 @@ import isNotIncludes from "./isNotIncludes";
 
 describe("isNotIncludes() ", () => {
   it("should return false for null or undefined values", () => {
-    expect(isNotIncludes(null, "a,b,c")).toBe(false);
-    expect(isNotIncludes(undefined, "a,b,c")).toBe(false);
+    expect(isNotIncludes(null, "a,b,c")).toBe(true);
+    expect(isNotIncludes(undefined, "a,b,c")).toBe(true);
   });
 
   it("should return false if value is in the list", () => {

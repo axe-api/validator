@@ -1,8 +1,11 @@
 import isIncludes from "./isIncludes";
 
-export default (value: unknown, ...args: unknown[]): boolean => {
+export default (
+  value: string | number | null | undefined,
+  ...args: unknown[]
+): boolean => {
   if (value === undefined || value === null) {
-    return false;
+    return true;
   }
 
   return !isIncludes(value, args);
