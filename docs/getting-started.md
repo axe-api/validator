@@ -1,3 +1,7 @@
+---
+footer: true
+---
+
 # Getting started
 
 ## Installation
@@ -21,11 +25,7 @@ import { validate, setLocales, en } from "robust-validator";
 
 setLocales(en);
 
-const data = {
-  email: "not-a-valid-email",
-  name: "John",
-  surname: "Doe",
-};
+const data = { email: "not-a-valid-email", name: "John", surname: "Doe" };
 
 const definition = {
   email: "required|email",
@@ -50,11 +50,7 @@ import {
 
 setLocales(en);
 
-const data = {
-  email: "not-a-valid-email",
-  name: "John",
-  surname: "Doe",
-};
+const data = { email: "not-a-valid-email", name: "John", surname: "Doe" };
 
 const definition = {
   email: [required(), email()],
@@ -74,18 +70,9 @@ By the example, you would get the following response:
 {
   "isValid": false,
   "isInvalid": true,
-  "fields": {
-    "email": false,
-    "name": true,
-    "surname": true
-  },
+  "fields": { "email": false, "name": true, "surname": true },
   "errors": {
-    "email": [
-      {
-        "rule": "required",
-        "message": "The field is required."
-      }
-    ]
+    "email": [{ "rule": "required", "message": "The field is required." }]
   }
 }
 ```
@@ -104,31 +91,10 @@ setLocales(en);
 const data = {
   secret: "some secret",
   users: [
-    {
-      addresses: [
-        {
-          city: "New York",
-        },
-        {
-          city: "Istanbul",
-        },
-      ],
-    },
-    {
-      addresses: [
-        {
-          city: "New York",
-        },
-        {
-          street: "Wall Street",
-        },
-      ],
-    },
+    { addresses: [{ city: "New York" }, { city: "Istanbul" }] },
+    { addresses: [{ city: "New York" }, { street: "Wall Street" }] },
   ],
-  permissons: {
-    read: true,
-    write: true,
-  },
+  permissons: { read: true, write: true },
 };
 
 const definition = {
@@ -155,23 +121,12 @@ And this is the content of the `result` variable:
     "permissons.delete": false
   },
   "errors": {
-    "secret": [
-      {
-        "rule": "min",
-        "message": "The field must be at least 100."
-      }
-    ],
+    "secret": [{ "rule": "min", "message": "The field must be at least 100." }],
     "users.1.addresses.1.city": [
-      {
-        "rule": "required",
-        "message": "The field is required."
-      }
+      { "rule": "required", "message": "The field is required." }
     ],
     "permissons.delete": [
-      {
-        "rule": "required",
-        "message": "The field is required."
-      }
+      { "rule": "required", "message": "The field is required." }
     ]
   }
 }

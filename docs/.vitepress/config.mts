@@ -48,7 +48,8 @@ export default defineConfig({
     ],
 
     footer: {
-      message: "Released under the MIT License.",
+      message:
+        'Released under the MIT License. | <a href="/privacy-policy">Privacy Policy</a> | <a href="/cookie-policy">Cookie Policy</a> | <a style="cursor: pointer" data-cc="show-preferencesModal">Cookie preferences</a>',
       copyright: "Copyright © 2020-present",
     },
 
@@ -56,13 +57,7 @@ export default defineConfig({
   },
 
   head: [
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css",
-      },
-    ],
+    ["link", { rel: "stylesheet", href: "/cookieconsent.css" }],
     ["script", { defer: "", src: "/init.js" }],
     [
       "script",
@@ -80,7 +75,7 @@ export default defineConfig({
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-67G9G0VBCC');
+        gtag('config', 'G-67G9G0VBCC', { anonymize_ip: true });
       `,
     ],
   ],

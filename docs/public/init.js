@@ -11,9 +11,7 @@ function loadScript(src) {
 }
 
 // Usage
-loadScript(
-  "https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js",
-).then(() => {
+loadScript("/cookieconsent.umd.js").then(() => {
   CookieConsent.run({
     categories: {
       necessary: { enabled: true, readOnly: true },
