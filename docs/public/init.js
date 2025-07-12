@@ -13,6 +13,9 @@ function loadScript(src) {
 // Usage
 loadScript("/cookieconsent.umd.js").then(() => {
   CookieConsent.run({
+    cookie: {
+      name: "rv-cookie",
+    },
     categories: {
       necessary: { enabled: true, readOnly: true },
       analytics: { enabled: true },
@@ -50,7 +53,7 @@ loadScript("/cookieconsent.umd.js").then(() => {
                   },
                   body: [
                     {
-                      name: "cc_cookie",
+                      name: "rv-cookie",
                       domain: "validator.axe-api.com",
                       expiration: "6 months",
                       description: "Remembers your cookie preferences.",
