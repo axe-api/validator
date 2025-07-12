@@ -6,7 +6,8 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "sitemap-ts": "^1.6.1"
+    "sitemap-ts": "^1.6.1",
+    "vanilla-cookieconsent": "^3.1.0"
   },
   "devDependencies": {
     "sass": "^1.89.2",
