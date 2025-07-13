@@ -28,7 +28,7 @@ export default defineConfig({
       {
         text: "Introduction",
         items: [
-          { text: "Why?", link: "/why" },
+          { text: "Purpose", link: "/purpose" },
           { text: "Getting started", link: "/getting-started" },
           { text: "Examples", link: "/examples" },
           { text: "Terminology", link: "/terminology" },

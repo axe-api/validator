@@ -26,15 +26,15 @@ Rule-based data validation in JS. Extendable, function-oriented, i18n-supported
 
 [Documentation](https://validator.axe-api.com/)
 
-## 💡 Why?
+## Why?
 
-Discovering a data validation library that seamlessly combines ease of use, the ability to store validation rules for future use, and robust internationalization (i18n) support is a formidable challenge. While numerous data validation libraries exist, finding one that fulfills all these criteria is often elusive. Some libraries that do meet these requirements are unfortunately no longer actively maintained.
+Most validation libraries are either hard to use, missing key features, or no longer maintained. It’s tough to find one that lets you reuse rules, supports multiple languages, and still feels easy to work with.
 
-Robust Validator was born out of the need for a versatile data validation solution that not only simplifies the validation process but also empowers developers with the flexibility to preserve and reuse validation rules. This library aims to bridge the gap by offering a user-friendly experience, ensuring your validation needs are met comprehensively.
+Robust Validator was built to solve that. It makes validation simple, reusable, and flexible. You can define your rules once and use them anywhere, and it works great with multiple languages out of the box.
 
-Why choose Robust Validator? It's more than just a data validation tool; it's a commitment to providing a reliable, well-maintained, and feature-rich solution for developers who value simplicity and effectiveness in their projects.
+If you want a validation library that just works, is easy to read, and stays up to date, Robust Validator is a solid choice.
 
-## 🤞 Principles
+## Principles
 
 I decided on some fundamental rules while building this library:
 
@@ -53,7 +53,7 @@ The library can be installed into an existing project:
 $ npm install --save robust-validator
 ```
 
-## 💪 Usage
+## Usage
 
 Using robust-validator is very simple.
 
@@ -80,7 +80,62 @@ const result = await validate(data, definition);
 console.log(result);
 ```
 
-## 🤝 Contributors
+## Nested data validation
+
+This feature allows dynamic traversal of nested data structures, supporting complex validation rules for paths like `users.*.addresses.*.city`.
+
+It is inspired by Laravel's validation system and works seamlessly with arrays and objects, including deeply nested data.
+
+```ts
+import { validate, setLocales, en } from "robust-validator";
+
+setLocales(en);
+
+const data = {
+  secret: "some secret",
+  users: [
+    { addresses: [{ city: "New York" }, { city: "Istanbul" }] },
+    { addresses: [{ city: "New York" }, { street: "Wall Street" }] },
+  ],
+  permissons: { read: true, write: true },
+};
+
+const definition = {
+  secret: "required|min:100",
+  "users.*.addresses.*.city": "required",
+  "permissons.read": "required|boolean",
+  "permissons.delete": "required|boolean",
+};
+
+const result = await validate(data, definition);
+console.log(result);
+```
+
+And this is the content of the `result` variable:
+
+```json
+{
+  "isValid": false,
+  "isInvalid": true,
+  "fields": {
+    "secret": false,
+    "users.*.addresses.*.city": false,
+    "permissons.read": true,
+    "permissons.delete": false
+  },
+  "errors": {
+    "secret": [{ "rule": "min", "message": "The field must be at least 100." }],
+    "users.1.addresses.1.city": [
+      { "rule": "required", "message": "The field is required." }
+    ],
+    "permissons.delete": [
+      { "rule": "required", "message": "The field is required." }
+    ]
+  }
+}
+```
+
+## Contributors
 
 <a href="https://github.com/axe-api/validator/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=axe-api/validator" />
@@ -88,6 +143,6 @@ console.log(result);
 
 Made with [contrib.rocks](https://contrib.rocks).
 
-## ⚖️ License
+## License
 
 [MIT License](LICENSE)
