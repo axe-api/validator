@@ -69,7 +69,10 @@ export default defineConfig({
           "Rule-based data validation library in JavaScript. It's extendable, function-oriented, and i18n supported.",
       },
     ],
-    ["meta", { property: "og:image", content: "" }],
+    [
+      "meta",
+      { property: "og:image", content: "https://validator.axe-api.com/og.png" },
+    ],
 
     ["link", { rel: "stylesheet", href: "/cookieconsent.css" }],
     ["script", { defer: "", src: "/init.js" }],
