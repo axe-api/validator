@@ -24,6 +24,33 @@ features:
     details: Full multi-language support built-in. No need for extra setup.
 ---
 
+<section class="used-by">
+  <div class="used-by-title">Projects using Robust Validator</div>
+
+  <div class="used-by-logos">
+    <a
+      href="https://axe-api.com"
+      target="_blank"
+      rel="noopener"
+      class="used-by-item"
+      title="Axe API"
+    >
+      <img src="https://axe-api.com/viking.png" alt="Axe API" />
+      <div class="used-by-name">Axe API</div>
+    </a>
+    <a
+      href="https://github.com/axe-api/validator/edit/main/docs/index.md"
+      target="_blank"
+      rel="noopener"
+      class="used-by-item used-by-add"
+      title="Add your project"
+    >
+      <div class="add-logo">+</div>
+      <div class="used-by-name">Add your project</div>
+    </a>
+  </div>
+</section>
+
 <div class="demo-section">
 
   <div class="demo-text">
