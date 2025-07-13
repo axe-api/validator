@@ -13,7 +13,7 @@ export default defineConfig({
   description:
     "Rule-based data validation library in JavaScript. It's extendable, function-oriented, and i18n supported.",
   lang: "en-US",
-  lastUpdated: false,
+  lastUpdated: true,
   appearance: "force-dark",
 
   themeConfig: {
@@ -45,7 +45,10 @@ export default defineConfig({
       },
     ],
     socialLinks: [
-      { icon: "github", link: "https://github.com/axe-api/validator" },
+      {
+        icon: "github",
+        link: "https://github.com/axe-api/validator",
+      },
     ],
 
     footer: {
