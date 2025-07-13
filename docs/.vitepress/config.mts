@@ -10,7 +10,8 @@ const links: any = [];
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Robust Validator",
-  description: "Another data validation library",
+  description:
+    "Rule-based data validation library in JavaScript. It's extendable, function-oriented, and i18n supported.",
   lang: "en-US",
   lastUpdated: false,
   appearance: "force-dark",
@@ -57,6 +58,19 @@ export default defineConfig({
   },
 
   head: [
+    ["meta", { property: "og:url", content: "https://validator.axe-api.com" }],
+    ["meta", { property: "og:type", content: "website" }],
+    ["meta", { property: "og:title", content: "Robust Validator" }],
+    [
+      "meta",
+      {
+        property: "og:description",
+        content:
+          "Rule-based data validation library in JavaScript. It's extendable, function-oriented, and i18n supported.",
+      },
+    ],
+    ["meta", { property: "og:image", content: "" }],
+
     ["link", { rel: "stylesheet", href: "/cookieconsent.css" }],
     ["script", { defer: "", src: "/init.js" }],
     [
