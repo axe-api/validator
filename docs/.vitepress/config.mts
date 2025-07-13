@@ -74,6 +74,29 @@ export default defineConfig({
       { property: "og:image", content: "https://validator.axe-api.com/og.png" },
     ],
 
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+    ["meta", { property: "twitter:domain", content: "validator.axe-api.com" }],
+    [
+      "meta",
+      { property: "twitter:url", content: "https://validator.axe-api.com" },
+    ],
+    ["meta", { name: "twitter:title", content: "Robust Validator" }],
+    [
+      "meta",
+      {
+        name: "twitter:description",
+        content:
+          "Rule-based data validation library in JavaScript. It's extendable, function-oriented, and i18n supported.",
+      },
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:image",
+        content: "https://validator.axe-api.com/og.png",
+      },
+    ],
+
     ["link", { rel: "stylesheet", href: "/cookieconsent.css" }],
     ["script", { defer: "", src: "/init.js" }],
     [
