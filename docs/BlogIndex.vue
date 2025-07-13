@@ -1,6 +1,12 @@
 <script setup lang="ts">
 const posts = [
   {
+    time: "14 July, 2025",
+    title:
+      "How to Validate Multilingual Error Messages in JavaScript Using Robust Validator",
+    url: "/blog/2025-07-14-how-to-validate-multilingual-error-messages-in-javascript-using-robust-validator",
+  },
+  {
     time: "13 July, 2025",
     title:
       "How to Build a Custom Validation Rule in JavaScript with Robust Validator",
