@@ -4,7 +4,8 @@ import { DEFINED_RULES } from "./ruleManager";
 
 export const toRuleDefinition = (rule: string): IRuleDefinition => {
   const [name, paramsAsString] = rule.split(":");
-  const ruleType = toRuleType(name);
+
+  const ruleType = name as RuleType;
 
   const params = paramsAsString ? paramsAsString.split(",") : [];
 
@@ -19,12 +20,4 @@ export const toRuleDefinition = (rule: string): IRuleDefinition => {
     callback,
     params,
   };
-};
-
-export const toRuleType = (name: string): RuleType => {
-  try {
-    return name as RuleType;
-  } catch (error) {
-    throw new Error(`Undefined rule: ${name}`);
-  }
 };
