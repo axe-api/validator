@@ -45,7 +45,7 @@ I decided on some fundamental rules while building this library:
 - ✅︎ Contribution to the rule set should be easy.
 - ✅︎ Should be well-documented.
 
-## 🏃 Installation
+## Installation
 
 The library can be installed into an existing project:
 
